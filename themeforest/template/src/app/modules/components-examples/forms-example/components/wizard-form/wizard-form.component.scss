@@ -1,0 +1,130 @@
+@import "../../../../../../scss/settings/variable";
+
+.wizard {
+
+  background-color: var(--colorBackground);
+
+  .wizard__form {
+    max-width: 610px;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding: 0 25px;
+
+    .wizard__toolbar {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.wizard__steps {
+  display: flex;
+}
+
+.wizard__step {
+  width: 100%;
+  text-align: center;
+  height: 55px;
+  text-transform: uppercase;
+  display: flex;
+  transition: background 0.3s;
+
+  border: 1px solid var(--colorBorder);
+  background: var(--colorHover);
+
+  p {
+    font-weight: 700;
+    margin: auto;
+    font-size: 14px;
+    transition: all 0.3s;
+  }
+
+  &.wizard__step--active {
+    background: $color-blue;
+    border-color: $color-blue;
+
+    p {
+      color: #ffffff;
+    }
+  }
+}
+
+.wizard__form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.wizard__title {
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+}
+
+.wizard__description {
+  color: $color-additional;
+  margin: 0;
+  max-width: 410px;
+}
+
+.wizard__form {
+  .form__form-group-field {
+    justify-content: flex-end;
+  }
+}
+
+.toggle-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0;
+  cursor: pointer;
+
+  span {
+    color: var(--colorText);
+    padding-left: 50px;
+  }
+
+  label {
+    margin: 0;
+  }
+}
+
+.toggle-label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding: 10px 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(153, 153, 153, 0.4);
+    background-color: #ffffff;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+
+    border-radius: 23px;
+    background-color: var(--colorBorder);
+    width: 40px;
+    height: 20px;
+  }
+}
+
+.toggle-btn input:checked ~ .toggle-label {
+
+  &:after {
+    background: $color-accent;
+    transform: translateX(20px);
+  }
+}

@@ -1,0 +1,332 @@
+<div class="dashboard container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">{{translations['page_title']}}</h3>
+    </div>
+  </div>
+  <div class="row">
+
+    <app-dashboard-tiny-widget title="{{translations['total_products']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3">
+      <app-tiny-bar-chart [data]="totalProductsData"
+                          [amount]="widgetTotalProducts.amount"
+                          [color]="widgetTotalProducts.color"
+                          [trendDirectionUp]="widgetTotalProducts.trendDirectionUp">
+      </app-tiny-bar-chart>
+    </app-dashboard-tiny-widget>
+    <app-dashboard-tiny-widget title="{{translations['total_profit']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3">
+      <app-tiny-bar-chart [data]="totalProfitsData"
+                          [amount]="widgetTotalProfit.amount"
+                          [color]="widgetTotalProfit.color"
+                          [trendDirectionUp]="widgetTotalProfit.trendDirectionUp">
+      </app-tiny-bar-chart>
+    </app-dashboard-tiny-widget>
+    <app-dashboard-tiny-widget title="{{translations['orders_today']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3">
+      <app-tiny-bar-chart [data]="ordersTodayData"
+                          [amount]="widgetOrdersToday.amount"
+                          [color]="widgetOrdersToday.color"
+                          [trendDirectionUp]="widgetOrdersToday.trendDirectionUp">
+      </app-tiny-bar-chart>
+    </app-dashboard-tiny-widget>
+    <app-dashboard-tiny-widget title="{{translations['subscriptions']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3">
+      <app-tiny-bar-chart [data]="subscriptionsData"
+                          [amount]="widgetSubscriptions.amount"
+                          [color]="widgetSubscriptions.color"
+                          [trendDirectionUp]="widgetSubscriptions.trendDirectionUp">
+      </app-tiny-bar-chart>
+    </app-dashboard-tiny-widget>
+
+  </div>
+  <div class="row">
+    <app-panel title="{{translations['product_sales']}}"
+               classes="col-12"
+               [controls]="true">
+      <div class="chart-container chart-with-legend">
+        <ngx-charts-area-chart
+          [scheme]="productSalesChartSettings.colorScheme"
+          [results]="productSales"
+          [animations]="productSalesChartSettings.animations"
+          (legendLabelClick)="onLegendLabelClick($event)"
+          [legend]="productSalesChartSettings.showLegend"
+          [legendPosition]="productSalesChartSettings.legendPosition"
+          [legendTitle]="productSalesChartSettings.legendTitle"
+          [gradient]="productSalesChartSettings.gradient"
+          [xAxis]="productSalesChartSettings.showXAxis"
+          [yAxis]="productSalesChartSettings.showYAxis"
+          [autoScale]="productSalesChartSettings.autoScale"
+          [showGridLines]="productSalesChartSettings.showGridLines"
+          (select)="select($event)">
+        </ngx-charts-area-chart>
+      </div>
+    </app-panel>
+    <app-panel title="{{translations['new_orders']}}" classes="col-md-12 col-lg-12 col-xl-5" [controls]="true">
+      <p class="subhead">Top sales of the last week</p>
+      <div class="orders-table-wrapper">
+        <table mat-table [dataSource]="dataSource"
+               class="mat-elevation-z8 border-none colored-rows orders-table">
+          <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns; let i = index;">
+            <th mat-header-cell *matHeaderCellDef> {{columnsAliases[column]}}</th>
+            <td mat-cell *matCellDef="let element; let j = index;">
+
+              <ng-container [ngSwitch]="column">
+
+                <ng-container *ngSwitchCase="'product'">
+                  <img class="product-photo" [src]="element.img" alt="item photo">
+                  {{element[column]}}
+                </ng-container>
+
+                <div class="" *ngSwitchCase="'quantity'">
+                  <div class="orders-amount" [ngClass]="{
+                  'orders-amount-low': element[column] < 20,
+                  'orders-amount-medium': element[column] <= 100
+                  }">
+                    <div *ngFor="let decoration of element['decorationCount']"></div>
+                    <span class="orders-quantity"></span>{{element[column]}}
+                  </div>
+                </div>
+
+                <ng-container *ngSwitchCase="'total'">
+                  {{element[column] | currency}}
+                </ng-container>
+
+                <div class="btn-group" dropdown *ngSwitchCase="'control'">
+                  <div ngDropdown>
+                    <button ngDropdownControl type="button" class="btn-orders-control">
+                    <mat-icon>more_horiz</mat-icon>
+                    </button>
+                    <div ngDropdownContent dropdownClass="slide-fade">
+                      <ul class="dropdown-in-table">
+                        <li><button class="dropdown-item" type="button" (click)="editTableRow(j)">Edit</button></li>
+                        <li><button class="dropdown-item" type="button" (click)="deleteTableRow(j)">Delete</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <span *ngSwitchDefault>{{element[column]}}</span>
+
+              </ng-container>
+
+
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+        <a class="table-orders-link" routerLink="/e-commerce/catalog">
+          All products
+          <mat-icon>expand_more</mat-icon>
+        </a>
+    </app-panel>
+    <app-panel title="{{translations['my_todos']}}" classes="col-12 col-md-12 col-lg-5 col-xl-3" [controls]="true">
+      <p class="subhead">Do not forget to do everything</p>
+      <ul class="todos-list checkbox-themed">
+        <li>
+          <mat-checkbox class="checkbox-default" [checked]="true"><span class="todo-text">Call to Margaret and tell about EasyDEV</span>
+          </mat-checkbox>
+        </li>
+        <li>
+          <mat-checkbox class="checkbox-default"><span class="todo-text">Prepare docs for boss</span></mat-checkbox>
+        </li>
+        <li>
+          <mat-checkbox class="checkbox-default" [checked]="true"><span
+            class="todo-text">Calculate the company budget</span></mat-checkbox>
+        </li>
+        <li>
+          <mat-checkbox class="checkbox-default"><span class="todo-text">Find a manager</span></mat-checkbox>
+        </li>
+        <li>
+          <mat-checkbox class="checkbox-default"><span class="todo-text">Call to Sarah</span></mat-checkbox>
+        </li>
+        <li>
+          <mat-checkbox class="checkbox-default"><span class="todo-text">Make a sandwich</span></mat-checkbox>
+        </li>
+        <li>
+          <mat-checkbox class="checkbox-default"><span class="todo-text">Drink a coffee</span></mat-checkbox>
+        </li>
+        <li>
+          <mat-checkbox class="checkbox-default"><span class="todo-text">Walk with my dog</span></mat-checkbox>
+        </li>
+        <li>
+          <mat-checkbox class="checkbox-default"><span class="todo-text">Buy some milk, bread and a new car</span>
+          </mat-checkbox>
+        </li>
+      </ul>
+    </app-panel>
+    <app-panel title="{{translations['sales_statistic']}}" classes="col-md-12 col-lg-7 col-xl-4" [controls]="true">
+      <p class="subhead">Top sales of the last week</p>
+      <div class="chart-container-sales-stat">
+        <ngx-charts-bar-vertical
+          class="app-bar-chart"
+          [scheme]="salesStatSettings.colorScheme"
+          [results]="yearlyData ? dataYearly : dataMontly"
+          [animations]="salesStatSettings.animations"
+          [xAxis]="salesStatSettings.showXAxis"
+          [yAxis]="salesStatSettings.showYAxis"
+          [legend]="salesStatSettings.showLegend"
+          [legendTitle]="salesStatSettings.legendTitle"
+          [showXAxisLabel]="salesStatSettings.showXAxisLabel"
+          [showYAxisLabel]="salesStatSettings.showYAxisLabel"
+          [showGridLines]="salesStatSettings.showGridLines"
+          [barPadding]="yearlyData ? salesStatSettings.barYearlyPadding : salesStatSettings.barPadding"
+          [roundEdges]="salesStatSettings.roundEdges"
+          (select)="select($event)"
+          (legendLabelClick)="onLegendLabelClick($event)">
+        </ngx-charts-bar-vertical>
+      </div>
+      <hr>
+      <div class="data-toggle">
+        <p class="data-toggle__value">Monthly</p>
+        <div class="toggle-btn toggle-btn--e-commerce">
+          <input
+          id="data-toggle"
+          class="visually-hidden"
+          type="checkbox"
+          name="data-toggle"
+          [(ngModel)]="yearlyData"
+          />
+          <label for="data-toggle" class="toggle-label"></label>
+        </div>
+        <p class="data-toggle__value">Yearly</p>
+      </div>
+    </app-panel>
+    <app-panel title="{{translations['sales_report']}}" classes="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-5" [controls]="true">
+      <p class="subhead">Top sales of the last week</p>
+
+      <div class="sales-report">
+        <div class="sales-report-wrapper">
+          <p class="sales-report-title">Today</p>
+          <p class="sales-report-now">$ 298,92</p>
+          <p class="sales-report-plan">$ 250 planned</p>
+          <div class="progress-wrap progress-wrap-small">
+            <p class="sales-report-value progress-label">100%</p>
+            <progressbar [value]="100"></progressbar>
+          </div>
+        </div>
+        <div class="sales-report-wrapper">
+          <p class="sales-report-title">This week</p>
+          <p class="sales-report-now">$ 1423,01</p>
+          <p class="sales-report-plan">$ 1500 planned</p>
+          <div class="progress-wrap progress-wrap-small progress-wrap-red">
+            <p class="sales-report-value progress-label">98%</p>
+            <progressbar [value]="98"></progressbar>
+          </div>
+        </div>
+        <div class="sales-report-wrapper">
+          <p class="sales-report-title">This month</p>
+          <p class="sales-report-now">$ 44321,74</p>
+          <p class="sales-report-plan">$ 45000 planned</p>
+          <div class="progress-wrap progress-wrap-small progress-wrap-red">
+            <p class="sales-report-value progress-label">100%</p>
+            <progressbar [value]="97"></progressbar>
+          </div>
+        </div>
+      </div>
+    </app-panel>
+    <app-panel title="{{translations['emails']}}" classes="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3" [controls]="true">
+      <div class="emails-widget">
+        <div class="progress-wrap progress-wrap-small progress-wrap-red">
+          <div class="email-info">
+            <p class="title">Open rate</p>
+            <p class="amount">84%</p>
+          </div>
+          <progressbar [value]="84"></progressbar>
+        </div>
+        <div class="progress-wrap progress-wrap-small">
+          <div class="email-info">
+            <p class="title">Sent</p>
+            <p class="amount">121/300</p>
+          </div>
+          <progressbar [value]="40"></progressbar>
+        </div>
+      </div>
+    </app-panel>
+    <app-panel title="{{translations['short_reminders']}}" classes="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4" [controls]="true">
+      <div class="short-reminders">
+        <carousel
+          [itemsPerSlide]="itemsPerSlide"
+          [singleSlideOffset]="singleSlideOffset"
+          [noWrap]="!noWrap">
+          <slide>
+            <div class="carousel-slide">
+              <mat-icon>gps_fixed</mat-icon>
+              <p class="carousel-title">Our goal</p>
+              <p>is creating a chain of jewelery stores</p></div>
+          </slide>
+          <slide>
+            <div class="carousel-slide carousel-slide-red">
+              <mat-icon>insert_emoticon</mat-icon>
+              <p class="carousel-title">Our mission</p>
+              <p>is creating a chain of jewelery stores</p></div>
+          </slide>
+          <slide>
+            <div class="carousel-slide">
+              <mat-icon>gps_fixed</mat-icon>
+              <p class="carousel-title">Our goal</p>
+              <p>is creating a chain of jewelery stores</p></div>
+          </slide>
+          <slide>
+            <div class="carousel-slide carousel-slide-red">
+              <mat-icon>insert_emoticon</mat-icon>
+              <p class="carousel-title">Our mission</p>
+              <p>is creating a chain of jewelery stores</p></div>
+          </slide>
+        </carousel>
+
+      </div>
+    </app-panel>
+    <app-panel title="{{translations['top_selling_products']}}" classes="col-12 col-md-12 col-lg-12 col-xl-6" [controls]="true">
+      <app-dashboard-pie-chart
+        [data]="sellingProductsData"
+        [showLabels]="topSellingProducts.showLabels"
+        [wrapperHeight]="topSellingProducts.height"
+      >
+      </app-dashboard-pie-chart>
+    </app-panel>
+    <app-panel title="" classes="col-12 col-md-12 col-lg-6 col-xl-3" [controls]="true">
+
+      <div class="product-card">
+        <div class="product-img">
+          <img [src]="imageResoures.secondaryAvatarImg2" alt="product photo">
+        </div>
+        <h5 class="bold-text product-title">{{translations['basic_card']}}</h5>
+        <p class="subhead product-subhead">Knowledge nay estimable questions repulsive daughters boy.</p>
+        <p>
+          <a routerLink="/e-commerce/catalog">View in the item list</a>
+        </p>
+      </div>
+
+    </app-panel>
+    <app-panel title="{{translations['sales_statistic']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3" [controls]="true">
+      <p class="subhead">Top selling items statistic by last month</p>
+      <app-pie-grid-chart-set [charts]="salesStatisticItems"></app-pie-grid-chart-set>
+    </app-panel>
+    <app-panel title="{{translations['recent_orders']}}" classes="col-lg-12" [controls]="true">
+
+
+      <div class="responsive-table">
+        <table mat-table [dataSource]="dataSourceResponsive" class="mat-elevation-z8 border-none colored-cells-hover recent-orders-table">
+
+          <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumnsResponsive">
+            <th mat-header-cell *matHeaderCellDef> {{columnsAliasesResponsive[column]}} </th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container *ngIf="column === 'status'; else simpleCell">
+                 <span class="badge"
+                       [ngClass]="{
+                 'badge-success': element.status === 'In Progress',
+                 'badge-primary': element.status === 'Completed'}"
+                 >{{element[column]}}</span>
+              </ng-container>
+              <ng-template #simpleCell>
+                {{element[column]}}
+              </ng-template>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumnsResponsive"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumnsResponsive;"></tr>
+        </table>
+      </div>
+    </app-panel>
+  </div>
+</div>

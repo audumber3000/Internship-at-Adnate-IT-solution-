@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">Cart</h3>
+      <h3 class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="cart card">
+        <div class="card-body">
+          <div class="card-title"><h5 class="bold-text">Cart</h5></div>
+          <div class="cart-component">
+            <table class="table--bordered cart__table table">
+              <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Tax</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let item of data; let i = index">
+                <td>{{i + 1}}</td>
+                <td>
+                  <span class="cart__preview-img"><img [src]="item.img" alt="product_preview"></span>
+                  <span>{{item.title}}</span>
+                </td>
+                <td>{{item.quantity}}</td>
+                <td>{{item.price | currency}}</td>
+                <td>{{item.tax | currency}}</td>
+                <td>{{item.total | currency}}</td>
+                <td>
+                  <button class="cart__table-btn" type="button">
+                    <mat-icon>delete_forever</mat-icon>
+                    Remove
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <h5 class="cart__sub-total">Sub-total: $328.00</h5>
+          <form class="form cart__deliveries">
+            <div class="form__form-group"><span class="form__form-group-label">Delivery method:</span>
+              <div class="form__form-group-field cart__delivery-field">
+                <div class="cart__delivery radio-button-themed">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1" [checked]="true">
+                      <span class="radio-btn__label">Russian Post</span>
+                      <p class="cart__delivery-time">5-7 working days</p>
+                      <p class="cart__delivery-price">$20</p>
+                    </mat-radio-button>
+                    <mat-radio-button value="2">
+                      <span class="radio-btn__label">DHL Service</span>
+                      <p class="cart__delivery-time">1-3 working days</p>
+                      <p class="cart__delivery-price">$39</p>
+                    </mat-radio-button>
+                    <mat-radio-button value="3">
+                      <span class="radio-btn__label">Mail Priority</span>
+                      <p class="cart__delivery-time">Tomorrow</p>
+                      <p class="cart__delivery-price">$54</p>
+                    </mat-radio-button>
+                  </mat-radio-group>
+              </div>
+            </div>
+            </div>
+            <h4 class="cart__total">Total Price: $348.00</h4>
+            <div role="toolbar" class="form__button-toolbar btn-toolbar">
+              <a class="btn btn-primary" routerLink="/e-commerce/payment">Purchase</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

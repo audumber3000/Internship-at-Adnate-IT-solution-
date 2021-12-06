@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">Product Edit</h3>
+      <h3 class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"><h5 class="bold-text">Main Information</h5></div>
+          <form class="form product-edit">
+            <div class="form__half">
+              <div class="form__form-group"><span class="form__form-group-label">Product Name</span>
+                <div class="form__form-group-field"><input name="name" type="text" value=""></div>
+              </div>
+              <div class="form__form-group-id-category">
+                <div class="form__form-group form__form-group-id"><span class="form__form-group-label">ID</span>
+                  <div class="form__form-group-field"><input name="id" type="text" value=""></div>
+                </div>
+                <div class="form__form-group"><span class="form__form-group-label">Category</span>
+                  <div class="form__form-group-field">
+                    <div class="form__form-group-input-wrap">
+                      <div class="form__form-group-input-wrap">
+                        <ng-select [searchable]="false">
+                          <ng-option [value]="true">Yes</ng-option>
+                          <ng-option [value]="false">No</ng-option>
+                        </ng-select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form__form-group"><span class="form__form-group-label">Short description <span>(300 characters max)</span></span>
+                <div class="form__form-group-field"><input name="short_description" type="text" value=""></div>
+              </div>
+              <div class="form__form-group"><span class="form__form-group-label">Full description</span>
+                <div class="form__form-group-field"><textarea name="full_description" type="text"></textarea></div>
+              </div>
+              <div class="card-title"><h5 class="bold-text">Pricing</h5></div>
+              <div class="form__form-group-price-discount">
+                <div class="form__form-group form__form-group-price"><span class="form__form-group-label">Price</span>
+                  <div class="form__form-group-field">
+                    <div class="form__form-group-icon">
+                      <mat-icon>attach_money</mat-icon>
+                    </div>
+                    <input name="price" type="text" value=""></div>
+                </div>
+                <div class="form__form-group"><span class="form__form-group-label">Discount</span>
+                  <div class="form__form-group-field">
+                    <div class="form__form-group-icon">
+                      <mat-icon>local_offer</mat-icon>
+                    </div>
+                    <input name="discount" type="text" value=""></div>
+                </div>
+              </div>
+              <div class="card-title"><h5 class="bold-text">General information</h5></div>
+              <div class="form form--horizontal">
+                <div class="form__form-group"><span class="form__form-group-label">Brand Name</span>
+                  <div class="form__form-group-field"><input name="brand" type="text" value=""></div>
+                </div>
+                <div class="form__form-group"><span class="form__form-group-label">Category</span>
+                  <div class="form__form-group-field"><input name="general_category" type="text" value=""></div>
+                </div>
+                <div class="form__form-group"><span class="form__form-group-label">Delivery Condition</span>
+                  <div class="form__form-group-field"><input name="delivery" type="text" value=""></div>
+                </div>
+                <div class="form__form-group"><span class="form__form-group-label">Weight</span>
+                  <div class="form__form-group-field"><input name="weight" type="text" value=""></div>
+                </div>
+                <div class="form__form-group"><span class="form__form-group-label">Size</span>
+                  <div class="form__form-group-field"><input name="size" type="text" value=""></div>
+                </div>
+              </div>
+            </div>
+            <div class="form__half">
+              <div class="form__form-group"><span class="form__form-group-label">Upload photo</span>
+                <div class="form__form-group-field">
+                  <app-drop-zone multiple="true"></app-drop-zone>
+                </div>
+              </div>
+            </div>
+            <div role="toolbar" class="form__button-toolbar btn-toolbar">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

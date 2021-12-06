@@ -1,0 +1,403 @@
+@import "settings/variable";
+@import "component/mat-checkbox";
+
+.chart-container {
+  height: 300px;
+
+  .ngx-charts {
+
+    .gridline-path {
+      stroke-width: 1px;
+      stroke: #999999;
+      opacity: 0.2;
+    }
+
+  }
+}
+
+.chart-container-sales-stat {
+  height: 250px;
+  position: relative;
+  display: flex;
+}
+
+.todos-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .mat-checkbox {
+  
+    &-layout {
+      white-space: normal;
+    }
+    
+    .mat-checkbox-label {
+      line-height: 18px;
+    }
+
+    &.mat-checkbox-checked {
+      .todo-text {
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+.orders-table-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  overflow-x: auto;
+
+  .orders-table {
+    min-width: 450px;
+    overflow: hidden;
+  }
+
+  .product-photo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 5px;
+  }
+
+  .mat-header-cell {
+    font-size: 13px;
+  }
+
+  .btn-orders-control {
+    margin: 0;
+    padding: 0 0 10px 10px;
+    border: none;
+    background-color: transparent;
+
+    .mat-icon {
+      margin: 0;
+      height: 20px;
+      width: 20px;
+      color: #999999;
+      font-size: 20px;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      .mat-icon {
+        color: $color-accent
+      }
+    }
+  }
+
+  .orders-amount {
+    display: flex;
+    margin-right: 15px;
+
+    div {
+      width: 3px;
+      height: 14px;
+      display: inline-block;
+      background-color: $color-accent;
+      border-radius: 3px;
+      margin: auto 3px auto 0;
+    }
+
+    .orders-quantity {
+      margin-left: auto;
+    }
+
+    &.orders-amount-medium div {
+      background-color: $color-yellow;
+    }
+
+    &.orders-amount-low div {
+      background-color: $color-red;
+    }
+  }
+
+}
+
+.recent-orders-table {
+
+  mat-cell:first-of-type,
+  mat-footer-cell:first-of-type,
+  mat-header-cell:first-of-type {
+    flex-basis: 40px;
+    flex-grow: 0;
+  }
+}
+
+.table-orders-link {
+  font-size: 12px;
+  margin-top: 20px;
+
+  &:hover {
+    color: #0056b3;
+  }
+
+  .mat-icon {
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+    vertical-align: middle;
+  }
+}
+
+.sales-report {
+  display: flex;
+  justify-content: space-between;
+
+  .sales-report-wrapper:last-child {
+    margin-right: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .sales-report-wrapper {
+    flex-grow: 1;
+    margin-right: 25px;
+  }
+
+  .sales-report-title {
+    color: #999999;
+    font-size: 12px;
+    line-height: 13px;
+    margin-bottom: 10px;
+  }
+
+  .sales-report-now {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 4px;
+  }
+
+  .sales-report-plan {
+    font-size: 11px;
+    line-height: 15px;
+    color: #999999;
+    opacity: 0.5;
+    margin-bottom: 10px;
+  }
+
+  .progress-label {
+    color: $color-accent;
+    font-size: 10px;
+    line-height: 16px;
+    bottom: 16px;
+    margin: 0;
+  }
+
+  .progress-wrap-red {
+    .progress-label {
+      color: $color-red;
+    }
+  }
+}
+
+.emails-widget {
+  .email-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+    p {
+      margin: 0;
+    }
+
+    .amount {
+      color: $color-accent;
+      font-size: 10px;
+      bottom: 16px;
+      margin: 0;
+    }
+  }
+
+  .progress-wrap-red {
+    .amount {
+      color: $color-red;
+    }
+  }
+}
+
+.product-img {
+  max-height: 270px;
+  height: 100%;
+  padding: 10px 0 20px 0;
+  margin-bottom: 15px;
+  text-align: center;
+
+  border-bottom: 1px solid var(--colorBorder);
+
+  img {
+    width: auto;
+    max-width: 100%;
+    max-height: 240px;
+  }
+}
+
+.product-title {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.product-subhead {
+  font-size: 13px;
+  line-height: normal;
+}
+
+.short-reminders {
+  .carousel-item {
+    min-height: 100px;
+  }
+
+  .right.carousel-control, .left.carousel-control {
+    display: none;
+  }
+
+  .carousel-indicators {
+
+    bottom: -30px;
+
+    li {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #d8d8d8;
+
+      &.active {
+        background-color: #f2f4f7;
+      }
+    }
+  }
+
+  .carousel-slide {
+    border-radius: 5px;
+    padding: 30px 13px;
+    position: relative;
+    overflow: hidden;
+
+    .mat-icon {
+      position: absolute;
+      height: 80px;
+      width: 80px;
+      font-size: 80px;
+      top: calc(50% - 40px);
+      opacity: 0.3;
+      right: -20px;
+      vertical-align: middle;
+
+      color: var(--colorIcon);
+    }
+
+    p {
+      color: $color-additional;
+      margin: 0;
+    }
+
+    .carousel-title {
+      color: $color-red;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    background: var(--colorBackgroundBody);
+
+    &.carousel-slide-red {
+      background: $color-red;
+
+      p {
+        color: white;
+        opacity: 0.45;
+      }
+
+      .mat-icon {
+        color: #ffffff;
+      }
+
+      .carousel-title {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.data-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__value {
+    margin: 0;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+.toggle-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0;
+  cursor: pointer;
+  width: 50px;
+
+  &--e-commerce {
+    margin-top: -18px;
+  }
+
+  span {
+    color: var(--colorText);
+    padding-left: 50px;
+  }
+
+  label {
+    margin: 0;
+  }
+}
+
+.toggle-label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding: 10px 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(153, 153, 153, 0.4);
+    background-color: #ffffff;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+
+    border-radius: 23px;
+    background-color: var(--colorBorder);
+    width: 40px;
+    height: 20px;
+  }
+}
+
+.toggle-btn input:checked ~ .toggle-label {
+
+  &:after {
+    background: $color-red;
+    transform: translateX(20px);
+  }
+}
+

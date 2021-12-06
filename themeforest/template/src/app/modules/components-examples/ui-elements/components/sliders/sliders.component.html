@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Range sliders</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-12 col-lg-6">
+      <div class="card slider-example">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Slider without params</h5>
+            <p class="subhead">Use default slider</p>
+          </div>
+          <ng5-slider value="0" (valueChange)="sliderEventHandler($event)"
+                      [options]="defaultSliderVarSet.options"></ng5-slider>
+          <p>Here is the example of slider value event bindings: {{defaultSliderVarSet.outputValue}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-6">
+      <div class="card slider-example">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Slider start point</h5>
+            <p class="subhead">Use default slider with input property <span class="red-text">[(value)]</span></p>
+          </div>
+          <ng5-slider [(value)]="twoWayBindingSliderVarSet.value"
+                      [options]="twoWayBindingSliderVarSet.options"></ng5-slider>
+          <p>Here is the example of slider value two way bindings: {{twoWayBindingSliderVarSet.value}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-6">
+      <div class="card slider-example">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Double slider type</h5>
+            <p class="subhead">Use default slider with input properties <span class="red-text">[(value)]</span> and <span class="red-text">[(highValue)]</span> </p>
+          </div>
+          <ng5-slider [(value)]="doubleSliderVarSet.minValue"
+                      [(highValue)]="doubleSliderVarSet.maxValue"
+                      [options]="doubleSliderVarSet.options">
+          </ng5-slider>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-6">
+      <div class="card slider-example">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Slider with scale</h5>
+            <p class="subhead">Use default slider with option <span class="red-text">stepsArray</span></p>
+          </div>
+          <ng5-slider [(value)]="ticksSliderVarSet.value"
+                      [options]="ticksSliderVarSet.options" style="margin-bottom: 4rem;">
+          </ng5-slider>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Google map</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Basic map</h5>
+          </div>
+          <app-map-ag-base></app-map-ag-base>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Map with labeled marker</h5>
+          </div>
+          <app-map-ag-base [markerLabel]="markerLabel"></app-map-ag-base>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Map with draggable marker</h5>
+          </div>
+          <app-map-ag-base [draggable]="draggableMarker"></app-map-ag-base>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

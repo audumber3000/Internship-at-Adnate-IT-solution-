@@ -1,0 +1,123 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Form-picker</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Date picker</h5>
+          </div>
+          <form class="form">
+            <div class="form__form-group"><span class="form__form-group-label">Default Date Picker</span>
+              <div class="form__form-group-field">
+                <input type="text"
+                       [bsConfig]="bsConfig"
+                       #dp1="bsDatepicker"
+                       bsDatepicker>
+                <div class="form__form-group-icon"><mat-icon>event</mat-icon></div>
+              </div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">Week Picker</span>
+              <div class="form__form-group-field">
+                <input type="text"
+                       [bsConfig]="bsConfigSelectWeek"
+                       #dp2="bsDatepicker"
+                       bsDatepicker>
+                <div class="form__form-group-icon"><mat-icon>today</mat-icon></div>
+              </div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">Interval Date Picker</span>
+              <div class="form__form-group-field">
+                <input type="text"
+                       [bsConfig]="bsConfig"
+                       #dp3="bsDaterangepicker"
+                       bsDaterangepicker>
+                <div class="form__form-group-icon"><mat-icon>date_range</mat-icon></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Time picker</h5>
+          </div>
+          <form class="form">
+            <div class="form__form-group"><span class="form__form-group-label">Default Time Picker</span>
+              <div class="form__form-group-field">
+                <input aria-label="12hr format" [ngxTimepicker]="default" readonly>
+                <ngx-material-timepicker #default [theme]="timepickertheme" ></ngx-material-timepicker>
+                <div class="form__form-group-icon"><mat-icon>av_timer</mat-icon></div>
+              </div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">Twelve hours mode</span>
+              <div class="form__form-group-field">
+                <input aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly>
+                <ngx-material-timepicker #fullTime [theme]="timepickertheme"></ngx-material-timepicker>
+                <div class="form__form-group-icon"><mat-icon>access_time</mat-icon></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Color picker</h5>
+          </div>
+          <form class="form color-pickers-sample">
+            <div class="form__form-group">
+              <span class="form__form-group-label">Sketch Color Picker</span>
+              <div [class]="'color-picker-field sketch-picker ' + (!isLightTheme ? 'dark-theme' : '')">
+                <input #cpColor
+                       [value]="color"
+                       cpWidth="220px"
+                       [(colorPicker)]="color"
+                       cpOutputFormat="rgba"
+                       [cpPresetColors]="colorPreset"
+                       cpPresetLabel=""
+                       cpPosition="top"/>
+                <div class="color-preview" [style.background]="color" (click)="cpColor.click()"></div>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Block Color Picker</span>
+              <div [class]="'color-picker-field block-picker ' + (!isLightTheme ? 'dark-theme' : '')">
+                <input #cpColor1
+                       [value]="color1"
+                       cpWidth="170px"
+                       [(colorPicker)]="color1"
+                       [cpPresetColors]="color2Preset"
+                       cpPresetLabel=""
+                       cpPosition="top"/>
+                <div class="color-preview" [style.background]="color1" (click)="cpColor1.click()"></div>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Chrome Color Picker</span>
+              <div [class]="'color-picker-field chrome5-picker ' + (!isLightTheme ? 'dark-theme' : '')">
+                <input #cpColor2
+                       [value]="color2"
+                       [(colorPicker)]="color2"
+                       cpPosition="top"/>
+                <div class="color-preview"[style.background]="color2" (click)="cpColor2.click()"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">{{titleAlert}}</h3>
+      <p class="page-subhead subhead">{{descriptionAlerts}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <app-alert-panel>
+      Basic configuration of alert
+    </app-alert-panel>
+    <app-alert-panel alertTheme="alert-bordered"
+                     [withIcons]="true"
+                     title="bordered alerts with icons"
+    >
+      Use basic alert with class <span class="red-text">alert-bordered</span>
+    </app-alert-panel>
+    <app-alert-panel alertTheme="alert-colored"
+                     [withIcons]="true"
+                     title="colored alerts with icons"
+    >
+      Use basic alert with class <span class="red-text">alert-colored</span>
+    </app-alert-panel>
+    <app-alert-panel alertTheme="alert-neutral"
+                     [withIcons]="true"
+                     title="neutral alerts with icons"
+    >
+      Use basic alert with class <span class="red-text">alert-neutral</span>
+    </app-alert-panel>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Add new navigation item</h5>
+      </div>
+      <p>Base routing located in <b>app-routing.module.ts</b>, eash module has it's own *-routing.module.ts</p>
+      <p>The most modules at this project are lazy modules, also main-layout-routing.module.ts contains most of lazy module routes</p>
+      <p>You can link any route you need with simple link:</p>
+      <pre><code [highlight]="simpleLinkCode"></code></pre>
+      <p>Also you can use SidebarLinkComponent like this: </p>
+      <pre><code [highlight]="sidebarLinkCode"></code></pre>
+      <p>You can add some inputs to app-sidebar-link:</p>
+      <ol>
+        <li><b>icon</b>: any name of lnr icon</li>
+        <li><b>route</b>: route</li>
+        <li><b>newLink</b>: true/false for adding badge 'new'</li>
+        <li><b>title</b>: put your title direct inside app-sidebar-link</li>
+      </ol>
+    </div>
+  </div>
+</div>

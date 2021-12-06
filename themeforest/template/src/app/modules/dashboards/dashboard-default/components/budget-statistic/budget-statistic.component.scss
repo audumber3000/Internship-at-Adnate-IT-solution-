@@ -1,0 +1,68 @@
+@import "settings/variable";
+
+.budget-statistic {
+  text-align: center;
+
+  .statistic-main {
+    margin-bottom: 40px;
+
+    .title {
+      margin-bottom: 15px;
+    }
+
+    .amount {
+      color: $color-red;
+      font-size: 48px;
+      line-height: 34px;
+    }
+  }
+
+  hr {
+    margin-bottom: 30px;
+  }
+
+  .budget-statistic-chart {
+
+    .chart-container {
+      height: 120px;
+      margin-bottom: 10px;
+      position: relative;
+
+      .stat-label {
+        font-size: 36px;
+        position: absolute;
+        line-height: 20px;
+        top: calc(50% - 10px);
+        width: 100%;
+        margin: 0;
+        -webkit-animation: label 1.5s ease-in;
+        animation: label 1.5s ease-in;
+        color: #dddddd;
+      }
+    }
+
+    .statistic-data {
+      display: flex;
+      justify-content: space-around;
+
+      p {
+        margin: 0;
+      }
+
+      .data-amount {
+        font-size: 18px;
+        line-height: 34px;
+        font-weight: 500;
+      }
+
+      .completed {
+        color: #eeeeee;
+      }
+
+      .remaining {
+        color: $color-accent;
+      }
+    }
+  }
+
+}

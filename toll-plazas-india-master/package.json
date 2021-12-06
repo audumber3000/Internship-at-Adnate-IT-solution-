@@ -1,0 +1,20 @@
+{
+  "name": "toll-plaza-india",
+  "version": "1.0.0",
+  "description": "",
+  "main": "process.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "d3-queue": "^3.0.7",
+    "json2csv": "^5.0.1",
+    "minimist": "^1.2.5",
+    "moment": "^2.23.0",
+    "request": "^2.88.0",
+    "tabletojson": "^1.0.1"
+  }
+}

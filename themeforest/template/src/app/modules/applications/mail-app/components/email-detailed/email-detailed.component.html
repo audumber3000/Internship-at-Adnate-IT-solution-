@@ -1,0 +1,65 @@
+<ng-container *ngIf="(emailData$ | async) as emailData">
+
+  <div class="email-detailed">
+    <div class="email-header">
+      <button type="button" class="btn-back" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <div class="author-details">
+        <img class="avatar" width="35" height="35" [src]="emailAvaImg" alt="">
+        <div class="author-info">
+          <p class="name">{{emailData.name}}</p>
+          <p class="email">email.example@mail.com</p>
+        </div>
+        <div class="favorite">
+          <mat-icon [ngClass]="{'checked': emailData.favorite}"
+                    (click)="emailDataService.toggleFavorite(emailData.id, !emailData.favorite)">star
+          </mat-icon>
+        </div>
+      </div>
+      <div class="email-controls">
+        <p class="email-date">July 12 11:30 PM</p>
+        <button type="button">
+          <mat-icon>reply</mat-icon>
+        </button>
+        <button type="button">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button type="button">
+          <mat-icon>print</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="email-body">
+      <div class="email-labels">
+        <span class="work"></span>
+      </div>
+      <h4><b>{{emailData.title}}</b></h4>
+      <p>{{emailData.message}}</p>
+    </div>
+    <div class="email-attachments" *ngIf="emailData.attachment">
+      <p class="inbox__email-attachment-title">Attachment (2 file 12Mb):</p>
+      <div class="email-attachment-link">
+        <mat-icon>attach_file</mat-icon>
+        <a href="#" download="">Project Design.psd (11Mb)</a>
+      </div>
+      <div class="email-attachment-link">
+        <mat-icon>attach_file</mat-icon>
+        <a href="#" download="">Report.txt (1Mb)</a>
+      </div>
+    </div>
+    <div class="email-reply-block">
+      <form class="">
+        <textarea class="email-reply-textarea" (click)="canSendMessage = true"></textarea>
+        <p class="email-reply-placeholder" *ngIf="!canSendMessage">Click here to <span>reply</span></p>
+        <button class="email-reply-close" type="button" (click)="canSendMessage = false">
+          <mat-icon>close</mat-icon>
+        </button>
+      </form>
+      <div role="toolbar" class="email-reply-btns btn-toolbar" *ngIf="canSendMessage">
+        <button class="btn btn-primary btn-sm">Send</button>
+        <a class="email-reply-btn-full" [routerLink]="['../../compose']">Go to full answer form</a>
+      </div>
+    </div>
+  </div>
+</ng-container>

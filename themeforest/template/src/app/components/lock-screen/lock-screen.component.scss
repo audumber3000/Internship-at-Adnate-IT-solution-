@@ -1,0 +1,13 @@
+.form__form-group {
+  margin-bottom: 40px;
+}
+
+.lock-screen___forgot-btn {
+  background-color: transparent;
+  border: none;
+  color: #70bbfd;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

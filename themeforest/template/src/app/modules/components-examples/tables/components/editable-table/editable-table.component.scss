@@ -1,0 +1,33 @@
+@import "../../../../../../scss/settings/variable";
+
+.mat-table {
+  width: 100%;
+  box-shadow: none;
+
+  .mat-header-cell {
+    color: var(--colorText);
+    font-weight: bold;
+  }
+
+  .editable-input {
+    border: 2px solid transparent;
+    cursor: pointer;
+    height: 48px;
+    color: var(--colorText);
+    background: var(--colorBackground);
+
+    &:focus {
+      border-color: $color-accent;
+      border-radius: 3px;
+      outline: none;
+      cursor: unset;
+    }
+  }
+
+  .mat-column-position {
+    .editable-input {
+      width: 30px;
+    }
+  }
+
+}

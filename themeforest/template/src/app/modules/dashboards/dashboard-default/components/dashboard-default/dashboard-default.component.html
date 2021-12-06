@@ -1,0 +1,127 @@
+<div class="dashboard dashboard-default container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">{{translations['page_title']}}</h3></div>
+  </div>
+  <div class="row">
+    <app-dashboard-tiny-widget title="{{translations['visits']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3">
+      <app-tiny-bar-chart [data]="visitsData"
+                          [amount]="widgetVisits.amount"
+                          [color]="widgetVisits.color"
+                          [trendDirectionUp]="widgetVisits.trendDirectionUp">
+      </app-tiny-bar-chart>
+    </app-dashboard-tiny-widget>
+    <app-dashboard-tiny-widget title="{{translations['total_page_views']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3">
+      <app-tiny-bar-chart [data]="totalPagesData"
+                          [amount]="widgetTotalPages.amount"
+                          [color]="widgetTotalPages.color"
+                          [trendDirectionUp]="widgetTotalPages.trendDirectionUp">
+      </app-tiny-bar-chart>
+    </app-dashboard-tiny-widget>
+    <app-dashboard-tiny-widget title="{{translations['new_users']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3">
+      <app-tiny-bar-chart [data]="newUsersData"
+                          [amount]="widgetNewUsers.amount"
+                          [color]="widgetNewUsers.color"
+                          [trendDirectionUp]="widgetNewUsers.trendDirectionUp">
+      </app-tiny-bar-chart>
+    </app-dashboard-tiny-widget>
+    <app-dashboard-tiny-widget title="{{translations['bounce_rate']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3">
+      <app-tiny-bar-chart [data]="bounceRateData"
+                          [amount]="widgetBounceRate.amount"
+                          [color]="widgetBounceRate.color"
+                          [trendDirectionUp]="widgetBounceRate.trendDirectionUp">
+      </app-tiny-bar-chart>
+    </app-dashboard-tiny-widget>
+  </div>
+
+  <div class="row">
+    <app-panel title="{{translations['ab_testing']}}"
+               classes="col-md-12 col-lg-12 col-xl-12"
+               [controls]="true">
+      <div class="chart-container chart-with-legend">
+        <ngx-charts-area-chart
+          [scheme]="ABTestingChartSettings.colorScheme"
+          [results]="dateData"
+          [animations]="ABTestingChartSettings.animations"
+          [legend]="ABTestingChartSettings.showLegend"
+          (legendLabelClick)="onLegendLabelClick($event)"
+          [legendPosition]="ABTestingChartSettings.legendPosition"
+          [legendTitle]="ABTestingChartSettings.legendTitle"
+          [xAxis]="ABTestingChartSettings.showXAxis"
+          [yAxis]="ABTestingChartSettings.showYAxis"
+          [showXAxisLabel]="ABTestingChartSettings.showXAxisLabel"
+          [showYAxisLabel]="ABTestingChartSettings.showYAxisLabel"
+          [xAxisLabel]="ABTestingChartSettings.xAxisLabel"
+          [yAxisLabel]="ABTestingChartSettings.yAxisLabel"
+          [autoScale]="ABTestingChartSettings.autoScale"
+          [showGridLines]="ABTestingChartSettings.showGridLines"
+
+          [roundDomains]="ABTestingChartSettings.roundDomains"
+          [tooltipDisabled]="ABTestingChartSettings.tooltipDisabled"
+          [trimXAxisTicks]="ABTestingChartSettings.trimXAxisTicks"
+          [trimYAxisTicks]="ABTestingChartSettings.trimYAxisTicks"
+          [maxXAxisTickLength]="ABTestingChartSettings.maxXAxisTickLength"
+          [maxYAxisTickLength]="ABTestingChartSettings.maxYAxisTickLength"
+          (select)="select($event)">
+        </ngx-charts-area-chart>
+      </div>
+    </app-panel>
+
+    <app-panel title="{{translations['bounce_rate']}}" classes="col-md-12 col-lg-6 col-xl-5" controls="true">
+      <app-bounce-rate></app-bounce-rate>
+    </app-panel>
+    <app-panel title="{{translations['visitors_sessions']}}" classes="col-md-12 col-lg-6 col-xl-4" controls="true">
+      <p class="subhead">Folly words widow one downs few age every seven.</p>
+      <div class="visitor-sessions">
+        <p class="chart-title">Total visitors <span>on 23.05.2019</span></p>
+        <p class="chart-number">12,384</p>
+      </div>
+      <app-dashboard-pie-chart [data]="visitorSessions"></app-dashboard-pie-chart>
+    </app-panel>
+    <app-panel title="{{translations['sales_statistic']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3" controls="true">
+      <p class="subhead">Folly words widow one downs few age every seven.</p>
+      <app-pie-grid-chart-set [charts]="salesStatisticItems"></app-pie-grid-chart-set>
+    </app-panel>
+    <app-panel title="{{translations['budget_statistic']}}" classes="col-md-12 col-lg-6 col-xl-4" controls="true">
+      <app-budget-statistic></app-budget-statistic>
+    </app-panel>
+    <app-panel title="{{translations['audience_by_country']}}" classes="col-md-12 col-lg-12 col-xl-8" controls="true">
+      <div class="table-responsive">
+        <table class="table table-audience">
+          <thead>
+          <tr>
+            <th>Country</th>
+            <th>Page views</th>
+            <th>Device</th>
+            <th>Bounce rate</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let country of audienceTableData;">
+            <td>
+              <img class="audience-table-flag" [src]="country.img" [attr.alt]="country.name">
+              {{country.name}}
+            </td>
+            <td>{{country.pageViews}}</td>
+            <td>{{country.device}}</td>
+            <td>
+              <div class="progress-wrap progress-wrap-middle">
+                <progressbar [value]="country.bounceRate">{{country.bounceRate}}%</progressbar>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </app-panel>
+    <app-panel title="{{translations['best_selling']}}" classes="col-12 col-md-12 col-lg-12 col-xl-8" controls="true">
+      <app-map-ag-base></app-map-ag-base>
+    </app-panel>
+    <app-panel title="{{translations['goals_completion']}}" classes="col-12 col-md-12 col-lg-12 col-xl-4" controls="true">
+      <p class="subhead">What's your progress</p>
+      <div class="progress-wrap progress-wrap-small" *ngFor="let goal of goalsToComplete;">
+        <p class="goal-title">{{goal.title}}</p>
+        <progressbar [value]="goal.percent">{{goal.percent}}%</progressbar>
+      </div>
+    </app-panel>
+  </div>
+</div>

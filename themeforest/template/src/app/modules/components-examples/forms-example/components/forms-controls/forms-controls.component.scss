@@ -1,0 +1,152 @@
+@import "../../../../../../scss/settings/variable";
+@import "../../../../../../scss/component/mat-checkbox";
+@import "../../../../../../scss/component/mat-radio-button";
+
+.form-preview {
+
+  .controls-set {
+    margin-right: 40px;
+    margin-bottom: 10px;
+    padding: 0;
+    display: flex;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    &.vertical {
+      flex-direction: column;
+    }
+  }
+
+  .radio-buttons-set {
+
+    .mat-radio-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mat-radio-button {
+      margin-bottom: 5px;
+    }
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .colored-checkbox-set {
+    max-width: 84px;
+    max-height: 80px;
+
+    .mat-checkbox {
+      margin-right: 10px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .checkbox-with-icon,
+  .radio-button-with-icon {
+    background-color: $color-accent;
+    min-width: 150px;
+    color: #ffffff;
+    height: 24px;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:not(.disabled) {
+      cursor: pointer;
+    }
+
+    &.disabled {
+      opacity: 0.4;
+    }
+
+    margin-bottom: 20px;
+
+    transition: all 0.3s;
+
+    &:hover:not(.disabled) {
+      background-color: $color-accent-hover;
+    }
+
+    .mat-icon {
+      font-size: 14px;
+      height: 16px;
+      width: 16px;
+      color: #fff;
+    }
+  }
+
+  .checkbox-with-icon {
+
+    .mat-checkbox {
+
+      label {
+        margin: 0;
+      }
+
+      .mat-checkbox-inner-container {
+        display: none;
+      }
+
+      .mat-checkbox-label {
+        color: #fff;
+      }
+
+      &:hover {
+        .mat-checkbox-label {
+          color: #fff;
+        }
+      }
+
+    }
+  }
+
+  .radio-button-with-icon {
+
+    .mat-radio-button {
+      margin: 0;
+
+      label {
+        margin: 0;
+      }
+
+      .mat-radio-container {
+        display: none;
+      }
+
+      .mat-radio-label-content {
+        color: #fff;
+      }
+
+      &:hover {
+        .mat-radio-label-content {
+          color: #fff;
+        }
+      }
+
+      .icon-checked {
+        display: none;
+      }
+
+      &.mat-radio-checked {
+        .icon-close {
+          display: none;
+        }
+
+        .icon-checked {
+          display: inline-flex;
+        }
+      }
+
+      .mat-icon {
+        vertical-align: middle;
+      }
+
+    }
+  }
+}
+

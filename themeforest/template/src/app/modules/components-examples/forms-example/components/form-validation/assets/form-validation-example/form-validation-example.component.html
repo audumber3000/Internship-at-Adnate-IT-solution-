@@ -1,0 +1,100 @@
+<form class="form" [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)" [ngClass]="{'form--horizontal': horizontalForm, 'form-error-above': showErrorAbove}">
+
+  <div class="form__form-group">
+    <span class="form__form-group-label">Username</span>
+    <div class="form__form-group-field">
+      <input formControlName="username" type="text" placeholder="Name">
+      <span class="form__form-group-error"
+            [@bounce]="bounce"
+            *ngIf="(username.dirty || username.touched) &&
+            username.invalid &&
+            username.errors.required">{{validationMessages.username}}</span>
+    </div>
+  </div>
+
+  <div class="form__form-group">
+    <span class="form__form-group-label">E-mail</span>
+    <div class="form__form-group-field">
+      <input formControlName="email" type="email" placeholder="example@mail.com">
+      <span class="form__form-group-error"
+            [@bounce]="bounce"
+            *ngIf="(email.dirty || email.touched) &&
+            email.invalid &&
+            email.errors.required &&
+            !email.errors.email">{{validationMessages.email}}</span>
+      <span class="form__form-group-error"
+            [@bounce]="bounce"
+            *ngIf="(email.dirty || email.touched) &&
+            email.invalid &&
+            !email.errors.required &&
+            email.errors.email">{{validationMessages.emailInvalid}}</span>
+    </div>
+  </div>
+
+  <div class="form__form-group">
+    <span class="form__form-group-label">Url</span>
+    <div class="form__form-group-field">
+      <input formControlName="url" type="url" placeholder="https://themeforest.net">
+      <span class="form__form-group-error"
+            [@bounce]="bounce"
+            *ngIf="(url.dirty || url.touched) &&
+            url.invalid &&
+            url.errors.required &&
+            !url.errors.pattern">{{validationMessages.url}}</span>
+      <span class="form__form-group-error"
+            [@bounce]="bounce"
+            *ngIf="(url.dirty || url.touched) &&
+            url.invalid &&
+            !url.errors.required &&
+            url.errors.pattern">{{validationMessages.urlInvalid}}</span>
+    </div>
+  </div>
+
+  <div class="form__form-group">
+    <span class="form__form-group-label">Password</span>
+    <div class="form__form-group-field">
+      <input formControlName="password" [attr.type]="showFormPassword ? 'text' : 'password'" placeholder="Password">
+      <span class="form__form-group-error"
+            [@bounce]="bounce"
+            *ngIf="(password.dirty || password.touched) &&
+            password.invalid &&
+            password.errors.required &&
+            !password.errors.minLength">{{validationMessages.password}}</span>
+      <span class="form__form-group-error"
+            [@bounce]="bounce"
+            *ngIf="(password.dirty || password.touched) &&
+            password.invalid &&
+            !password.errors.required &&
+            !password.errors.minLength">{{validationMessages.passwordLength}}</span>
+      <label class="form__form-group-button" [ngClass]="{'active': showFormPassword}">
+        <input type="checkbox" class="visually-hidden" formControlName="showPassword">
+        <mat-icon>visibility</mat-icon>
+      </label>
+    </div>
+  </div>
+
+  <div class="form__form-group">
+    <span class="form__form-group-label">Select Option</span>
+    <div class="form__form-group-field">
+      <div class="form__form-group-input-wrap">
+        <ng-select [searchable]="false" formControlName="selectOption">
+          <ng-option [value]="true">Yes</ng-option>
+          <ng-option [value]="false">No</ng-option>
+        </ng-select>
+      </div>
+      <span class="form__form-group-error"
+            [@bounce]="bounce"
+            *ngIf="(selectOption.dirty || selectOption.touched) &&
+            selectOption.invalid &&
+            selectOption.errors.required">{{validationMessages.selectOption}}</span>
+    </div>
+  </div>
+
+  <div role="toolbar" class="form__button-toolbar btn-toolbar">
+    <button type="submit" class="btn btn-primary">Validate</button>
+    <button type="button" class="btn btn-secondary"
+            [ngClass]="{ 'disabled': reactiveForm.pristine && !reactiveForm.touched }"
+            (click)="resetForm(reactiveForm)"
+            [disabled]="reactiveForm.pristine && !reactiveForm.touched">Cancel</button>
+  </div>
+</form>

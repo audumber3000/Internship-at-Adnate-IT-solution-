@@ -1,0 +1,167 @@
+@import 'settings/variable';
+
+:host {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 102;
+}
+
+.customizer-btn {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  bottom: 80px;
+  right: 0;
+  border: none;
+  border-radius: 3px 0 0 3px;
+  box-shadow: 0 1px 30px 1px rgba(0, 0, 0, 0.11);
+  cursor: pointer;
+  z-index: 102;
+
+  background-color: var(--colorBackground);
+}
+
+.customizer-btn-icon {
+  width: 18px;
+  height: 18px;
+  animation: iconOpacity linear infinite 4s;
+}
+
+@keyframes iconOpacity {
+  from {
+    opacity: 1
+  }
+  50% {
+    opacity: 0.3
+  }
+  to {
+    opacity: 1
+  }
+}
+
+.customizer-wrap {
+  height: 100vh;
+  width: 240px;
+  box-shadow: none;
+  padding: 20px;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 102;
+
+  background-color: var(--colorBackground);
+
+  &.customizer-wrap-open {
+    transform: translateX(0);
+    box-shadow: 0 1px 30px 1px rgba(0, 0, 0, 0.11);
+  }
+}
+
+.btn-back {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  border: none;
+}
+
+.title-wrap {
+  padding-bottom: 20px;
+  position: relative;
+  border-bottom: 1px solid var(--colorBorder);
+}
+
+.btn-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  .mat-icon {
+    color: $color-additional;
+    width: 14px;
+    height: 14px;
+    transition: 0.3s;
+    font-size: 14px;
+  }
+
+  &:hover {
+
+    .mat-icon {
+      color: $color-accent;
+    }
+  }
+}
+
+.customizer-caption {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0;
+  cursor: pointer;
+
+  span {
+    color: var(--colorText);
+    padding-left: 50px;
+  }
+
+  label {
+    margin: 0;
+  }
+
+  .toggle-label {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    padding: 10px 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      transition: 0.3s;
+      box-shadow: 0 5px 10px rgba(153, 153, 153, 0.4);
+      background-color: #ffffff;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+
+      border-radius: 23px;
+      background-color: var(--colorBorder);
+      width: 40px;
+      height: 20px;
+    }
+  }
+
+  input:checked ~ .toggle-label {
+
+    &:after {
+      background: $color-accent;
+      transform: translateX(20px);
+    }
+  }
+}
+

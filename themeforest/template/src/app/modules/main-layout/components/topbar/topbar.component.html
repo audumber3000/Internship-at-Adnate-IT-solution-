@@ -1,0 +1,144 @@
+<div class="topbar" [ngClass]="{'top-menu-active': (isTopMenuActive | async)}">
+    <div class="topbar-left">
+      <button class="btn-sidebar-collapse" type="button" (click)="changeSidebarVisibility()">
+        <img [src]="icon" alt="" class="icon" />
+      </button>
+      <button class="btn-sidebar-collapse mobile" type="button" (click)="changeMobileSidebarVisibility()">
+        <img [src]="icon" alt="" class="icon" />
+      </button>
+      <a class="logo" [ngClass]="{'dark-theme': !(isLightTheme | async)}" routerLink="/dashboard_default"></a>
+    </div>
+      <div class="topbar-right">
+      <div class="topbar-menu" *ngIf="isTopMenuActive | async">
+        <app-dropdown-container title="Dashboards">
+          <app-sidebar-link icon="home" route="/dashboard_default">Dashboard Default</app-sidebar-link>
+          <app-sidebar-link icon="store" route="/dashboard_ecommerce">Dashboard E-commerce</app-sidebar-link>
+          <app-sidebar-link icon="heart-pulse" route="/dashboard_fitness">Dashboard Fitness</app-sidebar-link>
+          <app-sidebar-link icon="rocket" route="/dashboard_crypto">Dashboard Crypto</app-sidebar-link>
+          <app-sidebar-link icon="apartment" route="/dashboard_booking">Dashboard Booking</app-sidebar-link>
+          <app-sidebar-link icon="smartphone" route="/dashboard_mobile_app">Dashboard MobileApp</app-sidebar-link>
+        </app-dropdown-container>
+        <app-dropdown-container title="UI Elements">
+          <app-sidebar-link route="/ui/alerts" (hideSidebarHandler)="hideSidebar($event)">Alerts</app-sidebar-link>
+          <app-sidebar-link route="/ui/buttons">Buttons</app-sidebar-link>
+          <app-sidebar-link route="/ui/carousel">Carousel</app-sidebar-link>
+          <app-sidebar-link route="/ui/collapse">Collapse</app-sidebar-link>
+          <app-sidebar-link route="/ui/grids">Grids</app-sidebar-link>
+          <app-sidebar-link route="/ui/modals">Modals</app-sidebar-link>
+          <app-sidebar-link route="/ui/notifications">Notifications</app-sidebar-link>
+          <app-sidebar-link route="/ui/panels">Panels</app-sidebar-link>
+          <app-sidebar-link route="/ui/progress_bars">Progress Bars</app-sidebar-link>
+          <app-sidebar-link route="/ui/sliders">Range Sliders</app-sidebar-link>
+          <app-sidebar-link route="/ui/tabs">Tabs</app-sidebar-link>
+          <app-sidebar-link route="/ui/timeline">Timeline</app-sidebar-link>
+          <app-sidebar-link route="/ui/tooltips">Tooltips & Popovers</app-sidebar-link>
+          <app-sidebar-link route="/ui/typography">Typography</app-sidebar-link>
+        </app-dropdown-container>
+        <app-dropdown-container title="Other pages">
+          <app-sidebar-link icon="envelope" route="/mail_app" [filter]="{filter: 'all'}">Mail Application</app-sidebar-link>
+          <app-sidebar-link icon="bubble" route="/chat_app">Chat Application</app-sidebar-link>
+          <app-sidebar-link icon="book" route="/todo_app">Todo Application</app-sidebar-link>
+          <app-topbar-dropdown title="Forms" icon="file-add">
+            <app-sidebar-link route="/forms/basic_form">Basic Form</app-sidebar-link>
+            <app-sidebar-link route="/forms/check_form_controls">Check Form Controls</app-sidebar-link>
+            <app-sidebar-link route="/forms/file_upload">File Upload</app-sidebar-link>
+            <app-sidebar-link route="/forms/floating_labels_form">Floating Labels Form</app-sidebar-link>
+            <app-sidebar-link route="/forms/form_dropzone">Form Dropzone</app-sidebar-link>
+            <app-sidebar-link route="/forms/form_layouts">Form Layouts</app-sidebar-link>
+            <app-sidebar-link route="/forms/form_pickers">Form Picker</app-sidebar-link>
+            <app-sidebar-link route="/forms/form_validation">Form Validation</app-sidebar-link>
+            <app-sidebar-link route="/forms/mask_form">Mask Form</app-sidebar-link>
+            <app-sidebar-link route="/forms/material_form">Material Form</app-sidebar-link>
+            <app-sidebar-link route="/forms/wizard_form">Wizard Form</app-sidebar-link>
+          </app-topbar-dropdown>
+          <app-topbar-dropdown title="Tables" icon="list">
+            <app-sidebar-link route="/tables/basic_tables">Basic tables</app-sidebar-link>
+            <app-sidebar-link route="/tables/pagination_tables">Data table</app-sidebar-link>
+            <app-sidebar-link route="/tables/editable_tables">Editable table</app-sidebar-link>
+            <app-sidebar-link route="/tables/selection_tables">Material table</app-sidebar-link>
+          </app-topbar-dropdown>
+          <app-topbar-dropdown title="Charts" icon="chart-bars">
+            <app-sidebar-link route="/charts/ng2_charts">ChartJS 2</app-sidebar-link>
+          </app-topbar-dropdown>
+          <app-topbar-dropdown title="Maps" icon="map">
+            <app-sidebar-link route="/maps/google_maps">Google Maps</app-sidebar-link>
+            <app-sidebar-link route="/maps/leaflet_map">Leaflet Map</app-sidebar-link>
+          </app-topbar-dropdown>
+          <app-topbar-dropdown title="Account" icon="user">
+            <app-sidebar-link route="/account/email_confirmation">Email Confirmation</app-sidebar-link>
+            <app-sidebar-link route="/lock_screen">Lock Screen</app-sidebar-link>
+            <app-sidebar-link route="/login">Log In</app-sidebar-link>
+            <app-sidebar-link route="/login_photo">Log In Photo</app-sidebar-link>
+            <app-sidebar-link route="/account/profile">Profile</app-sidebar-link>
+            <app-sidebar-link route="/register">Register</app-sidebar-link>
+            <app-sidebar-link route="/register_photo">Register Photo</app-sidebar-link>
+          </app-topbar-dropdown>
+          <app-topbar-dropdown title="E-commerce" icon="cart">
+            <app-sidebar-link route="/e-commerce/cart">Cart</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/catalog">Catalog</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/orders_list">Orders List</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/payment">Payment</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/product_edit">Product Edit</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/product_page">Product Page</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/product_list">Products List</app-sidebar-link>
+          </app-topbar-dropdown>
+          <app-topbar-dropdown title="Default pages" icon="file-empty">
+            <app-sidebar-link route="/default_pages/calendar">Calendar</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/faqs">FAQs</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/gallery">Gallery</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/invoice_template">Invoice template</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/pricing_cards">Pricing Cards</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/project_summary">Project Summary</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/search_results">Search Results</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/text_editor">Text Editor</app-sidebar-link>
+          </app-topbar-dropdown>
+          <app-sidebar-link icon="exit" route="/login">Log Out</app-sidebar-link>
+        </app-dropdown-container>
+        <a [routerLink]="['/documentation']">Documentation</a>
+      </div>
+      <form class="topbar-search item-collapse">
+        <input class="search-field" [class.search-field-open]="searchOpened" />
+        <button class="search-btn" type="button" (click)="openSearch()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </form>
+      <app-topbar-collapsed class="topbar-collapse">
+        <mat-icon>notifications</mat-icon>
+        <div class="content-collapse">
+          <div class="title-wrap">
+            <p class="title">Notifications</p>
+            <button class="btn-all-read" type="button">Mark all as read</button>
+          </div>
+          <div class="collapse-item" *ngFor="let email of emails">
+            <div class="img-wrap">
+              <img class="img-avatar" width="40" height="40" [src]="email.ava" alt="avatar" />
+            </div>
+            <p class="name">{{email.name}}</p>
+            <p class="message message-mail">{{email.message}}</p>
+            <p class="date">{{email.date}}</p>
+          </div>
+          <a routerLink="/dashboard_default" class="all-messages-link collapse-button">See all notifications</a>
+        </div>
+      </app-topbar-collapsed>
+      <app-topbar-collapsed class="topbar-collapse" [isNew]="true">
+        <mat-icon>email</mat-icon>
+        <div class="content-collapse">
+          <div class="title-wrap">
+            <p class="title">Unread messages</p>
+            <button class="btn-all-read" type="button">Mark all as read</button>
+          </div>
+          <div class="collapse-item" *ngFor="let email of emails">
+            <div class="img-wrap">
+              <img class="img-avatar" width="40" height="40" [src]="email.ava" alt="avatar" />
+            </div>
+            <p class="name">{{email.name}}</p>
+            <p class="message message-mail">{{email.message}}</p>
+            <p class="date">{{email.date}}</p>
+          </div>
+          <a routerLink="/mail_app/inbox" class="all-messages-link collapse-button">See all messages</a>
+        </div>
+      </app-topbar-collapsed>
+      <app-profile-widget></app-profile-widget>
+      <app-language-widget></app-language-widget>
+    </div>
+</div>

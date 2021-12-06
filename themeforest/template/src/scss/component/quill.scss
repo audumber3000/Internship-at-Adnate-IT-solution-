@@ -1,0 +1,178 @@
+.ql-tooltip {
+  top: -11px !important;
+  left: -1px !important;
+
+  input {
+    outline: none;
+  }
+}
+.ql-toolbar {
+  .ql-picker-label {
+    &:hover {
+      color: $color-accent !important;
+
+      svg {
+        .ql-stroke {
+          stroke: $color-accent !important;
+        }
+
+        .ql-fill {
+          fill: $color-accent !important;
+        }
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  button {
+    &:hover, &:focus {
+      svg {
+        .ql-stroke {
+          stroke: $color-accent !important;
+        }
+        .ql-fill {
+          fill: $color-accent !important;
+        }
+      }
+    }
+  }
+}
+
+.ql-active {
+  color: $color-accent !important;
+
+  svg {
+    .ql-stroke {
+      stroke: $color-accent !important;
+    }
+
+    .ql-fill {
+      fill: $color-accent !important;
+    }
+  }
+}
+
+.ql-picker-item {
+  &:hover {
+    color: $color-accent !important;
+
+    svg {
+      .ql-stroke {
+        stroke: $color-accent !important;
+      }
+
+      .ql-fill {
+        fill: $color-accent !important;
+      }
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.ql-selected {
+  color: $color-accent !important;
+  svg {
+    .ql-stroke {
+      stroke: $color-accent !important;
+    }
+    .ql-fill {
+      fill: $color-accent !important;
+    }
+  }
+}
+.ql-blank {
+   &::before {
+     font-style: unset !important;
+   }
+ }
+
+.dark-theme {
+  .mat-drawer-container {
+    color: var(--colorText);
+  }
+
+  button {
+    color: #b1c3c8 !important;
+
+    svg {
+      .ql-stroke {
+        stroke: #b1c3c8 !important;
+      }
+
+      .ql-fill {
+        fill: #b1c3c8 !important;
+      }
+    }
+  }
+
+  .ql-picker {
+    color: #b1c3c8 !important;
+
+    svg {
+      .ql-stroke {
+        stroke: #b1c3c8 !important;
+      }
+
+      .ql-fill {
+        fill: #b1c3c8 !important;
+      }
+    }
+
+    .ql-picker-item {
+      color: #444 !important;
+
+      svg {
+        .ql-stroke {
+          stroke: #444 !important;
+        }
+
+        .ql-fill {
+          fill: #444 !important;
+        }
+      }
+
+      &:hover {
+        color: $color-accent !important;
+
+        svg {
+          .ql-stroke {
+            stroke: $color-accent !important;
+          }
+
+          .ql-fill {
+            fill: $color-accent !important;
+          }
+        }
+      }
+    }
+  }
+
+  .ql-active {
+    color: $color-accent !important;
+    svg {
+      .ql-stroke {
+        stroke: $color-accent !important;
+      }
+
+      .ql-fill {
+        fill: $color-accent !important;
+      }
+    }
+  }
+
+  .ql-container {
+    color: #b1c3c8;
+  }
+
+  .ql-blank {
+    &::before {
+      color: $color-additional;
+      font-style: unset;
+    }
+  }
+}

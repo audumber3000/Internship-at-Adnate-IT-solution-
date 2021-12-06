@@ -1,0 +1,43 @@
+@import "../../../../../../scss/settings/variable";
+
+.material-form {
+
+  .mat-form-field {
+
+    .mat-input-element {
+      color: var(--colorText);
+    }
+
+    textarea {
+      line-height: 1.4;
+      min-height: 150px;
+    }
+
+    &.mat-focused {
+      .mat-form-field-ripple {
+        background-color: $color-accent;
+      }
+
+      .mat-form-field-label {
+        color: $color-accent;
+      }
+    }
+
+    .mat-form-field-label {
+      color: var(--colorText);
+    }
+  }
+
+  .mat-form-field-appearance-legacy {
+
+    &:hover {
+      .mat-form-field-underline {
+        background-color: $color-accent;
+      }
+    }
+
+    .mat-form-field-underline {
+      background-color: var(--colorFieldsBorder);
+    }
+  }
+}

@@ -1,0 +1,147 @@
+@import "settings/variable";
+
+.dashboard__btc {
+  color: #f6a81e;
+}
+
+.dashboard__eth {
+  color: #5e62e6;
+}
+
+.dashboard__neo {
+  color: #3ddb42;
+}
+
+.dashboard__ste {
+  color: #21cbe6;
+}
+
+.dashboard__eos {
+  color: #6d6a6a;
+}
+
+.dashboard__lit {
+  color: #b7b3b3;
+}
+
+.dashboard__place-order {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 900px) {
+    flex-wrap: nowrap;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-wrap: wrap;
+  }
+
+  @media screen and (min-width: 1360px) {
+    flex-wrap: nowrap;
+  }
+}
+
+.dashboard__place-order-form {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  form {
+    padding: 20px 20px 30px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: var(--colorBorder);
+  }
+
+  .form__form-group-label {
+    width: 50px;
+    margin-right: 15px;
+  }
+
+  .form__form-group-field {
+    width: calc(100% - 65px);
+  }
+
+  .form__button-toolbar {
+    margin-left: 0;
+    width: 100%;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  input {
+    background-color: var(--colorBackground);
+  }
+
+  @media screen and (min-width: 900px) {
+    width: calc(50% - 15px);
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 100%;
+    margin-top: 20px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  @media screen and (min-width: 1360px) {
+    width: calc(50% - 15px);
+    margin-top: 0;
+  }
+}
+
+.dashboard__place-order-form-subhead {
+  position: absolute;
+  font-size: 12px;
+  top: 4px;
+  right: 0;
+}
+
+.crypto-currency-table {
+  tr.mat-header-row {
+    height: 36px;
+  }
+}
+
+.form__form-group {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.btn-orders-control {
+  margin: 0;
+  padding: 0 0 10px 10px;
+  border: none;
+  background-color: transparent;
+
+  .mat-icon {
+    margin: 0;
+    height: 20px;
+    width: 20px;
+    color: #999999;
+    font-size: 20px;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    .mat-icon {
+      color: $color-accent
+    }
+  }
+}
+
+.chart-btc-etc-container {
+  height: 200px;
+}

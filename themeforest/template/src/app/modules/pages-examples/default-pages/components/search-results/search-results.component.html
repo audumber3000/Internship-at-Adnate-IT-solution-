@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Search Results</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Search libraries on cdnjs</h5>
+          </div>
+          <form class="form" (submit)="onSubmit($event)">
+            <div class="form__form-group">
+              <div class="form__form-group-field">
+                <input type="text" name="search" placeholder="Search..." value="bootstrap" (keyup)="searchTerm$.next($event.target.value)"/>
+                <div class="form__form-group-icon"><mat-icon>search</mat-icon></div>
+              </div>
+            </div>
+          </form>
+          <ng-container *ngIf="(searchTerm$ | async) as searchTerm">
+            <h4>Search result for '{{searchTerm}}'</h4>
+          </ng-container>
+          <ng-container *ngIf="(searchTotal$ | async) as searchTotal">
+            <p class="subhead">Found {{searchTotal}} results</p>
+          </ng-container>
+
+          <ng-container *ngIf="(searchResults$ | async) as searchResults">
+            <div class="search-results-all">
+              <div class="search-result" *ngFor="let result of searchResults | angularPaginator: {itemsPerPage: this.itemsPerPage, currentPage: currentPage }; let i = index">
+                <p class="search-result__title">{{result.name}}</p>
+                <p class="search-result__link">
+                  <a target="_blank" [attr.href]="result.latest">{{result.latest}}</a>
+                </p>
+              </div>
+            </div>
+            <div class="paginator-wrapper">
+              <app-angular-paginator (pageChange)="currentPage = $event"></app-angular-paginator>
+            </div>
+          </ng-container>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

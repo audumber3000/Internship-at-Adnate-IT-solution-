@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Form layouts</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Horizontal form</h5>
+            <p class="subhead">Labels are left from fields</p>
+          </div>
+          <app-form-layout-example></app-form-layout-example>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Horizontal form with icons</h5>
+            <p class="subhead">Labels are left from fields and icons</p>
+          </div>
+          <app-form-layout-example showIcons="true"></app-form-layout-example>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Vertical form</h5>
+            <p class="subhead">Labels are above fields</p>
+          </div>
+          <app-form-layout-example [horizontalForm]="false"></app-form-layout-example>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Vertical form with icons</h5>
+            <p class="subhead">Labels are above fields and icons</p>
+          </div>
+          <app-form-layout-example [horizontalForm]="false" showIcons="true"></app-form-layout-example>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Vertical form</h5>
+            <p class="subhead">Labels are above fields, use div with class super<span class="red-text"> form__half</span></p>
+          </div>
+          <form class="form" [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)">
+            <div class="form__half">
+              <div class="form__form-group">
+                <span class="form__form-group-label">First Name</span>
+                <div class="form__form-group-field">
+                  <input formControlName="firstName" type="text" placeholder="Name">
+                </div>
+              </div>
+
+              <div class="form__form-group">
+                <span class="form__form-group-label">Last Name</span>
+                <div class="form__form-group-field">
+                  <input formControlName="lastName" type="text" placeholder="Last Name">
+                </div>
+              </div>
+
+              <div class="form__form-group">
+                <span class="form__form-group-label">Date of Birth</span>
+                <div class="form__form-group-field">
+                  <input formControlName="birthDate" type="text" mask="d0/M0/0000" placeholder="d0/M0/yyyy">
+                </div>
+              </div>
+
+              <div class="form__form-group">
+                <span class="form__form-group-label">Gender</span>
+                <div class="form__form-group-field radio-button-themed">
+                  <mat-radio-group aria-label="Select an option" formControlName="gender">
+                    <mat-radio-button value="0">Male</mat-radio-button>
+                    <mat-radio-button value="1">Female</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="form__half">
+              <div class="form__form-group">
+                <span class="form__form-group-label">Select your country</span>
+                <div class="form__form-group-field">
+                  <div class="form__form-group-input-wrap">
+                    <ng-select   [searchable]="false" formControlName="country">
+                      <ng-option value="One">One</ng-option>
+                      <ng-option value="Two">Two</ng-option>
+                    </ng-select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__form-group">
+                <span class="form__form-group-label">City</span>
+                <div class="form__form-group-field">
+                  <input formControlName="lastName" type="text" placeholder="Entery your city" formControlName="city">
+                </div>
+              </div>
+
+              <div class="form__form-group">
+                <span class="form__form-group-label">ZIP Code</span>
+                <div class="form__form-group-field">
+                  <input formControlName="lastName" type="text" placeholder="Enter your ZIP code" formControlName="zipCode">
+                </div>
+              </div>
+
+              <div role="toolbar" class="form__button-toolbar btn-toolbar">
+                <button type="button" class="btn btn-secondary" (click)="resetForm(reactiveForm)">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

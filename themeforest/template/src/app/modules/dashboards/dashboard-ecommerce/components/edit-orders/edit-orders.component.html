@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">EDIT {{ordersData[ordersRowIndex].product }}</h5>
+          </div>
+          <form class="form form--horizontal" [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)">
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Title</span>
+              <div class="form__form-group-field">
+                <input formControlName="product" type="text" class="form-field" placeholder=""/>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Quantity</span>
+              <div class="form__form-group-field">
+                <input formControlName="quantity" type="text" class="form-field" placeholder=""/>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Sold</span>
+              <div class="form__form-group-field">
+                <input formControlName="sold" type="text" class="form-field" placeholder=""/>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Total</span>
+              <div class="form__form-group-field">
+                <input formControlName="total" type="text" class="form-field" placeholder=""/>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Image URL</span>
+              <div class="form__form-group-field">
+                <input formControlName="img" type="text" class="form-field" placeholder=""/>
+              </div>
+            </div>
+
+            <div role="toolbar" class="form__button-toolbar btn-toolbar">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary" (click)="turnBack()">Cancel</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

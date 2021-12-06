@@ -1,0 +1,137 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">Progress bars</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-6">
+      <div class="card">
+        <div class="card-body progress-bar-card">
+          <div class="card-title">
+            <h5 class="bold-text">Default progress bar</h5>
+            <p class="subhead">Use default progress</p>
+          </div>
+          <div class="progress-bar-body-card">
+            <div class="progress-wrap">
+              <progressbar [value]="80"></progressbar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6">
+      <div class="card">
+        <div class="card-body progress-bar-card">
+          <div class="card-title">
+            <h5 class="bold-text">Data progress bar</h5>
+            <p class="subhead">Use default progress with text</p>
+          </div>
+          <div class="progress-bar-body-card">
+            <div class="progress-wrap progress-wrap-middle">
+              <progressbar [value]="70">70%</progressbar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6">
+      <div class="card">
+        <div class="card-body progress-bar-card">
+          <div class="card-title">
+            <h5 class="bold-text">Animated progress bar</h5>
+            <p class="subhead">Use default progress with property <span class="red-text">animated</span></p>
+          </div>
+          <div class="progress-bar-body-card">
+            <div class="progress-wrap progress-wrap-middle">
+              <progressbar [value]="70" [animate]="true" [striped]="true"></progressbar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6">
+      <div class="card">
+        <div class="card-body progress-bar-card">
+          <div class="card-title">
+            <h5 class="bold-text">Colored progress bars</h5>
+            <p class="subhead">Use default progress with class
+              <span class="red-text">progress-wrap-yellow,
+               progress-wrap-violet,
+               progress-wrap-pink,
+               progress-wrap-blue</span></p>
+          </div>
+          <div class="progress-bar-body-card">
+            <div class="progress-wrap">
+              <progressbar [value]="20"></progressbar>
+            </div>
+            <div class="progress-wrap progress-wrap-yellow">
+              <progressbar [value]="30"></progressbar>
+            </div>
+            <div class="progress-wrap progress-wrap-violet">
+              <progressbar [value]="40"></progressbar>
+            </div>
+            <div class="progress-wrap progress-wrap-pink">
+              <progressbar [value]="50"></progressbar>
+            </div>
+            <div class="progress-wrap progress-wrap-blue">
+              <progressbar [value]="60"></progressbar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6">
+      <div class="card">
+        <div class="card-body progress-bar-card">
+          <div class="card-title">
+            <h5 class="bold-text">Multisized progress bars</h5>
+            <p class="subhead">Use default progress with class
+              <span class="red-text"> progress-wrap-small,
+             progress-wrap-middle,
+             progress-wrap-big</span>
+            </p>
+          </div>
+          <div class="progress-bar-body-card">
+            <div class="progress-wrap">
+              <progressbar [value]="20"></progressbar>
+            </div>
+            <div class="progress-wrap progress-wrap-small">
+              <progressbar [value]="40"></progressbar>
+            </div>
+            <div class="progress-wrap progress-wrap-middle">
+              <progressbar [value]="60"></progressbar>
+            </div>
+            <div class="progress-wrap progress-wrap-big">
+              <progressbar [value]="80"></progressbar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6">
+      <div class="card">
+        <div class="card-body progress-bar-card">
+          <div class="card-title">
+            <h5 class="bold-text">Animated multisized progress bars</h5>
+            <p class="subhead">Use default progress with combination of <span class="red-text">[animate]="true/false"</span> and <span class="red-text">[striped]="true/false"</span></p>
+          </div>
+          <div class="progress-bar-body-card">
+            <div class="progress-wrap">
+              <progressbar [value]="20" [animate]="true" [striped]="true"></progressbar>
+            </div>
+            <div class="progress-wrap progress-wrap-small">
+              <progressbar [value]="40" [animate]="true" [striped]="true"></progressbar>
+            </div>
+            <div class="progress-wrap progress-wrap-middle">
+              <progressbar [value]="60" [animate]="true" [striped]="true"></progressbar>
+            </div>
+            <div class="progress-wrap progress-wrap-big">
+              <progressbar [value]="80" [animate]="true" [striped]="true"></progressbar>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

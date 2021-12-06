@@ -1,0 +1,18 @@
+<button class="btn btn__show-modal" [ngClass]="btnColor" (click)="openModal(modalTemplate)" *ngIf="!isVisible; else modalTemplate">{{btn}}</button>
+
+<ng-template #modalTemplate>
+  <div [ngClass]="modalClasses">
+    <div class="ed-modal-header">
+      <button class="lnr lnr-cross modal-close-btn" type="button" (click)="modalRef.hide()"></button>
+      <span *ngIf="!header" [ngClass]="headerIcon"></span>
+      <h4 class="bold-text modal-title">{{title}}</h4>
+    </div>
+    <div class="ed-modal-body">
+      {{message}}
+    </div>
+    <div class="ed-modal-footer">
+      <button class="btn btn-secondary" (click)="modalRef.hide()">Cancel</button>
+      <button class="btn" [ngClass]="btnColor" (click)="modalRef.hide()">Ok</button>
+    </div>
+  </div>
+</ng-template>

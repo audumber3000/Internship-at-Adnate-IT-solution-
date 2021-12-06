@@ -1,0 +1,37 @@
+<div class="tiny-bar-chart">
+  <mat-icon *ngIf="trendDirectionUp">trending_up</mat-icon>
+  <mat-icon *ngIf="!trendDirectionUp">trending_down</mat-icon>
+  <p class="chart-total-stat">{{amount}}</p>
+  <div class="chart-container">
+    <ngx-charts-bar-vertical
+      class="app-bar-chart"
+      [scheme]="colorScheme"
+      [schemeType]="schemeType"
+      [results]="data"
+      [animations]="animations"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [legendTitle]="legendTitle"
+      [legendPosition]="legendPosition"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [tooltipDisabled]="tooltipDisabled"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [showGridLines]="showGridLines"
+      [barPadding]="barPadding"
+      [roundDomains]="roundDomains"
+      [roundEdges]="roundEdges"
+      [yScaleMax]="yScaleMax"
+      [showDataLabel]="showDataLabel"
+      [trimXAxisTicks]="trimXAxisTicks"
+      [trimYAxisTicks]="trimYAxisTicks"
+      [maxXAxisTickLength]="maxXAxisTickLength"
+      [maxYAxisTickLength]="maxYAxisTickLength"
+      (select)="select($event)"
+      (legendLabelClick)="onLegendLabelClick($event)">
+    </ngx-charts-bar-vertical>
+  </div>
+</div>

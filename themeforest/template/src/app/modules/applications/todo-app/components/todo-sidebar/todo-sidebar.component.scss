@@ -1,0 +1,130 @@
+@import "settings/variable";
+
+.todo__input-new {
+  text-align: center;
+}
+
+.todo__sidebar {
+  background-color: $color-blue;
+  min-height: 710px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+
+  .todo_sidebar-image {
+    width: 130px;
+    margin-bottom: 20px;
+  }
+
+  .todo__date-filter,
+  .todo__priority-filter {
+    align-self: flex-start;
+    text-align: left;
+    margin-bottom: 20px;
+
+    .title {
+      font-size: 12px;
+      margin-bottom: 15px;
+      color: white;
+      opacity: 0.6;
+    }
+  }
+
+  .todo__date-filter-list,
+  .todo__priority-filter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    label {
+      margin: 0;
+      color: white;
+      font-size: 12px;
+    }
+  }
+
+  .todo__filter-radio {
+    display: none;
+  }
+
+  .todo__filter-radio + label {
+    position: relative;
+    padding: 0 0 0 25px;
+    cursor: pointer;
+  }
+
+  .todo__filter-radio + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fafbfe;
+    border-radius: 50%;
+  }
+
+  .todo__filter-radio + label:after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #fafbfe;
+    opacity: 0;
+    transition: .2s;
+  }
+
+  .todo__filter-radio:checked + label:after {
+    opacity: 1;
+  }
+}
+
+.todo__btn-add-new {
+  color: white;
+  cursor: pointer;
+  background-color: $color-blue;
+  white-space: nowrap;
+  padding: 5px 15px;
+  margin: 0;
+  border: 2px solid white;
+  border-radius: 100px;
+  margin-bottom: 20px;
+
+  &:before {
+    background-color: lighten($color-blue, 10%);
+  }
+
+  &:hover {
+    color: white;
+  }
+
+  svg {
+    height: 16px;
+    width: 16px;
+    margin: 0;
+    fill: white;
+  }
+}
+
+.todo-modal {
+  .form__form-group {
+    text-align: left;
+  }
+}
+
+.datepicker-wrapper {
+  width: 100%;
+  .datepicker__input-container {
+    width: 100%;
+  }
+}
+
+

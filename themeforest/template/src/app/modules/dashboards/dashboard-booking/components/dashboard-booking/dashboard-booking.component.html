@@ -1,0 +1,114 @@
+<div class="container__wrap">
+  <div class="dashboard container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="page-title">{{translations['page_title']}}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-6 col-xl-3" *ngFor="let card of statCards">
+        <div class="card card-booking">
+          <div class="card-body">
+            <app-tiny-stat-progress
+              [title]="card.title"
+              [color]="card.color"
+              [total]="card.total"
+              [trendDirectionUp]="card.trendDirectionUp"
+              [percent]="card.percent">
+            </app-tiny-stat-progress>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-lg-6 col-xl-3 reservations">
+        <app-panel title="{{translations['reservations']}}" classes="reservations-wrapper" controls="true">
+          <p class="subhead">Reservation overview</p>
+          <div class="reservations-info">
+            <p class="chart-title">Total visitors <span>on 23.05.2019</span></p>
+            <p class="chart-number">345</p>
+          </div>
+          <app-dashboard-pie-chart [data]="reservations" wrapperHeight="100px"></app-dashboard-pie-chart>
+        </app-panel>
+
+        <div class="our-mission">
+          <mat-icon>gps_fixed</mat-icon>
+          <p class="our-mission-title">Our mission</p>
+          <p>We are inspired by the customer’s happiness and their ability to travel!</p>
+        </div>
+
+      </div>
+
+
+      <app-panel title="{{translations['weekly_stat']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3" controls="true">
+        <p class="subhead">Top selling items statistic by last month</p>
+        <app-pie-grid-chart-set
+          [charts]="weeklyStats"
+          [horizontal]="horizontal"
+          [hideTotal]="hideTotal"
+          [coloredPercent]="coloredPercent">
+        </app-pie-grid-chart-set>
+        <hr>
+        <div class="weekly-stat">
+          <h5 class="bold-text">{{translations['social_score']}}</h5>
+          <app-progress-statistics-set [data]="weeklyStatProgress"></app-progress-statistics-set>
+        </div>
+      </app-panel>
+
+      <app-panel title="{{translations['occupancy']}}" classes="col-md-12 col-lg-12 col-xl-6" controls="true">
+        <p class="subhead">See how effective your business is</p>
+        <app-occupancy></app-occupancy>
+
+        <hr>
+
+        <div class="table-responsive">
+          <table class="table occupancy-table">
+            <tbody>
+            <tr>
+              <td class="td-head">Arrivals</td>
+              <td class="td-blue">24</td>
+              <td class="td-blue">74</td>
+              <td class="td-blue">54</td>
+              <td class="td-blue">57</td>
+              <td class="td-blue">32</td>
+              <td class="td-blue">68</td>
+              <td class="td-blue">53</td>
+            </tr>
+            <tr>
+              <td class="td-head">Departures</td>
+              <td class="td-green">75</td>
+              <td class="td-green">65</td>
+              <td class="td-green">46</td>
+              <td class="td-green">35</td>
+              <td class="td-green">65</td>
+              <td class="td-green">21</td>
+              <td class="td-green">34</td>
+            </tr>
+            <tr>
+              <td class="td-head">Stay overs</td>
+              <td class="td-gray">3113</td>
+              <td class="td-gray">2424</td>
+              <td class="td-gray">4545</td>
+              <td class="td-gray">4543</td>
+              <td class="td-gray">3432</td>
+              <td class="td-gray">3211</td>
+              <td class="td-gray">2112</td>
+            </tr>
+            <tr>
+              <td class="td-head">Customers</td>
+              <td class="td-gray">131</td>
+              <td class="td-gray">133</td>
+              <td class="td-gray">343</td>
+              <td class="td-gray">342</td>
+              <td class="td-gray">351</td>
+              <td class="td-gray">234</td>
+              <td class="td-gray">242</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </app-panel>
+    </div>
+  </div>
+</div>

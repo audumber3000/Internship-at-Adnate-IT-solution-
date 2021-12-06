@@ -1,0 +1,29 @@
+<div class="card" *ngIf="visible">
+  <mat-expansion-panel class=""
+                       [ngClass]="inputClasses"
+                       [hideToggle]="true"
+                       [disabled]="true"
+                       [expanded]="panelOpenState">
+    <div class="statistics-refresh" *ngIf="isRefreshing">
+      <mat-spinner [diameter]="30"></mat-spinner>
+    </div>
+    <mat-expansion-panel-header collapsedHeight="*" expandedHeight="*">
+      <mat-panel-title>
+        <div class="title-wrapper">
+          <h5 class="bold-text">
+            <span class="panel-icon lnr" [ngClass]="iconClass" *ngIf="iconName"></span>
+            {{title}}
+            <span class="badge badge-secondary panel-label" *ngIf="labelText">{{labelText}}</span>
+          </h5>
+          <div class="panel-btns" *ngIf="controls">
+            <button class="panel-btn" type="button" (click)="togglePanel($event)"><mat-icon>remove</mat-icon></button>
+            <button class="panel-btn" type="button" (click)="refreshPanel()"><mat-icon>autorenew</mat-icon></button>
+            <button class="panel-btn" type="button" (click)="dismissPanel()"><mat-icon>close</mat-icon></button>
+          </div>
+        </div>
+        <ng-content *ngIf="panelOpenState" select=".subhead"></ng-content>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <ng-content></ng-content>
+  </mat-expansion-panel>
+</div>

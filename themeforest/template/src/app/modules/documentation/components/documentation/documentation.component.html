@@ -1,0 +1,53 @@
+<div class="documentation container" [ngClass]="{'dark-theme': !(isDarkTheme | async)}">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Documentation / {{routeName}}</h3>
+    </div>
+  </div>
+  <div class="row documentation-main">
+    <div class="documentation-navigation col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+      <div>
+        <div class="card navigation-wrap">
+          <div class="card-body">
+            <ul class="links-list">
+              <li><a class="navigation-link" routerLink="introduction" routerLinkActive="active">Introduction</a></li>
+              <li><a class="navigation-link" routerLink="installation" routerLinkActive="active">Installation</a></li>
+              <li><a class="navigation-link" routerLink="file_structure" routerLinkActive="active">File Structure</a></li>
+              <li><a class="navigation-link" routerLink="components" routerLinkActive="active">Components</a></li>
+              <li><a class="navigation-link" routerLink="form" routerLinkActive="active">Form</a></li>
+              <li><a class="navigation-link" routerLink="color_themes" routerLinkActive="active">Color Themes</a></li>
+              <li><a class="navigation-link" routerLink="navigation_item" routerLinkActive="active">Navigation Item</a></li>
+              <li><a class="navigation-link" routerLink="resources" routerLinkActive="active">Resources</a></li>
+              <li><a class="navigation-link" routerLink="changelog" routerLinkActive="active">Changelog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-9" [ngClass]="{'dark-theme': !(isDarkTheme | async)}">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="pagination-wrapper">
+      <div class="link-wrapper">
+        <a
+          *ngIf="prevRouteName"
+          class="pagination-link"
+          [routerLink]="prevRouteLink"
+          routerLinkActive="active"
+        >
+          <mat-icon>chevron_left</mat-icon> {{prevRouteName}}
+        </a>
+      </div>
+      <div class="link-wrapper">
+        <a
+          *ngIf="nextRouteName"
+          class="pagination-link"
+          [routerLink]="nextRouteLink"
+          routerLinkActive="active"
+        >
+          {{nextRouteName}} <mat-icon>chevron_right</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,185 @@
+@import "../../../../../../scss/settings/variable";
+
+.card {
+
+  .mat-expansion-panel {
+    position: relative;
+    border-radius: var(--borderRadius);
+    box-shadow: var(--boxShadows);
+    background-color: var(--colorBackground);
+
+    &.mat-expanded {
+      height: 100%;
+    }
+
+    .mat-expansion-panel-content {
+      font-size: 13px;
+    }
+
+    .mat-expansion-panel-header {
+      height: auto!important;
+      min-height: 34px;
+    }
+
+    .mat-expansion-panel-header-title {
+      flex-direction: column;
+      text-transform: uppercase;
+      margin-right: 0;
+      padding: 20px 0;
+    }
+
+    .subhead {
+      text-transform: none;
+      font-size: 12px;
+      line-height: 18px;
+      opacity: 0.7;
+      transition: 0.3s;
+      color: var(--colorText);
+    }
+
+    .title-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      h5 {
+        font-size: 13px;
+      }
+    }
+
+    .panel-btns {
+      display: flex;
+      z-index: 9;
+
+      .panel-btn:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .panel-btn {
+      width: 14px;
+      height: 14px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      margin-right: 10px;
+
+      .mat-icon {
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+        color: $color-additional;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .panel-label {
+      left: 100%;
+      background-color: $color-accent;
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      line-height: 13px;
+      padding: 3px 10px;
+      margin-left: 10px;
+    }
+
+    .mat-expansion-panel-body {
+      padding: 16px 24px 50px 24px;
+      color: var(--colorText);
+    }
+
+    &.divided {
+
+      .mat-expansion-panel-header {
+        &.mat-expanded {
+          border-bottom: solid 1px var(--colorBorder);
+        }
+      }
+    }
+
+    &.panel-success,
+    &.panel-primary,
+    &.panel-warning,
+    &.panel-danger {
+
+      .mat-expansion-panel-header-title {
+        h5 {
+          color: #ffffff;
+        }
+      }
+
+      .panel-btns {
+        .mat-icon {
+          color: #ffffff;
+        }
+      }
+    }
+
+    &.panel-success {
+      .mat-expansion-panel-header {
+        background-color: $color-accent;
+      }
+    }
+
+    &.panel-primary {
+      .mat-expansion-panel-header {
+        background-color: $color-blue;
+      }
+    }
+
+    &.panel-warning {
+      .mat-expansion-panel-header {
+        background-color: $color-yellow;
+      }
+    }
+
+    &.panel-danger {
+      .mat-expansion-panel-header {
+        background-color: $color-red;
+      }
+    }
+  }
+
+  .statistics-refresh {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      border-radius: 5px;
+
+      background-color: var(--colorBackground);
+      opacity: 0.8;
+    }
+
+    .mat-spinner {
+      z-index: 10;
+
+      svg {
+
+        circle {
+          stroke: $color-accent;
+        }
+      }
+    }
+
+  }
+}
+

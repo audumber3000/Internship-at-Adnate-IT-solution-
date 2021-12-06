@@ -1,0 +1,57 @@
+<div>
+  <ng-container *ngIf="(todosPending$ | async) as todosPending">
+    <div xs="12" class="" *ngFor="let todo of todosPending;">
+      <div class="card">
+        <div class="todo__item card-body checkbox-themed">
+          <mat-checkbox class="checkbox-bold" [id]="todo.id" [checked]="todo.completed" (change)="toggleComplete(todo.id)"></mat-checkbox>
+          <div class="todo__info">
+            <div class="todo__header"><h3>{{todo.title}}</h3>
+              <div class="todo__additional"><p class="todo__due-date">Due date: {{todo.date | date: 'shortDate'}}</p>
+                <span class="todo__priority">Priority:</span>
+                <span class="todo__priority-indicator" [ngClass]="todo.priority"></span>
+              </div>
+            </div>
+            <div class="todo__content">
+              <div class="todo__description">{{todo.description}}</div>
+              <button class="todo__delete-btn" type="button" (click)="deleteTodo(todo.id)">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <div class="col-md-12">
+    <div class="todo-app__divider">
+      <div class="todo-app__divider-line"></div>
+      <p class="todo-app__divider-title">Done</p>
+      <div class="todo-app__divider-line"></div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="(todosCompleted$ | async) as todosCompleted">
+    <div xs="12" class="" *ngFor="let todo of todosCompleted;">
+      <div class="card">
+        <div class="todo__item card-body checkbox-themed">
+          <mat-checkbox class="checkbox-bold" [id]="todo.id" [checked]="todo.completed" (change)="toggleComplete(todo.id)"></mat-checkbox>
+          <div class="todo__info">
+            <div class="todo__header"><h3>{{todo.title}}</h3>
+              <div class="todo__additional"><p class="todo__due-date">Due date: {{todo.date | date: 'shortDate'}}</p>
+                <span class="todo__priority">Priority:</span>
+                <span class="todo__priority-indicator" [ngClass]="todo.priority"></span>
+              </div>
+            </div>
+            <div class="todo__content">
+              <div class="todo__description">{{todo.description}}</div>
+              <button class="todo__delete-btn" type="button" (click)="deleteTodo(todo.id)">
+                <mat-icon>delete_forever</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

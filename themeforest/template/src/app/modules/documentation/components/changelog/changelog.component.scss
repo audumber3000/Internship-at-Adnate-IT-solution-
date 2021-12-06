@@ -1,0 +1,28 @@
+.documentation {
+
+  .card-body {
+    color: var(--colorText);
+
+    ul {
+      color: var(--colorText);
+      list-style: none;
+
+      li::before {
+        content: '\2022';
+        color: #00efb8;
+        font-weight: bold; 
+        display: inline-block; 
+        width: 1em; 
+        margin-left: -1em; 
+      }
+    }
+  }
+
+  .card-title {
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    text-transform: none;
+  }
+}

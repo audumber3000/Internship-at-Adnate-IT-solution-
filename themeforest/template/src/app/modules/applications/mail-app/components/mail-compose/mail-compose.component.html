@@ -1,0 +1,43 @@
+<div class="compose-container">
+  <h5 class="compose-title bold-text">Compose new message</h5>
+  <form class="form" [formGroup]="emailForm" (ngSubmit)="onSubmit(emailForm)">
+
+    <div class="form__form-group">
+      <div class="form__form-group-field">
+        <input formControlName="addressee" type="text" class="form-field" placeholder="To:"/>
+      </div>
+    </div>
+
+    <div class="form__form-group">
+      <div class="form__form-group-field">
+        <input formControlName="emailTitle" type="text" class="form-field" placeholder="Subject:"/>
+      </div>
+    </div>
+
+    <div class="text-editor" [ngClass]="{'dark-theme': !(isDarkTheme | async)}">
+      <quill-editor
+        [styles]="{height: '200px'}"
+        placeholder=""
+      >
+      </quill-editor>
+    </div>
+
+    <div class="attach-files">
+      <input class="visually-hidden" autocomplete="off" type="file" #file name="file" (change)="onFilesAdded()" [attr.multiple]="true" formControlName="fileList"/>
+      <button type="button" class="btn btn-outline-secondary btn-attach" (click)="addFiles()">Attach files</button>
+      <ng-container *ngIf="fileList.length">
+        <div class="attachment-icon-container">
+          <mat-icon>attach_file</mat-icon>
+        </div>
+        <button class="attachment-clear" type="button" (click)="clearFilesList()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </ng-container>
+    </div>
+
+    <div role="toolbar" class="form__button-toolbar btn-toolbar">
+      <button type="submit" class="btn btn-primary">Send</button>
+      <button type="button" class="btn btn-secondary" (click)="resetForm(emailForm)">Cancel</button>
+    </div>
+  </form>
+</div>

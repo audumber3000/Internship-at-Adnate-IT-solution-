@@ -1,0 +1,10 @@
+version: '2'
+services:
+  client:
+    build: ./
+    container_name: ngeasydev
+    ports:
+      - 4200:4200
+    volumes:
+      - ./:/client
+    command: yarn serve:docker

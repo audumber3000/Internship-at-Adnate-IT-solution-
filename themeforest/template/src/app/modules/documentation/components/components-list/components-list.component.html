@@ -1,0 +1,357 @@
+<div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Components</h5>
+      </div>
+      <p>These are the examples of using template components. All components have a basic structure and configuration.
+        Just copy a component with its styles to your project.</p>
+      <p>Most of components are based on <a href="https://valor-software.com/ngx-bootstrap/#/">ngx-bootstrap</a> and some of them on<a
+        href="https://getbootstrap.com/docs/4.0/getting-started/introduction/"> bootstrap 4</a>. You can read about all used packages in a description of
+        components below and <a routerLink="/documentation/resources">here</a>.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Alerts</h5>
+      </div>
+      <p>Alerts are based on
+        <a href="https://getbootstrap.com/docs/4.0/components/alerts/">bootstrap 4</a>. Here is the example of our wrapper:</p>
+      <pre><code [highlight]="alertsCode"></code></pre>
+      <p>Input variables of AlertComponent:</p>
+      <div class="table-responsive">
+        <table class="table--bordered table--head-accent table">
+          <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>alertType</td>
+            <td>string</td>
+            <td>One of the following type:
+              <span class="red-text">'alert-bordered'</span>,
+              <span class="red-text">'alert-colored'</span>,
+              <span class="red-text">'alert-neutral'</span>
+            </td>
+          </tr>
+          <tr>
+            <td>alertTheme</td>
+            <td>string</td>
+            <td>One of the following color theme:
+              <span class="red-text">'info'</span>,
+              <span class="red-text">'primary'</span>,
+              <span class="red-text">'warning'</span> or <span class="red-text">'danger'</span>
+            </td>
+          </tr>
+          <tr>
+            <td>icon</td>
+            <td>string</td>
+            <td>Name of angular material icon</td>
+          </tr>
+          <tr>
+            <td>withIcons</td>
+            <td>boolean</td>
+            <td>Hide or show icon</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>You can find this component in: <b>src/app/modules/ui-elements/assets/alert</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Buttons</h5>
+      </div>
+      <p>Buttons are based on <a href="https://getbootstrap.com/docs/4.0/components/buttons/">bootstrap 4</a>. Here is the example of our usage:</p>
+      <pre><code [highlight]="buttonsCode"></code></pre>
+      <p>Options for styling buttons</p>
+      <div class="table-responsive">
+        <table class="table--bordered table--head-accent table">
+          <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>class</td>
+            <td>string</td>
+            <td>You can use any of this classes for your buttons:
+              <span class="red-text">'btn-sm'</span>,
+              <span class="red-text">'rounded'</span>,
+              <span class="red-text">'square'</span>, and
+              <span class="red-text">'icon-right'</span>, for buttons with icon right</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>You can find this component in: <b>src/app/modules/ui-elements/components/buttons</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Carousel</h5>
+      </div>
+      <p>Carousel are based on
+        <a href="https://github.com/sheikalthaf/ngu-carousel">ngu-carousel</a>.</p>
+      <p><b>Template code:</b></p>
+      <pre><code [highlight]="carouselTemplateCode"></code></pre>
+      <p><b>Component code:</b></p>
+      <pre><code [highlight]="carouselComponentCode"></code></pre>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Collapse</h5>
+      </div>
+      <p>Collapse are based on
+        <a href="https://valor-software.com/ngx-bootstrap/#/collapse">ngx-bootstrap collapse</a>. Here is the example of our wrapper:</p>
+      <pre><code [highlight]="collapseCode"></code></pre>
+      <p>Input variables of CollapseItemComponent:</p>
+      <div class="table-responsive">
+        <table class="table--bordered table--head-accent table">
+          <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>title</td>
+            <td>string</td>
+            <td>Title of collapsed view</td>
+          </tr>
+          <tr>
+            <td>boxType</td>
+            <td>string</td>
+            <td>One of the following box type:
+              <span class="red-text">' '</span>,
+              <span class="red-text">'boxed'</span>, or
+              <span class="red-text">'with-shadow'</span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>You can find this component in: <b>src/app/modules/ui-elements/components/collapse</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Modals</h5>
+      </div>
+      <p>Modals are based on
+        <a href="https://valor-software.com/ngx-bootstrap/#/modals">ngx-bootstrap modals</a>. Here is the example of our wrapper:</p>
+      <pre><code [highlight]="modalCode"></code></pre>
+      <p>Input variables of ModalComponent:</p>
+      <div class="table-responsive">
+        <table class="table--bordered table--head-accent table">
+          <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>title</td>
+            <td>string</td>
+            <td>Title of modal</td>
+          </tr>
+          <tr>
+            <td>message</td>
+            <td>string</td>
+            <td>Main message of modal</td>
+          </tr>
+          <tr>
+            <td>color</td>
+            <td>string</td>
+            <td>One of the following colors classes:
+              <span class="red-text">'primary'</span>,
+              <span class="red-text">'success'</span>,
+              <span class="red-text">'warning'</span>, or
+              <span class="red-text">'danger'</span>
+            </td>
+          </tr>
+          <tr>
+            <td>colored</td>
+            <td>boolean</td>
+            <td>Simple or colored modals</td>
+          </tr>
+          <tr>
+            <td>header</td>
+            <td>boolean</td>
+            <td>Show or hide header</td>
+          </tr>
+          <tr>
+            <td>btn</td>
+            <td>string</td>
+            <td>One of the following buttons names:
+              <span class="red-text">'Default'</span>,
+              <span class="red-text">'Success'</span>,
+              <span class="red-text">'Warning'</span>, or
+              <span class="red-text">'Danger'</span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>You can find this component in: <b>src/app/modules/ui-elements/assets/modal</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Panel</h5>
+      </div>
+      <p>Panels are based on
+        <a href="https://material.angular.io/components/expansion/overview">Material Expansion Panel</a>. Here is the example of our wrapper:</p>
+      <pre><code [highlight]="panelsCode"></code></pre>
+      <p>Input variables of PanelComponent:</p>
+      <div class="table-responsive">
+        <table class="table--bordered table--head-accent table">
+          <thead>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>title</td>
+            <td>string</td>
+            <td>Title of panel</td>
+          </tr>
+          <tr>
+            <td>labelText</td>
+            <td>string</td>
+            <td>Text of panel body</td>
+          </tr>
+          <tr>
+            <td>iconName</td>
+            <td>string</td>
+            <td>Any name of fontawesome lrn icon
+            </td>
+          </tr>
+          <tr>
+            <td>divided</td>
+            <td>boolean</td>
+            <td>Divide or not header from panel body</td>
+          </tr>
+          <tr>
+            <td>controls</td>
+            <td>boolean</td>
+            <td>Show or hide controls panel
+            </td>
+          </tr>
+          <tr>
+            <td>panelColor</td>
+            <td>string</td>
+            <td>One of the following color names:
+              <span class="red-text">'primary'</span>,
+              <span class="red-text">'success'</span>,
+              <span class="red-text">'warning'</span>, or
+              <span class="red-text">'danger'</span>
+            </td>
+          </tr>
+          <tr>
+            <td>classes</td>
+            <td>string</td>
+            <td>Here you can add any classes, default classes:
+              <span class="red-text">'col-md-12 col-lg-12 col-xl-6'</span>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>You can find this component in: <b>src/app/modules/shared-core/components/panel</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Popovers</h5>
+      </div>
+      <p>Popovers are based on
+        <a href="https://valor-software.com/ngx-bootstrap/#/popover">ngx-bootstrap popover</a>. Here is the example of our wrapper:</p>
+      <pre><code [highlight]="popoversCode"></code></pre>
+      <p>You can find more examples in this component: <b>src/app/modules/ui-elements/components/tooltips-popovers</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Progress Bars</h5>
+      </div>
+      <p>Progress is based on
+        <a href="https://valor-software.com/ngx-bootstrap/#/progressbar">ngx-bootstrap progress</a>. Here is the example</p>
+      <pre><code [highlight]="progressBarsCode"></code></pre>
+      <p>To change progress bar style you need to add some classes to <b>'progress-wrap'</b>:</p>
+      <ol>
+        <li>To change color:<span class="red-text"> 'progress-wrap-yellow'</span>,<span class="red-text"> 'progress-wrap-violet'</span>,<span
+          class="red-text"> 'progress-wrap-pink'</span>,<span class="red-text"> 'progress-wrap-blue'</span></li>
+        <li>To change size:<span class="red-text"> 'progress-wrap-small'</span>,<span class="red-text"> 'progress-wrap-middle'</span>,<span
+          class="red-text"> 'progress-wrap-big'</span></li>
+        <li>To change stripted or animated behavior you can add inputs <span class="red-text">[animated]</span>, or <span class="red-text">[striped]</span></li>
+      </ol>
+      <p>You can find more examples in this component: <b>src/app/modules/ui-elements/components/progress-bars</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Range Slider</h5>
+      </div>
+      <p>Slider are based on
+        <a href="https://github.com/angular-slider/ng5-slider">ng5-slider</a>. Here is the example of usage:</p>
+      <pre><code [highlight]="rangeSlidersTemplateCode"></code></pre>
+      <p>Also you need this code in your component</p>
+      <pre><code [highlight]="rangeSlidersComponentCode"></code></pre>
+      <p>You can find more examples of usages and options in this component: <b>src/app/modules/ui-elements/components/sliders</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Tabs</h5>
+      </div>
+      <p>Tabs is based on
+        <a href="https://valor-software.com/ngx-bootstrap/#/tabs">ngx-bootstrap tabs</a>. Here is the example</p>
+      <pre><code [highlight]="tabsCode"></code></pre>
+      <p>To change tabs style you need:</p>
+      <ol>
+        <li>To add border use input <b>'customClass'</b> with classes:<span class="red-text"> 'bordered-top'</span>,<span class="red-text"> 'bordered-bottom'</span></li>
+        <li>To change justified behavior, use input <b>[justified]="true"</b> with <b>tabset</b></li>
+        <li>To change vertical behavior, use input <b>[vertical]="true"</b> with <b>tabset</b> and add <span class="red-text">'tabs-vertical'</span> class to <span class="red-text">'tabs'</span></li>
+      </ol>
+      <p>You can find more examples in this component: <b>src/app/modules/ui-elements/components/tabs</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Tooltips</h5>
+      </div>
+      <p>Tooltips are based on
+        <a href="https://valor-software.com/ngx-bootstrap/#/popover">ngx-bootstrap tooltip</a>. Here is the example of usage:</p>
+      <pre><code [highlight]="tooltipsCode"></code></pre>
+      <p>You can find more examples here: <b>src/app/modules/ui-elements/components/tooltips-popovers</b></p>
+    </div>
+  </div>
+</div>

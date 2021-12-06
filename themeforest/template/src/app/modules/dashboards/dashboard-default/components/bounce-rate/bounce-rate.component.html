@@ -1,0 +1,25 @@
+<p class="bounce-rate-percent">32%</p>
+<div class="chart-container bounce-rate-chart">
+  <ngx-charts-area-chart
+    [scheme]="colorScheme"
+    [schemeType]="schemeType"
+    [results]="chartData"
+    [animations]="animations"
+    [legend]="showLegend"
+    (legendLabelClick)="onLegendLabelClick($event)"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [showGridLines]="showGridLines"
+
+    [roundDomains]="roundDomains"
+    [tooltipDisabled]="tooltipDisabled"
+    [trimXAxisTicks]="trimXAxisTicks"
+    [trimYAxisTicks]="trimYAxisTicks"
+    [maxXAxisTickLength]="maxXAxisTickLength"
+    [maxYAxisTickLength]="maxYAxisTickLength"
+    (select)="select($event)">
+  </ngx-charts-area-chart>
+</div>

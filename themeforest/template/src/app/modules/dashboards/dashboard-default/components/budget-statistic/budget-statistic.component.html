@@ -1,0 +1,33 @@
+<div class="budget-statistic">
+  <div class="statistic-main">
+    <p class="title">Total Budget</p>
+    <p class="amount">{{12321 | currency}}</p>
+  </div>
+  <hr>
+  <div class="budget-statistic-chart">
+    <div class="chart-container">
+      <p class="stat-label">$</p>
+      <app-easydev-pie-chart
+        [scheme]="colorScheme"
+        [results]="data"
+        [animations]="animations"
+        [legend]="showLegend"
+        [explodeSlices]="explodeSlices"
+        [labels]="showLabels"
+        [doughnut]="doughnut"
+        [arcWidth]="arcWidth"
+        [gradient]="gradient">
+      </app-easydev-pie-chart>
+    </div>
+    <div class="statistic-data">
+      <div>
+        <p class="data-amount">$4,937</p>
+        <p class="completed">Completed</p>
+      </div>
+      <div>
+        <p class="data-amount">$7,566</p>
+        <p class="remaining">Remaining</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div>
+  <router-outlet></router-outlet>
+</div>
+<div class="statistics-refresh" *ngIf="loadingRoute">
+  <mat-spinner [diameter]="30"></mat-spinner>
+</div>

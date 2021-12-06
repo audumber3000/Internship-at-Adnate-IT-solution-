@@ -1,0 +1,364 @@
+<div class="container" [ngClass]="{'dark-theme': !(isDarkTheme | async)}">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">Buttons</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Default buttons</h5>
+            <p class="subhead">Use default button with necessary values of properties
+              <span class="red-text"> color, outline </span> and <span class="red-text"> disabled</span>
+            </p>
+          </div>
+          <div class="card-title"><h5 class="subhead">Modifier color
+            <span class="red-text">primary, success, warning, danger</span>
+          </h5>
+            <p class="subhead">Modifier outline and disabled
+              <span class="red-text">true, false</span>
+            </p>
+          </div>
+          <div role="toolbar" class="btn-toolbar">
+            <button class="btn btn-outline-secondary">Minimal</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button disabled class="btn btn-secondary disabled">Disabled</button>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-warning">Warning</button>
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-outline-primary">Primary</button>
+            <button class="btn btn-outline-success">Success</button>
+            <button class="btn btn-outline-warning">Warning</button>
+            <button class="btn btn-outline-danger">Danger</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Buttons icons and expand</h5>
+          </div>
+          <h5 class="bold-text">Icon buttons</h5>
+          <div class="card-title">
+            <h5 class="subhead">Use default buttons with class
+              <span class="red-text">icon, icon-right</span>
+            </h5>
+          </div>
+          <div role="toolbar" class="btn-toolbar">
+            <button class="icon btn btn-outline-secondary">
+              <p><mat-icon>settings</mat-icon>Settings</p>
+            </button>
+            <button disabled class="icon btn btn-secondary disabled">
+              <p><mat-icon>settings</mat-icon>Disabled</p>
+            </button>
+            <button class="icon icon-right btn btn-outline-primary">
+              <p>Settings <mat-icon>send</mat-icon></p>
+            </button>
+            <button class="icon btn btn-primary">
+              <p><mat-icon>settings</mat-icon>Settings</p>
+            </button>
+            <button class="icon btn btn-success">
+              <p><mat-icon>thumb_up</mat-icon>Success</p>
+            </button>
+            <button class="icon btn btn-warning">
+              <p><mat-icon>sms_failed</mat-icon>Danger</p>
+            </button>
+            <button class="icon btn btn-danger">
+              <p><mat-icon>cancel</mat-icon>Warning</p>
+            </button>
+          </div>
+          <h5 class="bold-text">Expand</h5>
+          <div role="toolbar" class="btn-toolbar">
+            <button type="button" class="icon expand btn btn-outline-secondary">
+              <p>
+                <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12,4V2C6.48,2 2,6.48 2,12H4C4,7.58 7.58,4 12,4Z"></path>
+                </svg>
+                Expand
+              </p>
+            </button>
+            <button type="button" class="icon expand btn btn-primary">
+              <p>
+                <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12,4V2C6.48,2 2,6.48 2,12H4C4,7.58 7.58,4 12,4Z"></path>
+                </svg>
+                Settings
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"><h5 class="bold-text">Square buttons</h5><h5 class="subhead">Use default button with
+            class <span class="red-text">square</span></h5></div>
+          <div role="toolbar" class="btn-toolbar">
+            <button class="square btn btn-outline-secondary">Minimal</button>
+            <button class="square btn btn-secondary">Secondary</button>
+            <button disabled class="square btn btn-secondary disabled">Disabled</button>
+            <button class="square btn btn-primary">Primary</button>
+            <button class="square btn btn-success">Success</button>
+            <button class="square btn btn-warning">Warning</button>
+            <button class="square btn btn-danger">Danger</button>
+            <button class="square btn btn-outline-primary">Primary</button>
+            <button class="square btn btn-outline-success">Success</button>
+            <button class="square btn btn-outline-warning">Warning</button>
+            <button class="square btn btn-outline-danger">Danger</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"><h5 class="bold-text">Rounded buttons</h5><h5 class="subhead">Use default button with
+            class <span class="red-text">rounded</span></h5></div>
+          <div role="toolbar" class="btn-toolbar">
+            <button class="rounded btn btn-outline-secondary">Minimal</button>
+            <button class="rounded btn btn-secondary">Secondary</button>
+            <button disabled class="rounded btn btn-secondary disabled">Disabled</button>
+            <button class="rounded btn btn-primary">Primary</button>
+            <button class="rounded btn btn-success">Success</button>
+            <button class="rounded btn btn-warning">Warning</button>
+            <button class="rounded btn btn-danger">Danger</button>
+            <button class="rounded btn btn-outline-primary">Primary</button>
+            <button class="rounded btn btn-outline-success">Success</button>
+            <button class="rounded btn btn-outline-warning">Warning</button>
+            <button class="rounded btn btn-outline-danger">Danger</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"><h5 class="bold-text">Status buttons</h5><h5 class="subhead">Use default buttons with
+            property <span class="red-text">size</span></h5></div>
+          <h5 class="bold-text">Small buttons</h5>
+          <div class="card-title"><h5 class="subhead">Use the modifier <span class="red-text">btn-sm</span></h5></div>
+          <div role="toolbar" class="btn-toolbar">
+            <button class="btn btn-outline-secondary btn-sm">Minimal</button>
+            <button class="btn btn-secondary btn-sm">Secondary</button>
+            <button disabled class="btn btn-secondary btn-sm disabled">Disabled</button>
+            <button class="btn btn-primary btn-sm">Primary</button>
+            <button class="btn btn-success btn-sm">Success</button>
+            <button class="btn btn-warning btn-sm">Warning</button>
+            <button class="btn btn-danger btn-sm">Danger</button>
+            <button class="btn btn-outline-primary btn-sm">Primary</button>
+            <button class="btn btn-outline-success btn-sm">Success</button>
+            <button class="btn btn-outline-warning btn-sm">Warning</button>
+            <button class="btn btn-outline-danger btn-sm">Danger</button>
+          </div>
+          <h5 class="bold-text">Large buttons</h5>
+          <div class="card-title"><h5 class="subhead">Use the modifier <span class="red-text">btn-lg</span></h5></div>
+          <div role="toolbar" class="btn-toolbar">
+            <button class="btn btn-outline-secondary btn-lg">Minimal</button>
+            <button class="btn btn-secondary btn-lg">Secondary</button>
+            <button disabled class="btn btn-secondary btn-lg disabled">Disabled</button>
+            <button class="btn btn-primary btn-lg">Primary</button>
+            <button class="btn btn-success btn-lg">Success</button>
+            <button class="btn btn-warning btn-lg">Warning</button>
+            <button class="btn btn-danger btn-lg">Danger</button>
+            <button class="btn btn-outline-primary btn-lg">Primary</button>
+            <button class="btn btn-outline-success btn-lg">Success</button>
+            <button class="btn btn-outline-warning btn-lg">Warning</button>
+            <button class="btn btn-outline-danger btn-lg">Danger</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"><h5 class="bold-text">Button group</h5></div>
+          <h5 class="bold-text">Icon group</h5>
+          <div class="card-title"><h5 class="subhead">Use default button group with class<span class="red-text"> btn-group--icons</span>
+          </h5></div>
+          <div role="toolbar" class="btn-toolbar">
+            <div role="group" class="btn-group--icons btn-group">
+              <button class="btn btn-outline-secondary"><span class="lnr lnr-pushpin"></span></button>
+              <button class="btn btn-outline-secondary"><span class="lnr lnr-heart-pulse"></span></button>
+              <button class="btn btn-outline-secondary"><span class="lnr lnr-cog"></span></button>
+              <button class="btn btn-outline-secondary"><span class="lnr lnr-magic-wand"></span></button>
+            </div>
+          </div>
+          <h5 class="bold-text">Large buttons</h5>
+          <div class="card-title"><h5 class="subhead">Use default button group</h5></div>
+          <div role="toolbar" class="btn-toolbar">
+            <div role="group" class="btn-group">
+              <button class="btn btn-outline-secondary">Left</button>
+              <button class="btn btn-outline-secondary">Middle</button>
+              <button class="btn btn-outline-secondary">Right</button>
+            </div>
+          </div>
+          <h5 class="bold-text">Justify buttons</h5>
+          <div class="card-title"><h5 class="subhead">Use default button group with class<span class="red-text"> btn-group--justified</span>
+          </h5></div>
+          <div role="toolbar" class="btn-toolbar">
+            <div role="group" class="btn-group--justified btn-group">
+              <button class="btn btn-primary">Left</button>
+              <button class="btn btn-primary">Middle</button>
+              <button class="btn btn-primary">Right</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"><h5 class="bold-text">Button dropdown</h5></div>
+          <h5 class="bold-text">Basic buttons with dropdown</h5>
+          <div class="card-title"><h5 class="subhead">Use default dropdown toggle</h5></div>
+          <div role="toolbar" class="btn-toolbar">
+            <div class="dropdown" dropdown>
+              <button id="button-basic" dropdownToggle type="button" class="icon icon--right btn btn-outline-secondary"
+                      aria-controls="dropdown-basic">
+                Dropdown<mat-icon>expand_more</mat-icon>
+              </button>
+              <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                  role="menu" aria-labelledby="button-basic">
+                <li role="menuitem"><button type="button" class="dropdown-item">Action</button>
+                <li role="menuitem"><button type="button" class="dropdown-item">Another</button>
+                <li class="divider dropdown-divider"></li>
+                <li role="menuitem"><button type="button" class="dropdown-item">Another Action</button>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown" dropdown>
+              <button id="button-secondary" dropdownToggle type="button" class="icon icon--right btn btn-secondary"
+                      aria-controls="dropdown-secondary">
+                Dropdown<mat-icon>expand_more</mat-icon>
+              </button>
+              <ul id="dropdown-secondary" *dropdownMenu class="dropdown-menu"
+                  role="menu" aria-labelledby="button-basic">
+                <li role="menuitem"><button type="button" class="dropdown-item">Action</button>
+                <li role="menuitem"><button type="button" class="dropdown-item">Another</button>
+                <li class="divider dropdown-divider"></li>
+                <li role="menuitem"><button type="button" class="dropdown-item">Another Action</button>
+                </li>
+              </ul>
+            </div>
+            <div class="dropdown" dropdown>
+              <button id="button-primary" dropdownToggle type="button" class="icon icon--right btn btn-outline-primary"
+                      aria-controls="dropdown-primary">
+                Dropdown<mat-icon>expand_more</mat-icon>
+              </button>
+              <ul id="dropdown-primary" *dropdownMenu class="dropdown-menu"
+                  role="menu" aria-labelledby="button-basic">
+                <li role="menuitem"><button type="button" class="dropdown-item">Action</button>
+                <li role="menuitem"><button type="button" class="dropdown-item">Another</button>
+                <li class="divider dropdown-divider"></li>
+                <li role="menuitem"><button type="button" class="dropdown-item">Another Action</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <h5 class="bold-text">Buttons with divided dropdown</h5>
+          <div class="card-title">
+            <p class="subhead">Use default dropdown toggle with <span class="red-text">button</span></p>
+          </div>
+          <div role="toolbar" class="btn-toolbar">
+            <div class="dropdown" dropdown>
+              <div role="group" class="btn-group">
+                <button type="button" class="btn btn-outline-secondary">Dropdown</button>
+                <button id="button-divided-primary" dropdownToggle type="button" class="btn btn-outline-secondary"
+                        aria-controls="dropdown-divided-primary">
+                  <mat-icon>expand_more</mat-icon>
+                  <span class="sr-only">Split button!</span>
+                </button>
+                <ul id="dropdown-divided-primary" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-basic">
+                  <li role="menuitem"><button type="button" class="dropdown-item">Action</button>
+                  <li role="menuitem"><button type="button" class="dropdown-item">Another</button>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><button type="button" class="dropdown-item">Another Action</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="dropdown" dropdown>
+              <div role="group" class="btn-group">
+                <button type="button" class="btn btn-outline-primary">Dropdown</button>
+                <button id="button-divided-secondary" dropdownToggle type="button" class="btn btn-outline-primary"
+                        aria-controls="dropdown-divided-secondary">
+                  <mat-icon>expand_more</mat-icon>
+                  <span class="sr-only">Split button!</span>
+                </button>
+                <ul id="dropdown-divided-secondary" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-basic">
+                  <li role="menuitem"><button type="button" class="dropdown-item">Action</button>
+                  <li role="menuitem"><button type="button" class="dropdown-item">Another</button>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><button type="button" class="dropdown-item">Another Action</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="dropdown" dropdown>
+              <div role="group" class="btn-group">
+                <button type="button" class="btn btn-outline-primary">Dropdown</button>
+                <button id="btn-divided-primary" dropdownToggle type="button" class="btn btn-primary"
+                        aria-controls="dropdwn-divided-primary">
+                  <mat-icon>expand_more</mat-icon>
+                  <span class="sr-only">Split button!</span>
+                </button>
+                <ul id="dropdwn-divided-primary" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-basic">
+                  <li role="menuitem"><button type="button" class="dropdown-item">Action</button>
+                  <li role="menuitem"><button type="button" class="dropdown-item">Another</button>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><button type="button" class="dropdown-item">Another Action</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="dropdown" dropdown>
+              <div role="group" class="btn-group">
+                <button type="button" class="btn btn-primary">Dropdown</button>
+                <button id="btn-primary" dropdownToggle type="button" class="btn btn-primary"
+                        aria-controls="dropdwn-primary">
+                  <mat-icon>expand_more</mat-icon>
+                  <span class="sr-only">Split button!</span>
+                </button>
+                <ul id="dropdwn-primary" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-basic">
+                  <li role="menuitem"><button type="button" class="dropdown-item">Action</button>
+                  <li role="menuitem"><button type="button" class="dropdown-item">Another</button>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><button type="button" class="dropdown-item">Another Action</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="dropdown" dropdown>
+              <div role="group" class="btn-group">
+                <button type="button" class="btn btn-primary disabled" disabled>Dropdown</button>
+                <button id="btn-primary-disabled" dropdownToggle type="button" class="btn btn-primary disabled"
+                        aria-controls="dropdwn-primary-disabled" disabled>
+                  <mat-icon>expand_more</mat-icon>
+                  <span class="sr-only">Split button!</span>
+                </button>
+                <ul id="dropdwn-primary-disabled" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-basic">
+                  <li role="menuitem"><button type="button" class="dropdown-item">Action</button>
+                  <li role="menuitem"><button type="button" class="dropdown-item">Another</button>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><button type="button" class="dropdown-item">Another Action</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

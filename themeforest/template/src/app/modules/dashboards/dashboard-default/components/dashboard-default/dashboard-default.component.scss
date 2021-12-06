@@ -1,0 +1,55 @@
+.main {
+  justify-content: center;
+  height: 100%;
+
+  .chart-col {
+    width: 75%;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 25%;
+    bottom: 0;
+
+    .chart-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.chart-container {
+  height: 300px;
+
+  .ngx-charts {
+
+    .gridline-path {
+      stroke-width: 1px;
+      stroke: #999999;
+      opacity: 0.2;
+    }
+  }
+
+  &.bounce-rate-chart {
+    height: 260px;
+  }
+}
+
+.visitor-sessions {
+  .chart-title {
+
+    span {
+      color: #999999;
+      font-size: 11px;
+    }
+  }
+
+  .chart-number {
+    font-size: 48px;
+    line-height: 34px;
+    margin-bottom: 20px;
+  }
+}
+

@@ -1,0 +1,5 @@
+<div class="rating">
+  <mat-icon *ngFor="let i of starNumbers">{{fillIconName}}</mat-icon>
+  <mat-icon *ngFor="let i of unStarNumbers">{{emptyIconName}}</mat-icon>
+  <ng-content></ng-content>
+</div>

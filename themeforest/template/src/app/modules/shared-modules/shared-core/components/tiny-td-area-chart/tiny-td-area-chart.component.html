@@ -1,0 +1,22 @@
+<div class="chart-container">
+  <ngx-charts-area-chart
+    appNgxChartAreaZeroMarign
+    class="tiny-chart"
+    [scheme]="chartSettings.colorScheme"
+    [schemeType]="chartSettings.schemeType"
+    [results]="data"
+    [animations]="chartSettings.animations"
+    [legend]="chartSettings.showLegend"
+    (legendLabelClick)="onLegendLabelClick($event)"
+    [xAxis]="chartSettings.showXAxis"
+    [yAxis]="chartSettings.showYAxis"
+    [showXAxisLabel]="chartSettings.showXAxisLabel"
+    [showYAxisLabel]="chartSettings.showYAxisLabel"
+    [xAxisLabel]="chartSettings.xAxisLabel"
+    [yAxisLabel]="chartSettings.yAxisLabel"
+    [autoScale]="chartSettings.autoScale"
+    [showGridLines]="chartSettings.showGridLines"
+    (select)="select($event)">
+  </ngx-charts-area-chart>
+</div>
+

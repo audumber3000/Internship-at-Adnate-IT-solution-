@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Payment</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"><h5 class="bold-text">Payment</h5></div>
+          <div class="payment">
+            <form class="form payment__credit-cards">
+              <div class="form__form-group"><span class="form__form-group-label">Choose payment method:</span>
+                <div class="form__form-group-field radio-button-themed">
+
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1" [checked]="true">
+                      <img [src]="masterCard" alt="masterCard"><p class="payment-name">MasterCard</p>
+                    </mat-radio-button>
+                    <mat-radio-button value="2">
+                      <img [src]="visa" alt="masterCard"><p class="payment-name">Visa</p>
+                    </mat-radio-button>
+                    <mat-radio-button value="3">
+                      <img [src]="payPal" alt="masterCard"><p class="payment-name">PayPal</p>
+                    </mat-radio-button>
+                  </mat-radio-group>
+
+                </div>
+              </div>
+
+              <div class="form__form-group"><span class="form__form-group-label">Card number</span>
+                <div class="form__form-group-field">
+                  <div class="form__form-group-icon">
+                    <mat-icon>credit_card</mat-icon>
+                  </div>
+                  <input name="card_number" placeholder="xxxx-xxxx-xxxx-xxxx" mask="0000-0000-0000-0000" type="text" value="">
+                </div>
+              </div>
+              <div class="form__form-group-date-cvc">
+                <div class="form__form-group form__form-group-date"><span
+                  class="form__form-group-label">Expiration Date</span>
+                  <div class="form__form-group-field"><input name="date" placeholder="DD/MM/YY" mask="d0-M0-0000" type="text" value="">
+                  </div>
+                </div>
+                <div class="form__form-group form__form-group-cvc"><span class="form__form-group-label">CVC</span>
+                  <div class="form__form-group-field"><input name="cvc" placeholder="" type="text" value=""></div>
+                </div>
+              </div>
+              <div class="form__form-group"><span class="form__form-group-label">Cardholder name</span>
+                <div class="form__form-group-field"><input name="name" type="text" placeholder="Name and Surname" value="">
+                </div>
+              </div>
+              <h4 class="payment__total">Total Price: $348.00</h4>
+              <div role="toolbar" class="form__button-toolbar btn-toolbar">
+                <button type="submit" class="btn btn-primary">Make Payment</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

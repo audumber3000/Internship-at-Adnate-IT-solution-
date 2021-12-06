@@ -1,0 +1,86 @@
+<div class="dashboard container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">{{translations['page_title']}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <app-panel title="{{translations['current_users']}}"
+               classes="col-md-12 col-lg-6 col-xl-3"
+               [controls]="true">
+      <div class="subhead">Last 10 minutes</div>
+        <div class="chart-current-users">
+          <div class="chart-gauge-container">
+            <ngx-charts-gauge
+              class="chart-gauge"
+              [legend]="currentUsersChart.showLegend"
+              [results]="currentUsersChartData"
+              [animations]="currentUsersChart.animations"
+              [textValue]="currentUsersChart.gaugeTextValue"
+              [scheme]="currentUsersChart.colorScheme"
+              [min]="currentUsersChart.gaugeMin"
+              [max]="currentUsersChart.gaugeMax"
+              [units]="currentUsersChart.gaugeUnits"
+              [angleSpan]="currentUsersChart.gaugeAngleSpan"
+              [startAngle]="currentUsersChart.gaugeStartAngle"
+              [showAxis]="currentUsersChart.gaugeShowAxis"
+              [bigSegments]="currentUsersChart.gaugeLargeSegments"
+              [smallSegments]="currentUsersChart.gaugeSmallSegments"
+              [margin]="currentUsersChart.showMargins ? currentUsersChart.margin : null"
+              [tooltipDisabled]="currentUsersChart.tooltipDisabled"
+              (select)="select($event)"
+              (legendLabelClick)="onLegendLabelClick($event)"
+            >
+            </ngx-charts-gauge>
+          </div>
+          <div class="dashboard__current-users-info"><p class="dashboard__current-users-day">
+            <span>7d min</span><span>0</span></p>
+            <p class="dashboard__current-users-day"><span>7d max</span><span>500</span></p>
+          </div>
+        </div>
+    </app-panel>
+
+    <app-panel title="{{translations['active_users']}}"
+               classes="col-md-12 col-lg-6 col-xl-9"
+               [controls]="true">
+      <div class="subhead">See how users involve into app</div>
+      <app-active-users></app-active-users>
+    </app-panel>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-12 col-lg-6 col-xl-3" *ngFor="let card of statUsers">
+      <div class="card card-booking">
+        <div class="card-body">
+          <app-tiny-stat-progress
+            [title]="card.title"
+            [color]="card.color"
+            [total]="card.total"
+            [trendDirectionUp]="card.trendDirectionUp"
+            [percent]="card.percent">
+          </app-tiny-stat-progress>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <app-panel title="{{translations['app_tile_clicks']}}" classes="col-md-12 col-lg-6 col-xl-6" controls="true">
+      <p class="subhead">How effective your business is in comparison with the previous month</p>
+      <app-tile-clicks></app-tile-clicks>
+    </app-panel>
+
+    <app-panel title="{{translations['weekly_stat_mobile']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3" controls="true">
+      <p class="subhead">Top selling items statistic by last month</p>
+      <app-pie-grid-chart-set
+        [charts]="weeklyStats"
+        [horizontal]="weeklyStatsSettings.horizontal"
+        [hideTotal]="weeklyStatsSettings.hideTotal"
+        [coloredPercent]="weeklyStatsSettings.coloredPercent">
+      </app-pie-grid-chart-set>
+    </app-panel>
+
+    <app-panel title="{{translations['social_marketing_mobile']}}" classes="col-12 col-md-12 col-lg-6 col-xl-3" controls="true">
+      <p class="subhead">Comes from social networks</p>
+      <app-progress-statistics-set [data]="socialMarketingStatProgress"></app-progress-statistics-set>
+    </app-panel>
+  </div>
+</div>

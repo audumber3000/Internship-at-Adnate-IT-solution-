@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <main>
+    <div class="account">
+      <div class="account__wrapper">
+        <div class="account__card">
+          <div class="account__head">
+            <h3 class="account__title">Welcome to<span class="account__logo"> Easy<span class="account__logo-accent">DEV</span></span></h3>
+            <h4 class="account__subhead subhead">Start your business easily</h4>
+          </div>
+          <form class="form" [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)">
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Username</span>
+              <div class="form__form-group-field">
+                <div class="form__form-group-icon"><mat-icon>person_outline</mat-icon></div>
+                <input formControlName="username" type="text" placeholder="Name">
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Password</span>
+              <div class="form__form-group-field">
+                <div class="form__form-group-icon"><mat-icon>vpn_key</mat-icon></div>
+                <input formControlName="password" [attr.type]="showFormPassword ? 'text' : 'password'" placeholder="Password">
+                <label class="form__form-group-button" [ngClass]="{'active': showFormPassword}">
+                  <input type="checkbox" class="visually-hidden" formControlName="showPassword">
+                  <mat-icon>visibility</mat-icon>
+                </label>
+              </div>
+              <div class="account__forgot-password">
+                <a routerLink="/login">Forgot a password?</a>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <div class="form__form-group-field checkbox-themed">
+                <mat-checkbox class="checkbox-default" formControlName="rememberMe">Remember me</mat-checkbox>
+              </div>
+            </div>
+
+            <div class="account__btns">
+              <a class="btn btn-primary account__btn" routerLink="/dashboard_default">Sign In</a>
+              <a class="btn btn-outline-primary account__btn" routerLink="/register">Create Account</a>
+            </div>
+
+          </form>
+          <div class="account__or">
+            <p>Or Easily Using</p>
+          </div>
+          <div class="account__social">
+            <a class="account__social-btn account__social-btn--facebook" routerLink="/dashboard_default">
+            <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17,2V2H17V6H15C14.31,6 14,6.81 14,7.5V10H14L17,10V14H14V22H10V14H7V10H10V6C10,3.79 11.79,2 14,2H17Z"></path>
+            </svg>
+          </a><a class="account__social-btn account__social-btn--google" routerLink="/dashboard_default">
+            <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z"></path>
+            </svg>
+          </a></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

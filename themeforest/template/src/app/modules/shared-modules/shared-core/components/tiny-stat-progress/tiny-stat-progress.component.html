@@ -1,0 +1,12 @@
+<div class="stat-progress-container">
+  <div class="title-wrapper">
+    <h5 class="total-title" [ngClass]="color">{{total}}</h5>
+    <mat-icon *ngIf="trendDirectionUp">trending_up</mat-icon>
+    <mat-icon *ngIf="!trendDirectionUp">trending_down</mat-icon>
+  </div>
+  <h5 class="total-description">{{title}}</h5>
+  <div class="progress-wrap progress-wrap-small progress-wrap-rounded" [ngClass]="progressColor">
+    <p class="progress-label">{{percent}}%</p>
+    <progressbar [value]="percent"></progressbar>
+  </div>
+</div>

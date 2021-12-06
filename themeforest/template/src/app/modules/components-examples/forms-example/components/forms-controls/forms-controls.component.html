@@ -1,0 +1,202 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">Check Form Controls</h3>
+      <h3 class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Default controls</h5>
+            <p class="subhead">Checkboxes and radio buttons</p>
+          </div>
+          <form class="form form-preview">
+            <div>
+              <label>Select color</label>
+              <div class="controls-set colored-checkbox-set checkbox-themed">
+                <mat-checkbox class="medium-turquoise"></mat-checkbox>
+                <mat-checkbox class="steel-blue"></mat-checkbox>
+                <mat-checkbox class="violet-red"></mat-checkbox>
+
+                <mat-checkbox class="light-golden-rod"></mat-checkbox>
+                <mat-checkbox class="olive-drab"></mat-checkbox>
+                <mat-checkbox class="dark-orchid"></mat-checkbox>
+
+                <mat-checkbox class="indian-red"></mat-checkbox>
+                <mat-checkbox class="aqua-medium"></mat-checkbox>
+                <mat-checkbox class="orange"></mat-checkbox>
+              </div>
+            </div>
+            <div class="controls-set vertical checkbox-themed">
+              <mat-checkbox [checked]="checked">Checkbox 1</mat-checkbox>
+              <mat-checkbox>Checkbox 2</mat-checkbox>
+              <mat-checkbox [disabled]="disabled">Checkbox Disabled</mat-checkbox>
+              <mat-checkbox [disabled]="disabled" [checked]="checked">Disabled & checked</mat-checkbox>
+            </div>
+            <div class="radio-buttons-set radio-button-themed">
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1" [checked]="checked">Radio button 1</mat-radio-button>
+                <mat-radio-button value="2">Radio button 2</mat-radio-button>
+              </mat-radio-group>
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="3" [disabled]="disabled">Radio button disabled</mat-radio-button>
+                <mat-radio-button value="4" [disabled]="disabled" [checked]="checked">Radio button disabled & checked</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Colored controls</h5>
+            <p class="subhead">Checkboxes and radio buttons. Use classes<span class="red-text"> checkbox-colored, radio-button-colored</span></p>
+          </div>
+          <form class="form form-preview">
+            <div>
+              <label>Select color</label>
+              <div class="controls-set colored-checkbox-set checkbox-themed">
+                <mat-checkbox class="medium-turquoise"></mat-checkbox>
+                <mat-checkbox class="steel-blue"></mat-checkbox>
+                <mat-checkbox class="violet-red"></mat-checkbox>
+
+                <mat-checkbox class="light-golden-rod"></mat-checkbox>
+                <mat-checkbox class="olive-drab"></mat-checkbox>
+                <mat-checkbox class="dark-orchid"></mat-checkbox>
+
+                <mat-checkbox class="indian-red"></mat-checkbox>
+                <mat-checkbox class="aqua-medium"></mat-checkbox>
+                <mat-checkbox class="orange"></mat-checkbox>
+              </div>
+            </div>
+            <div class="controls-set vertical checkbox-themed">
+              <mat-checkbox class="checkbox-colored" [checked]="checked">Checkbox 1</mat-checkbox>
+              <mat-checkbox class="checkbox-colored">Checkbox 2</mat-checkbox>
+              <mat-checkbox class="checkbox-colored" [disabled]="disabled">Checkbox Disabled</mat-checkbox>
+              <mat-checkbox class="checkbox-colored" [disabled]="disabled" [checked]="checked">Disabled & checked</mat-checkbox>
+            </div>
+            <div class="radio-buttons-set radio-button-themed">
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button class="radio-button-colored" value="1" [checked]="checked">Radio button 1</mat-radio-button>
+                <mat-radio-button class="radio-button-colored" value="2">Radio button 2</mat-radio-button>
+              </mat-radio-group>
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button class="radio-button-colored" value="3" [disabled]="disabled">Radio button disabled</mat-radio-button>
+                <mat-radio-button class="radio-button-colored" value="4" [disabled]="disabled" [checked]="checked">Radio button disabled & checked</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Colored controls on click</h5>
+            <p class="subhead">Checkboxes and radio buttons. Use classes<span class="red-text"> checkbox-bold, radio-button-bold</span></p>
+          </div>
+          <form class="form form-preview">
+            <div>
+              <label>Select color</label>
+              <div class="controls-set colored-checkbox-set checkbox-themed">
+                <mat-checkbox class="medium-turquoise"></mat-checkbox>
+                <mat-checkbox class="steel-blue"></mat-checkbox>
+                <mat-checkbox class="violet-red"></mat-checkbox>
+
+                <mat-checkbox class="light-golden-rod"></mat-checkbox>
+                <mat-checkbox class="olive-drab"></mat-checkbox>
+                <mat-checkbox class="dark-orchid"></mat-checkbox>
+
+                <mat-checkbox class="indian-red"></mat-checkbox>
+                <mat-checkbox class="aqua-medium"></mat-checkbox>
+                <mat-checkbox class="orange"></mat-checkbox>
+              </div>
+            </div>
+            <div class="controls-set vertical checkbox-themed">
+              <mat-checkbox class="checkbox-bold" [checked]="checked">Checkbox 1</mat-checkbox>
+              <mat-checkbox class="checkbox-bold">Checkbox 2</mat-checkbox>
+              <mat-checkbox class="checkbox-bold" [disabled]="disabled">Checkbox Disabled</mat-checkbox>
+              <mat-checkbox class="checkbox-bold" [disabled]="disabled" [checked]="checked">Disabled & checked</mat-checkbox>
+            </div>
+            <div class="radio-buttons-set radio-button-themed">
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button class="radio-button-bold" value="1" [checked]="checked">Radio button 1</mat-radio-button>
+                <mat-radio-button class="radio-button-bold" value="2">Radio button 2</mat-radio-button>
+              </mat-radio-group>
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button class="radio-button-bold" value="3" [disabled]="disabled">Radio button disabled</mat-radio-button>
+                <mat-radio-button class="radio-button-bold" value="4" [disabled]="disabled" [checked]="checked">Radio button disabled & checked</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Button type controls</h5>
+            <p class="subhead">Checkboxes and radio buttons. Use classes<span class="red-text"> checkbox-with-icon, radio-button-with-icon</span> and look at the example</p>
+          </div>
+          <form class="form form-preview">
+            <div>
+              <label>Select color</label>
+              <div class="controls-set colored-checkbox-set checkbox-themed">
+                <mat-checkbox class="colored-checkbox medium-turquoise"></mat-checkbox>
+                <mat-checkbox class="colored-checkbox steel-blue"></mat-checkbox>
+                <mat-checkbox class="colored-checkbox violet-red"></mat-checkbox>
+
+                <mat-checkbox class="colored-checkbox light-golden-rod"></mat-checkbox>
+                <mat-checkbox class="colored-checkbox olive-drab"></mat-checkbox>
+                <mat-checkbox class="colored-checkbox dark-orchid"></mat-checkbox>
+
+                <mat-checkbox class="colored-checkbox indian-red"></mat-checkbox>
+                <mat-checkbox class="colored-checkbox aqua-medium"></mat-checkbox>
+                <mat-checkbox class="colored-checkbox orange"></mat-checkbox>
+              </div>
+            </div>
+            <div class="controls-set vertical">
+              <div class="checkbox-with-icon" [ngClass]="{'disabled': checkbox.disabled}" *ngFor="let checkbox of iconCheckboxSet; let i=index;">
+                <mat-icon *ngIf="checkbox.checked">done</mat-icon>
+                <mat-icon *ngIf="!checkbox.checked">close</mat-icon>
+                <mat-checkbox [checked]="checkbox.checked"
+                              [disabled]="checkbox.disabled"
+                              (change)="handleCheckboxClick(i)">{{checkbox.label}}</mat-checkbox>
+              </div>
+            </div>
+            <div class="radio-buttons-set">
+              <mat-radio-group aria-label="Select an option">
+                <div class="radio-button-with-icon" [ngClass]="{'disabled': radio.disabled}" *ngFor="let radio of iconRadioButtonSet_1; let i=index;">
+                  <mat-radio-button [value]="i"
+                                    [checked]="radio.checked"
+                                    [disabled]="radio.disabled">
+                    <mat-icon class="icon-checked">done</mat-icon>
+                    <mat-icon class="icon-close">close</mat-icon>
+                    {{radio.label}}
+                  </mat-radio-button>
+                </div>
+              </mat-radio-group>
+              <mat-radio-group aria-label="Select an option">
+                <div class="radio-button-with-icon" [ngClass]="{'disabled': radio.disabled}" *ngFor="let radio of iconRadioButtonSet_2; let i=index;">
+                  <mat-radio-button [value]="i"
+                                    [checked]="radio.checked"
+                                    [disabled]="radio.disabled">
+                    <mat-icon class="icon-checked">done</mat-icon>
+                    <mat-icon class="icon-close">close</mat-icon>
+                    {{radio.label}}
+                  </mat-radio-button>
+                </div>
+              </mat-radio-group>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

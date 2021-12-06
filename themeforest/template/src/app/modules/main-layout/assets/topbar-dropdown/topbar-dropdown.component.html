@@ -1,0 +1,15 @@
+<div class="topbar-category-wrap">
+  <div class="sidebar-link sidebar-category">
+    <span class="sidebar-link-icon lnr" [ngClass]="iconName" *ngIf="icon"></span>
+    <p class="sidebar-link-title">
+      {{title}}
+      <span class="topbar-category-new" *ngIf="isNew"></span>
+    </p>
+    <span class="topbar-category-icon lnr lnr-chevron-right"></span>
+  </div>
+  <div class="topbar-submenu-wrap">
+    <ul class="topbar-submenu">
+      <ng-content></ng-content>
+    </ul>
+  </div>
+</div>

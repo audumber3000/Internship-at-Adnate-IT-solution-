@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">EDIT {{currencyData[currencyRowIndex].name }}</h5>
+          </div>
+          <form class="form form--horizontal" [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)">
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Market Cap</span>
+              <div class="form__form-group-field">
+                <input formControlName="marketCap" type="text" class="form-field" placeholder=""/>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Price</span>
+              <div class="form__form-group-field">
+                <input formControlName="price" type="text" class="form-field" placeholder=""/>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Volume</span>
+              <div class="form__form-group-field">
+                <input formControlName="volume" type="text" class="form-field" placeholder=""/>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Circulating</span>
+              <div class="form__form-group-field">
+                <input formControlName="circulating" type="text" class="form-field" placeholder=""/>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Change</span>
+              <div class="form__form-group-field">
+                <input formControlName="change" type="text" class="form-field" placeholder=""/>
+              </div>
+            </div>
+
+            <div role="toolbar" class="form__button-toolbar btn-toolbar">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary" (click)="turnBack()">Cancel</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

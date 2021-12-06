@@ -1,0 +1,130 @@
+@import "../../../../../../scss/settings/variable";
+
+.tab-pane {
+  padding-top: 20px;
+}
+
+.tabs {
+
+  .tabs-wrap {
+
+    .nav-tabs {
+      flex-wrap: nowrap;
+    }
+
+    .nav-link {
+      color: var(--colorText);
+      background-color: transparent;
+      
+      @media screen and (max-width: 500px) {
+        padding: 0.4em 0.6em;
+      }
+      
+      &.active {
+        border-bottom-color: var(--colorBackground);
+
+      }
+    }
+  }
+
+
+  .bordered-top {
+    .nav-link {
+      border-top: 2px solid transparent;
+      border-radius: 0;
+      
+      &.active {
+        border-radius: 0!important;
+        border-top: 2px solid $color-accent!important;
+      }
+    }
+  }
+
+  .bordered-bottom {
+    .nav-link {
+      border-color: transparent;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 11px;
+    }
+
+    .nav-link.active {
+      border-radius: 0;
+      border-color: transparent;
+      border-bottom: 2px solid $color-accent;
+      padding-bottom: 10px;
+    }
+  }
+
+  &.tabs-vertical {
+    overflow-y: visible;
+
+    .tab-container {
+      display: flex;
+    }
+
+    .nav-tabs {
+      border-bottom: none;
+      width: 90px;
+      height: 100%;
+      flex-wrap: wrap;
+
+      li {
+        margin-top: 0;
+        width: 100%;
+
+        .nav-link {
+          padding: 10px 5px;
+          margin-right: 0;
+          transition: background-color 0.3s;
+          border-radius: 0;
+          border: none;
+
+          color: var(--colorText);
+          border-right: 2px solid #dddddd;
+
+          &:hover, &:focus, &:active {
+            outline: none;
+
+            background-color: var(--colorHover);
+          }
+        }
+
+        .nav-link.active, .nav-link.active:focus,
+        .nav-link.active:hover {
+          background-color: transparent;
+          border-right-color: $color-accent;
+        }
+
+        &.disabled .nav-link {
+          color: $color-additional;
+        }
+      }
+    }
+
+    .tab-pane {
+      padding-top: 0;
+      padding-left: 20px;
+    }
+
+    &.tabs-vertical-colored {
+
+      .nav-tabs {
+        li {
+
+          .nav-link {
+            border-right-color: #eeeeee;
+            padding-left: 10px;
+            text-align: center;
+          }
+
+          .nav-link.active, .nav-link.active:focus,
+          .nav-link.active:hover {
+            background-color: #eeeeee;
+            border-right-color: #eeeeee;
+            color: #646777;
+          }
+        }
+      }
+    }
+  }
+}

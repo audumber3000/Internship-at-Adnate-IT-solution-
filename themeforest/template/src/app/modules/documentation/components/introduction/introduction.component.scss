@@ -1,0 +1,7 @@
+.card-title:not(:first-child) {
+  margin-top: 30px;
+}
+
+.card-body {
+  color: var(--colorText);
+}

@@ -1,0 +1,12 @@
+.chart-container {
+  position: relative;
+  height: 36px;
+  min-width: 160px;
+
+  .tiny-chart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

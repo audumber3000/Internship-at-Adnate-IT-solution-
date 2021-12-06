@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Carousel</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-xl-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Basic carousel</h5>
+            <p class="subhead">Use ngu-carousel with <span class="red-text">lg: 4</span> grid option</p>
+          </div>
+          <ngu-carousel #multiplyCarousel [inputs]="multiplyCarouselConfig" [dataSource]="multiplyCarouselItems">
+            <ngu-tile *nguCarouselDef="let item; let i = index; let ani = animate">
+              <div class="tile" [style.background]="'url('+item+')'"></div>
+            </ngu-tile>
+
+            <button NguCarouselPrev class="slick-arrow slick-prev" [style.opacity]="multiplyCarousel.isFirst ? 0.5:1"></button>
+            <button NguCarouselNext class="slick-arrow slick-next" [style.opacity]="multiplyCarousel.isLast ? 0.5:1"></button>
+
+            <ul class="myPoint" NguCarouselPoint>
+              <li *ngFor="let i of multiplyCarousel.pointNumbers; let i = index" [class.active]="i==multiplyCarousel.activePoint" (click)="multiplyCarousel.moveTo(i)"></li>
+            </ul>
+          </ngu-carousel>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Basic carousel without caption</h5>
+            <p class="subhead">Use ngu-carousel with <span class="red-text">lg: 1</span> grid option</p>
+          </div>
+          <ngu-carousel #simpleCarousel [inputs]="carouselConfig" [dataSource]="carouselItems">
+            <ngu-tile *nguCarouselDef="let item; let i = index; let ani = animate">
+              <div class="tile" [style.background]="'url('+item+')'">
+              </div>
+            </ngu-tile>
+
+            <button NguCarouselPrev class="slick-arrow single slick-prev" [style.opacity]="simpleCarousel.isFirst ? 0.5:1"></button>
+            <button NguCarouselNext class="slick-arrow single slick-next" [style.opacity]="simpleCarousel.isLast ? 0.5:1"></button>
+
+            <ul class="myPoint" NguCarouselPoint>
+              <li *ngFor="let i of simpleCarousel.pointNumbers; let i = index" [class.active]="i==simpleCarousel.activePoint" (click)="simpleCarousel.moveTo(i)"></li>
+            </ul>
+          </ngu-carousel>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Basic carousel with caption</h5>
+            <p class="subhead">Use ngu-carousel with any styled content inside <span class="red-text">ngu-tile</span> component</p>
+          </div>
+          <ngu-carousel #carouselWithTitle [inputs]="carouselConfig" [dataSource]="carouselItems">
+            <ngu-tile *nguCarouselDef="let item; let i = index; let ani = animate">
+              <div class="tile" [style.background]="'url('+item+')'">
+                <div class="content-container">
+                  <p class="slider-caption">Sayan mountains, Siberia</p>
+                  <p class="slider-description">Folly words widow one downs few age every seven.</p>
+                </div>
+              </div>
+            </ngu-tile>
+
+            <button NguCarouselPrev class="slick-arrow single slick-prev" [style.opacity]="carouselWithTitle.isFirst ? 0.5:1"></button>
+            <button NguCarouselNext class="slick-arrow single slick-next" [style.opacity]="carouselWithTitle.isLast ? 0.5:1"></button>
+
+            <ul class="myPoint" NguCarouselPoint>
+              <li *ngFor="let i of carouselWithTitle.pointNumbers; let i = index" [class.active]="i==carouselWithTitle.activePoint" (click)="carouselWithTitle.moveTo(i)"></li>
+            </ul>
+          </ngu-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

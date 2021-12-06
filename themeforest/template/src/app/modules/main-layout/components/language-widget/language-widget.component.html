@@ -1,0 +1,20 @@
+<button class="topbar__btn" type="button" (click)="toggle()">
+  <span class="language-btn-title">
+    <img [src]="currentLang.img" [alt]="currentLang.alt" />
+    <span>{{currentLang.name}}</span>
+  </span>
+  <mat-icon>expand_more</mat-icon>
+</button>
+
+<button class="btn-back" type="button" *ngIf="!isCollapsed" (click)="toggle()"></button>
+
+<div [collapse]="isCollapsed" class="collapse-content content-language">
+  <ng-container *ngFor="let lang of languages">
+    <button class="language-btn" type="button" (click)="changeLanguage(lang.name)">
+      <span class="language-btn-title">
+          <img [src]="lang.img" [alt]="lang.alt" />
+          <span>{{lang.name}}</span>
+      </span>
+    </button>
+  </ng-container>
+</div>

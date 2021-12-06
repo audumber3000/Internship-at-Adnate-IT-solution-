@@ -1,0 +1,107 @@
+@import "settings/variable";
+
+.chat-app {
+  background-color: var(--colorBackground);
+  height: calc(100vh - 185px);
+
+  .mat-drawer-side {
+    border-color: var(--colorFieldsBorder);
+  }
+}
+
+.chats {
+  min-width: 245px;
+  width: 335px;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--colorBackground);
+}
+
+.chat-search {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid var(--colorFieldsBorder);
+  padding: 5px 5px 5px 15px;
+
+  .chat-search-input {
+    width: 100%;
+    font-size: 12px;
+    transition: all 0.3s;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--colorText);
+  }
+
+  .mat-icon {
+    color: $color-additional;
+    height: 18px;
+    width: 18px;
+    font-size: 18px;
+    margin-right: 5px;
+  }
+}
+
+.chats-list {
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .chat-preview {
+    display: flex;
+    height: 72px;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 1px solid var(--colorFieldsBorder);
+
+    &:hover {
+      background-color: var(--colorHover);
+    }
+
+    &.active {
+      background-color: var(--colorHover);
+    }
+  }
+
+  .contact-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 15px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .contact-info {
+    overflow: hidden;
+    margin-right: 15px;
+
+    .name {
+      font-size: 12px;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .post {
+      margin-top: 0;
+      margin-bottom: 3px;
+      font-size: 10px;
+      line-height: 1.2;
+    }
+
+    .last-msg {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.33;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+}

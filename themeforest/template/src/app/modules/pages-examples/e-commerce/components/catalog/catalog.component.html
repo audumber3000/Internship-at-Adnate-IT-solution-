@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Catalog</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let product of productSet">
+      <app-product-card [productData]="product"></app-product-card>
+    </ng-container>
+  </div>
+</div>

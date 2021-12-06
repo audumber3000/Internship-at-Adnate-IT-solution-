@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Panels</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <app-panel title="Default panel"
+               classes="col-12 col-md-12 col-lg-6"
+               controls="true">
+      {{panelText}}
+    </app-panel>
+    <app-panel title="Default panel with subhead"
+               classes="col-12 col-md-12 col-lg-6"
+               controls="true">
+      <p class="subhead">Folly words widow one downs few age every seven.</p>
+      {{panelText}}
+    </app-panel>
+    <app-panel title="Default panel divided"
+               classes="col-12 col-md-12 col-lg-6"
+               divided="true"
+               controls="true">
+      {{panelText}}
+    </app-panel>
+    <app-panel title="Label panel divided"
+               classes="col-12 col-md-12 col-lg-6"
+               divided="true"
+               labelText="label"
+               controls="true">
+      {{panelText}}
+    </app-panel>
+    <app-panel title="Label panel divided"
+               classes="col-12 col-md-12 col-lg-6"
+               divided="true"
+               iconName="chart-bars"
+               controls="true">
+      {{panelText}}
+    </app-panel>
+    <app-panel title="Success panel"
+               classes="col-12 col-md-12 col-lg-6"
+               panelColor="success"
+               controls="true">
+      {{panelText}}
+    </app-panel>
+    <app-panel title="Warning panel"
+               classes="col-12 col-md-12 col-lg-6"
+               panelColor="warning"
+               controls="true">
+      {{panelText}}
+    </app-panel>
+    <app-panel title="Danger panel"
+               classes="col-12 col-md-12 col-lg-6"
+               panelColor="danger"
+               controls="true">
+      {{panelText}}
+    </app-panel>
+    <app-panel title="Primary panel"
+               classes="col-12 col-md-12 col-lg-6"
+               panelColor="primary"
+               controls="true">
+      {{panelText}}
+    </app-panel>
+  </div>
+</div>

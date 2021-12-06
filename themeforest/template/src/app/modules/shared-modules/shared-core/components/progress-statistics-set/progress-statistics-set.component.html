@@ -1,0 +1,7 @@
+<div class="stat-progress-item" *ngFor="let stat of data;">
+  <div class="stat-title">{{stat.title}}</div>
+  <div class="progress-wrap progress-wrap-small progress-wrap-rounded progress-wrap-blue-gradient">
+    <p class="progress-label">{{stat.percent}}%</p>
+    <progressbar [value]="stat.percent"></progressbar>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Chat Application</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <mat-sidenav-container class="chat-app">
+          <mat-sidenav [opened]="sidebarOpened$ | async" #sidenav
+                       [mode]="mode.value"
+                       (closed)="closeSidebar()"
+                       (click)="closeSidebarMobile()">
+            <div class="chats">
+              <div class="chat-search">
+                <mat-icon>search</mat-icon>
+                <input class="chat-search-input" type="text" placeholder="Search">
+              </div>
+              <perfect-scrollbar style="max-width: 600px; height: calc(100vh - 235px);">
+                <div class="chats-list">
+                  <ul>
+                    <li *ngFor="let contact of (chatsPreviewData$ | async) let i = index;">
+                      <a class="chat-preview" [routerLink]="['dialog', i]" routerLinkActive="active">
+                        <div class="contact-avatar">
+                          <img [src]="contact.avatar" width="40" height="40" alt="contact avatar">
+                        </div>
+                        <div class="contact-info">
+                          <p class="name">{{contact.name}}</p>
+                          <p class="post">{{contact.post}}</p>
+                          <p class="last-msg">{{contact.lastMessage}}</p>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </perfect-scrollbar>
+
+            </div>
+          </mat-sidenav>
+
+          <mat-sidenav-content>
+            <router-outlet></router-outlet>
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+      </div>
+    </div>
+  </div>
+</div>

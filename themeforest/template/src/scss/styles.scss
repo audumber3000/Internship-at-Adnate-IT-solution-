@@ -1,0 +1,30 @@
+@import 'generic/normalize';
+@import 'generic/box-sizing';
+@import 'settings/variable.scss';
+@import 'component/btn.scss';
+@import 'base/scaffolding.scss';
+@import 'base/typography.scss';
+@import 'base/visually-hidden.scss';
+@import '~material-design-icons/iconfont/material-icons.css';
+
+@import 'component/account';
+@import 'component/layout';
+@import 'component/progress-bars';
+@import 'component/card';
+@import 'component/modal';
+@import 'component/list';
+@import 'component/form';
+@import 'component/tables';
+@import 'component/dashboard';
+@import 'component/notifications';
+@import 'component/mat-checkbox';
+@import 'component/mat-side-nav';
+@import 'component/quill';
+@import 'component/scrollbar';
+
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~angular-dropdown/styles';
+@import '~angular-notifier/styles';
+@import '~quill/dist/quill.core.css';
+@import '~quill/dist/quill.snow.css';

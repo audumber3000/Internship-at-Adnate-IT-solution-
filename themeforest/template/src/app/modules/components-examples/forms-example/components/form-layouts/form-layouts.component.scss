@@ -1,0 +1,13 @@
+@import "../../../../../../scss/settings/variable";
+@import "../../../../../../scss/component/mat-radio-button";
+
+.form__form-group {
+  .form__form-group-field {
+
+    .mat-radio-button:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
+
+

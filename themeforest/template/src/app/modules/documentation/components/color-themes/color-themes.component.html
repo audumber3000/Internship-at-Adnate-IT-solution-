@@ -1,0 +1,27 @@
+<div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Color theme</h5>
+      </div>
+      <p>We have created light and dark color theme for this template based on css variables.</p>
+      <pre><code [highlight]="themeCode"></code></pre>
+      <p>Also we have created service for manage color theme: <span class="red-text">ThemeService</span></p>
+      <p>You can find full source code of this service here: <b>src/app/services/theme.service.ts</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h5 class="bold-text">Change color theme</h5>
+      </div>
+      <p>First of all you need to inject ThemeService in your component you want to toggle theme like this:</p>
+      <pre><code [highlight]="importServiceCode"></code></pre>
+      <p>Next step you need to call one of the toggle method:</p>
+      <pre><code [highlight]="changeThemeDarkCode"></code></pre>
+      <pre><code [highlight]="changeThemeLightCode"></code></pre>
+      <p>You can find full source code of this service here: <b>src/app/services/theme.service.ts</b></p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,153 @@
+@import '../../../../../../scss/settings/variable';
+
+.alert {
+  border-radius: 0;
+  position: relative;
+  margin-bottom: 10px;
+  padding: 0;
+  display: flex;
+
+  &.fade {
+    opacity: 1;
+  }
+
+  p {
+    color: #ffffff;
+    margin-top: 0;
+  }
+
+  .close {
+    color: white;
+    opacity: 1;
+    font-weight: 100;
+    right: 20px;
+    font-size: 14px;
+    line-height: 14px;
+    position: absolute;
+    top: calc(50% - 7px);
+    text-shadow: none;
+
+    &:focus, &:active, &:active:focus {
+      outline: none;
+    }
+  }
+
+  &.alert-info {
+    background-color: $color-blue;
+    border-color: $color-blue;
+
+    &.alert-bordered .alert-icon {
+      background-color: $color-blue;
+    }
+
+    &.alert-colored .alert-icon {
+      background-color: #87c3f7;
+    }
+
+    &.alert-neutral .alert-icon .mat-icon {
+      color: $color-blue;
+    }
+  }
+
+  &.alert-success {
+    background-color: $color-accent;
+    border-color: $color-accent;
+
+    &.alert-bordered .alert-icon {
+      background-color: $color-accent;
+    }
+
+    &.alert-colored .alert-icon {
+      background-color: #55e5bb;
+    }
+
+    &.alert-neutral .alert-icon .mat-icon {
+      color: $color-accent;
+    }
+  }
+
+  &.alert-warning {
+    background-color: $color-yellow;
+    border-color: $color-yellow;
+
+    &.alert-bordered .alert-icon {
+      background-color: $color-yellow;
+    }
+
+    &.alert-colored .alert-icon {
+      background-color: #f4dd87;
+    }
+
+    &.alert-neutral .alert-icon .mat-icon {
+      color: $color-yellow;
+    }
+  }
+
+  &.alert-danger {
+    background-color: $color-red;
+    border-color: $color-red;
+
+    &.alert-bordered .alert-icon {
+      background-color: $color-red;
+    }
+
+    &.alert-colored .alert-icon {
+      background-color: #f88e7d;
+    }
+
+    &.alert-neutral .alert-icon .mat-icon {
+      color: $color-red;
+    }
+  }
+
+  &.alert-bordered {
+    background-color: transparent;
+
+    p {
+      color: var(--colorText);
+    }
+
+    .close {
+      color: $color-additional;
+    }
+  }
+
+  &.alert-neutral {
+    background-color: transparent;
+    border-color: #f2f4f7;
+
+    p {
+      color: var(--colorText);
+    }
+
+    .close {
+      color: $color-additional;
+    }
+
+    .mat-icon {
+      color: var(--colorText);
+    }
+
+    .alert-icon {
+      border-right: 1px solid #f2f4f7;;
+    }
+  }
+}
+
+.alert-icon {
+  padding: 18px;
+  display: flex;
+
+  .mat-icon {
+    color: #ffffff;
+    margin: auto 0;
+  }
+}
+
+.alert-content {
+  padding: 10px 40px 10px 20px;
+}
+
+.btn-show-alert {
+  display: flex;
+}

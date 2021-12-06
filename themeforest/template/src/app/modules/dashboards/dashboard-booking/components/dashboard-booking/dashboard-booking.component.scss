@@ -1,0 +1,124 @@
+.card-booking {
+
+  .card-body {
+    padding: 20px 30px 25px 30px;
+  }
+}
+
+.weekly-stat {
+  h5 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+}
+
+.occupancy-table {
+  tr, td {
+    border: none;
+  }
+  td {
+    font-size: 13px;
+    padding: 5px;
+  }
+
+  td.td-head {
+    color: var(--colorText);
+  }
+
+  td.td-blue {
+    font-weight: 500;
+    color: #48b5ff;
+  }
+
+  td.td-green {
+    font-weight: 500;
+    color: #b8e986;
+  }
+  td.td-gray {
+    color: #999999;
+  }
+}
+
+.reservations-wrapper {
+  height: 100%;
+}
+
+.reservations {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+
+  .reservations-info {
+    .chart-title {
+
+      span {
+        color: #999999;
+        font-size: 11px;
+      }
+    }
+
+    .chart-number {
+      font-size: 48px;
+      line-height: 34px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .pie-chart-wrapper {
+
+    .ngx-charts {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.our-mission {
+  background: #b8e986;
+  border-radius: 5px;
+  padding: 15px 13px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+  max-height: 120px;
+  min-height: 120px;
+
+  .mat-icon {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    font-size: 80px;
+    top: calc(50% - 40px);
+    opacity: 0.3;
+    right: -23px;
+    transform: rotate(5deg);
+    color: #ffffff;
+  }
+
+  p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #ffffff;
+    max-width: 100%;
+    @media screen and (min-width: 376px) and (max-width: 991px) {
+      max-width: calc(100% - 60px);
+    }
+    @media screen and (min-width: 1200px) and (max-width: 1550px) {
+      font-size: 14px;
+    }
+    @media screen and (max-width: 420px) {
+      font-size: 14px;
+    }
+
+  }
+
+  .our-mission-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 4px;
+    @media screen and (min-width: 1200px) and (max-width: 1399px) {
+      font-size: 20px;
+    }
+  }
+}

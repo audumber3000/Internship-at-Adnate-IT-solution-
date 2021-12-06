@@ -1,0 +1,17 @@
+<div class="chart-container">
+  <ngx-charts-line-chart
+    [scheme]="colorScheme"
+    [schemeType]="schemeType"
+    [results]="chartData"
+    [animations]="animations"
+    (legendLabelClick)="onLegendLabelClick($event)"
+    [gradient]="gradient"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [autoScale]="autoScale"
+    [showGridLines]="showGridLines"
+    [curve]="curve"
+
+    (select)="select($event)">
+  </ngx-charts-line-chart>
+</div>

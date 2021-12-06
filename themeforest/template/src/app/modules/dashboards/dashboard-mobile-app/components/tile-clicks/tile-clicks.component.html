@@ -1,0 +1,30 @@
+<div class="chart-container" [ngStyle]="{'height': wrapperHeight}">
+  <ngx-charts-bar-horizontal-2d
+    class="chart-tile-click"
+    [view]="view"
+    [scheme]="colorScheme"
+    [schemeType]="schemeType"
+    [results]="multi"
+    [animations]="animations"
+    [tooltipDisabled]="tooltipDisabled"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    (legendLabelClick)="onLegendLabelClick($event)"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [showGridLines]="showGridLines"
+    [barPadding]="barPadding"
+    [groupPadding]="groupPadding"
+    [roundDomains]="roundDomains"
+    [roundEdges]="roundEdges"
+    [xScaleMax]="xScaleMax"
+    [showDataLabel]="showDataLabel"
+    [trimXAxisTicks]="trimXAxisTicks"
+    [trimYAxisTicks]="trimYAxisTicks"
+    [maxXAxisTickLength]="maxXAxisTickLength"
+    [maxYAxisTickLength]="maxYAxisTickLength"
+    (select)="select($event)"
+  >
+  </ngx-charts-bar-horizontal-2d>
+</div>

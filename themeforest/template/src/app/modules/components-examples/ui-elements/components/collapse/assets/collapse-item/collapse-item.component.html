@@ -1,0 +1,14 @@
+<div [ngClass]="boxType">
+  <button type="button"
+          class="collapse-title"
+          [ngClass]="{'collapsed': !isCollapsed}" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">
+    <mat-icon *ngIf="isCollapsed; else remove">add</mat-icon>
+    <ng-template #remove><mat-icon>remove</mat-icon></ng-template>
+    <p>
+      {{title}}
+      <mat-icon>expand_more</mat-icon>
+    </p>
+  </button>
+  <div id="collapseBasic" [collapse]="isCollapsed" class="card card-block card-header"><ng-content></ng-content></div>
+</div>

@@ -1,0 +1,62 @@
+@import "../../../../../../scss/settings/variable";
+
+.gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  img {
+    width: 100%;
+  }
+}
+
+.gallery-btns {
+  display: flex;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+
+  input {
+    &:checked + .btn-gallery {
+      color: $color-accent!important;
+    }
+  }
+}
+
+.btn-gallery {
+  background: transparent;
+  padding: 0;
+  margin-right: 20px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  color: $color-additional;
+  font-size: 12px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+
+
+  &:hover {
+    color: $color-additional-hover;
+  }
+}
+
+.gallery__img-wrap {
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+
+  .gallery__img-wrap {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+
+  .gallery__img-wrap {
+    width: 25%;
+  }
+}

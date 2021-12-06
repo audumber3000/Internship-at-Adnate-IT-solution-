@@ -1,0 +1,156 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">Wizard form</h3>
+      <h3 class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="wizard">
+          <div class="wizard__steps">
+            <div class="wizard__step" [ngClass]="{'wizard__step--active': stepNumber === 0}"><p>Step 1</p></div>
+            <div class="wizard__step" [ngClass]="{'wizard__step--active': stepNumber === 1}"><p>Step 2</p></div>
+            <div class="wizard__step" [ngClass]="{'wizard__step--active': stepNumber === 2}"><p>Step 3</p></div>
+          </div>
+          <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)">
+            <div [ngSwitch]="stepNumber">
+              <ng-template [ngSwitchCase]="0">
+                <div class="wizard__form-wrapper">
+                  <div class="form form--horizontal wizard__form">
+                    <h3 class="wizard__title" >Fill your personal data</h3>
+                    <div class="form__form-group"><span class="form__form-group-label">Username</span>
+                      <div class="form__form-group-field">
+                        <input name="username" type="text" placeholder="Name" formControlName="username">
+                      </div>
+                    </div>
+                    <div class="form__form-group">
+                      <span class="form__form-group-label">E-mail</span>
+                      <div class="form__form-group-field">
+                        <input name="email" type="email" placeholder="example@mail.com" formControlName="email">
+                      </div>
+                    </div>
+                    <div class="form__form-group">
+                      <span class="form__form-group-label">Url</span>
+                      <div class="form__form-group-field">
+                        <input name="url" type="url" placeholder="https://themeforest.net" formControlName="url">
+                      </div>
+                    </div>
+
+                    <div class="form__form-group">
+                      <span class="form__form-group-label">Password</span>
+                      <div class="form__form-group-field">
+                        <input formControlName="password" [attr.type]="showFormPassword ? 'text' : 'password'" placeholder="Password" formControlName="password">
+                        <label class="form__form-group-button" [ngClass]="{'active': showFormPassword}">
+                          <input type="checkbox" class="visually-hidden" formControlName="showPassword">
+                          <mat-icon>visibility</mat-icon>
+                        </label>
+                      </div>
+                    </div>
+                    <div role="toolbar" class="form__button-toolbar wizard__toolbar btn-toolbar">
+                      <button type="button" disabled class="previous btn btn-primary disabled">Back</button>
+                      <button type="submit" class="next btn btn-primary" (click)="nextStep()">Next</button>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template [ngSwitchCase]="1">
+                <div class="wizard__form-wrapper">
+                  <div class="form form--horizontal wizard__form">
+                    <h3 class="wizard__title">What’s your address</h3>
+                    <div class="form__form-group"><span class="form__form-group-label">Country</span>
+                      <div class="form__form-group-field">
+                        <div class="form__form-group-input-wrap">
+                          <ng-select [searchable]="false" placeholder="Select Country" formControlName="country">
+                            <ng-option [value]="one">One</ng-option>
+                            <ng-option [value]="two">Two</ng-option>
+                          </ng-select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form__form-group">
+                      <span class="form__form-group-label">City</span>
+                      <div class="form__form-group-field">
+                        <input name="city" type="text" placeholder="City name" formControlName="city">
+                      </div>
+                    </div>
+                    <div class="form__form-group form__form-group--address">
+                      <span class="form__form-group-label">Address</span>
+                      <div class="form__form-group-field">
+                        <input name="street_name" type="text" placeholder="Street name" formControlName="strName">
+                        <input name="building" type="text" placeholder="Building" formControlName="bldName">
+                      </div>
+                    </div>
+                    <div class="form__form-group">
+                      <span class="form__form-group-label">ZIP Code</span>
+                      <div class="form__form-group-field">
+                        <input name="zip" type="text" formControlName="zipCode">
+                      </div>
+                    </div>
+                    <div role="toolbar" class="form__button-toolbar wizard__toolbar btn-toolbar">
+                      <button type="button" class="previous btn btn-primary" (click)="backStep()">Back</button>
+                      <button type="submit" class="next btn btn-primary" (click)="nextStep()">Next</button>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template [ngSwitchCase]="2">
+                <div class="wizard__form-wrapper">
+                  <div class="form form--horizontal wizard__form">
+                    <h3 class="wizard__title">Set the preferences</h3>
+                    <div class="form__form-group">
+                      <span class="form__form-group-label">Change Plan</span>
+                      <div class="form__form-group-field">
+                        <div class="form__form-group-input-wrap">
+                          <ng-select [searchable]="false" placeholder="Choose plan" formControlName="plan">
+                            <ng-option [value]="true">Yes</ng-option>
+                            <ng-option [value]="false">No</ng-option>
+                          </ng-select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form__form-group"><span class="form__form-group-label">E-Mail Notifications</span>
+                      <div class="form__form-group-field">
+                        <div class="toggle-btn">
+                          <input
+                            id="email-notifications"
+                            class="visually-hidden"
+                            type="checkbox"
+                            name="email-notifications"
+                            formControlName="emailNotifications"
+                          />
+                          <label for="email-notifications" class="toggle-label"><span></span></label>
+                        </div>
+                      </div>
+                      <p class="wizard__description">Agreement offending commanded my an. Change wholly say why eldest
+                        period.</p></div>
+                    <div class="form__form-group">
+                      <span class="form__form-group-label">Phone Notifications</span>
+                      <div class="form__form-group-field">
+                        <div class="toggle-btn">
+                          <input
+                            id="phone-notifications"
+                            class="visually-hidden"
+                            type="checkbox"
+                            name="phone-notifications"
+                            formControlName="phoneNotifications"
+                          />
+                          <label for="phone-notifications" class="toggle-label"><span></span></label>
+                        </div>
+                      </div>
+                      <p class="wizard__description">Are projection put celebrated particular unreserved joy unsatiable
+                        its. In then dare good am rose bred or.</p></div>
+                    <div role="toolbar" class="form__button-toolbar wizard__toolbar btn-toolbar">
+                      <button type="button" class="previous btn btn-primary" (click)="backStep()">Back</button>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

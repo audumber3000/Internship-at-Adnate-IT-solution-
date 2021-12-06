@@ -1,0 +1,228 @@
+<div class="dashboard container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">{{translations['page_title']}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
+      <div class="card card-health-chart">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">{{translations['heartrate']}}</h5>
+          </div>
+          <div class="health-chart-wrapper">
+            <div class="health-chart">
+              <app-easydev-pie-grid
+                appNgxChartZeroMargin
+                [scheme]="heartRate.colorScheme"
+                (legendLabelClick)="onLegendLabelClick($event)"
+                [results]="heartRate.data"
+                [showLabel]="false"
+                [designatedTotal]="heartRate.total"
+                (select)="select($event)">
+              </app-easydev-pie-grid>
+            </div>
+            <div class="health-chart-info">
+              <mat-icon [ngStyle]="{'color': heartRate.colorScheme.domain[0]}">favorite_border</mat-icon>
+              <p class="health-chart-number">96</p>
+              <p class="health-chart-units">b/min</p></div>
+          </div>
+          <p class="goal">Reference: 58-120</p></div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
+      <div class="card card-health-chart">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">{{translations['calories_burn']}}</h5>
+          </div>
+          <div class="health-chart-wrapper">
+            <div class="health-chart">
+              <app-easydev-pie-grid
+                appNgxChartZeroMargin
+                [scheme]="caloriesBurn.colorScheme"
+                (legendLabelClick)="onLegendLabelClick($event)"
+                [results]="caloriesBurn.data"
+                [showLabel]="false"
+                [designatedTotal]="caloriesBurn.total"
+                (select)="select($event)">
+              </app-easydev-pie-grid>
+            </div>
+            <div class="health-chart-info">
+              <mat-icon [ngStyle]="{'color': caloriesBurn.colorScheme.domain[0]}">flash_on</mat-icon>
+              <p class="health-chart-number">360</p>
+              <p class="health-chart-units">b/min</p></div>
+          </div>
+          <p class="goal">Goal: 500 kKal</p></div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
+      <div class="card card-health-chart">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">{{translations['steps']}}</h5>
+          </div>
+          <div class="health-chart-wrapper">
+            <div class="health-chart">
+              <app-easydev-pie-grid
+                appNgxChartZeroMargin
+                [scheme]="steps.colorScheme"
+                (legendLabelClick)="onLegendLabelClick($event)"
+                [results]="steps.data"
+                [showLabel]="false"
+                [designatedTotal]="steps.total"
+                (select)="select($event)">
+              </app-easydev-pie-grid>
+            </div>
+            <div class="health-chart-info">
+              <mat-icon [ngStyle]="{'color': steps.colorScheme.domain[0]}">directions_walk</mat-icon>
+              <p class="health-chart-number">1.2k</p>
+              <p class="health-chart-units">steps</p></div>
+          </div>
+          <p class="goal">Goal 2000 steps</p></div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
+      <div class="card card-health-chart">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">{{translations['page_title']}}Distance</h5>
+          </div>
+          <div class="health-chart-wrapper">
+            <div class="health-chart">
+              <app-easydev-pie-grid
+                appNgxChartZeroMargin
+                [scheme]="distance.colorScheme"
+                (legendLabelClick)="onLegendLabelClick($event)"
+                [results]="distance.data"
+                [showLabel]="false"
+                [designatedTotal]="distance.total"
+                (select)="select($event)">
+              </app-easydev-pie-grid>
+            </div>
+            <div class="health-chart-info">
+              <mat-icon [ngStyle]="{'color': distance.colorScheme.domain[0]}">location_on</mat-icon>
+              <p class="health-chart-number">3.8</p>
+              <p class="health-chart-units">km</p></div>
+          </div>
+          <p class="goal">Goal: 4km</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <app-panel title="{{translations['activity_chart']}}"
+               classes="col-md-12 col-lg-12 col-xl-12"
+               [controls]="true">
+      <div class="chart-activity-container chart-with-legend">
+        <ngx-charts-area-chart
+          [scheme]="activityChartSettings.colorScheme"
+          [schemeType]="activityChartSettings.schemeType"
+          [results]="activityChartData"
+          [animations]="activityChartSettings.animations"
+          [legend]="activityChartSettings.showLegend"
+          [legendPosition]="activityChartSettings.legendPosition"
+          [legendTitle]="activityChartSettings.legendTitle"
+          (legendLabelClick)="onLegendLabelClick($event)"
+          [xAxis]="activityChartSettings.showXAxis"
+          [yAxis]="activityChartSettings.showYAxis"
+          [showXAxisLabel]="activityChartSettings.showXAxisLabel"
+          [showYAxisLabel]="activityChartSettings.showYAxisLabel"
+          [xAxisLabel]="activityChartSettings.xAxisLabel"
+          [yAxisLabel]="activityChartSettings.yAxisLabel"
+          [autoScale]="activityChartSettings.autoScale"
+          [showGridLines]="activityChartSettings.showGridLines"
+          [yAxisTickFormatting]="activityChartSettings.yAxisTickFormatting"
+          [roundDomains]="activityChartSettings.roundDomains"
+          [tooltipDisabled]="activityChartSettings.tooltipDisabled"
+          (select)="select($event)">
+        </ngx-charts-area-chart>
+      </div>
+    </app-panel>
+    <app-panel title="{{translations['today_running_map']}}"
+               classes="col-12 col-md-12 col-lg-12 col-xl-9"
+               [controls]="true">
+      <app-map-ag-base></app-map-ag-base>
+    </app-panel>
+    <app-panel title="{{translations['my_competitors']}}"
+               classes="col-12 col-md-12 col-lg-5 col-xl-3"
+               [controls]="true">
+        <a class="dashboard__competitor" routerLink="/account/profile">
+        <div class="dashboard__competitor-img"><img [src]="imageResoures.secondaryAvatarImg3" alt=""></div>
+        <div class="dashboard__competitor-info"><p class="dashboard__competitor-name">Peter Jackson</p>
+          <p class="dashboard__competitor-result">12,254 km</p></div>
+        </a>
+        <a class="dashboard__competitor" routerLink="/account/profile">
+        <div class="dashboard__competitor-img"><img [src]="imageResoures.mainAvatarImg" alt=""></div>
+        <div class="dashboard__competitor-info"><p class="dashboard__competitor-name">Lora Melbourn</p>
+          <p class="dashboard__competitor-result">11,224 km</p></div>
+        </a>
+        <a class="dashboard__competitor" routerLink="/account/profile">
+        <div class="dashboard__competitor-img"><img [src]="imageResoures.secondaryAvatarImg5" alt=""></div>
+        <div class="dashboard__competitor-info"><p class="dashboard__competitor-name">Cat Mew</p>
+          <p class="dashboard__competitor-result">9,921 km</p></div>
+        </a>
+        <a class="dashboard__competitor" routerLink="/account/profile">
+        <div class="dashboard__competitor-img"><img [src]="imageResoures.secondaryAvatarImg" alt=""></div>
+        <div class="dashboard__competitor-info"><p class="dashboard__competitor-name">Liza Orly</p>
+          <p class="dashboard__competitor-result">7,875 km</p></div>
+        </a>
+        <a class="dashboard__competitor" routerLink="/account/profile">
+          <div class="dashboard__competitor-img">
+            <img [src]="imageResoures.secondaryAvatarImg1" alt=""></div>
+          <div class="dashboard__competitor-info">
+            <p class="dashboard__competitor-name">Michael Bro</p>
+            <p class="dashboard__competitor-result">6,154 km</p>
+          </div>
+        </a>
+        <a class="dashboard__competitor" routerLink="/account/profile">
+        <div class="dashboard__competitor-img">
+          <img [src]="imageResoures.secondaryAvatarImg4" alt="">
+        </div>
+        <div class="dashboard__competitor-info">
+          <p class="dashboard__competitor-name">Charlie Sunset</p>
+          <p class="dashboard__competitor-result">6,154 km</p>
+        </div>
+      </a>
+    </app-panel>
+    <app-panel title="{{translations['fat_burning']}}"
+               classes="col-12 col-md-12 col-lg-7 col-xl-6"
+               [controls]="true">
+      <div class="dashboard__weight-stats">
+        <div class="dashboard__weight-stat"><p class="dashboard__weight-stat-title">Weight control</p>
+          <p class="dashboard__weight-stat-value dashboard__weight-stat-value--control">+3 kg</p></div>
+        <div class="dashboard__weight-stat"><p class="dashboard__weight-stat-title">Your total weight </p>
+          <p class="dashboard__weight-stat-value dashboard__weight-stat-value--total">58 kg</p></div>
+      </div>
+
+      <div class="fat-burning-chart">
+        <ngx-charts-area-chart
+          [scheme]="fatBurningSettings.colorScheme"
+          [schemeType]="fatBurningSettings.schemeType"
+          [results]="fatBurningData"
+          [animations]="fatBurningSettings.animations"
+          [legend]="fatBurningSettings.showLegend"
+          (legendLabelClick)="onLegendLabelClick($event)"
+          [xAxis]="fatBurningSettings.showXAxis"
+          [yAxis]="fatBurningSettings.showYAxis"
+          [showXAxisLabel]="fatBurningSettings.showXAxisLabel"
+          [showYAxisLabel]="fatBurningSettings.showYAxisLabel"
+          [xAxisLabel]="fatBurningSettings.xAxisLabel"
+          [yAxisLabel]="fatBurningSettings.yAxisLabel"
+          [autoScale]="fatBurningSettings.autoScale"
+          [showGridLines]="fatBurningSettings.showGridLines"
+          [curve]="fatBurningSettings.curve"
+          (select)="select($event)">
+        </ngx-charts-area-chart>
+      </div>
+
+    </app-panel>
+    <app-panel title="{{translations['activity_rating']}}"
+               classes="col-md-12 col-lg-12 col-xl-6"
+               [controls]="true">
+      <app-dashboard-pie-chart wrapperHeight="360px"
+                               [showLabels]="true"
+                               [data]="activityRating"></app-dashboard-pie-chart>
+    </app-panel>
+  </div>
+</div>

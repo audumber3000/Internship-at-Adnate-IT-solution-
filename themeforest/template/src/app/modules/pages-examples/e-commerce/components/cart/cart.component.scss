@@ -1,0 +1,134 @@
+@import "../../../../../../scss/settings/variable";
+@import "../../../../../../scss/component/mat-radio-button";
+
+.cart__preview-img {
+  width: 50px;
+  height: 45px;
+  border: 1px solid #f0f0f0;
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  padding: 5px;
+  position: absolute;
+  top: 8px;
+
+  & + span {
+    padding-left: 60px;
+    display: block;
+    min-width: 400px;
+  }
+
+  img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+.cart-component {
+  overflow-x: auto;
+
+  .cart__table {
+    color: var(--colorTextAdditional);
+    margin-bottom: 0;
+
+    thead th {
+      border-top: none;
+      border-bottom: 2px solid var(--colorBorder);
+      color: var(--colorText);
+    }
+
+    tbody td {
+      padding: 20px 10px;
+      position: relative;
+      border-top: 1px solid var(--colorBorder);
+    }
+  }
+}
+
+
+
+.cart__table-btn {
+  background: transparent;
+  border: none;
+  line-height: 14px;
+  padding: 0;
+  position: relative;
+  color: $color-additional;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: flex-end;
+
+  .mat-icon {
+    height: 16px;
+    width: 16px;
+    font-size: 16px;
+    vertical-align: bottom;
+    margin-right: 5px;
+    color: $color-additional;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    color: $color-red-hover;
+
+    .mat-icon {
+      color: $color-red-hover;
+    }
+  }
+}
+
+.cart__sub-total {
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.cart__deliveries {
+  margin-top: 20px;
+}
+
+.cart__delivery-field {
+  flex-wrap: wrap;
+}
+
+.cart__deliveries-title {
+  font-weight: 500;
+}
+
+.cart__delivery {
+  margin-bottom: 10px;
+
+  .mat-radio-button {
+    margin-right: 50px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  & > label {
+    margin-bottom: 0;
+  }
+}
+
+.cart__delivery-time, .cart__delivery-price {
+  font-size: 10px;
+  line-height: 13px;
+  margin: 0;
+}
+
+.cart__delivery-time {
+  color: $color-additional;
+  margin-bottom: 8px;
+}
+
+.cart__total {
+  width: 100%;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.btn {
+  margin-bottom: 10px;
+}

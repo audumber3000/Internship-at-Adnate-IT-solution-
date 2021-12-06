@@ -1,0 +1,114 @@
+<div class="sidebar" [ngClass]="{
+  'sidebar-collapse': (isCollapsed$ | async),
+  'top-menu-active': (isTopMenuActive$ | async),
+  'show-mobile': !(isMobileCollapsed$ | async)}">
+  <section class="content-container">
+    <perfect-scrollbar style="max-width: 600px; height: 95vh; overflow: visible">
+      <div class="scrollable-content">
+        <ul class="sidebar-block">
+          <app-sidebar-link icon="home" route="/dashboard_default">Dashboard Default</app-sidebar-link>
+          <app-sidebar-link icon="store" route="/dashboard_ecommerce">Dashboard E-commerce</app-sidebar-link>
+          <app-sidebar-link icon="heart-pulse" route="/dashboard_fitness">Dashboard Fitness</app-sidebar-link>
+          <app-sidebar-link icon="rocket" route="/dashboard_crypto">Dashboard Crypto</app-sidebar-link>
+          <app-sidebar-link icon="apartment" route="/dashboard_booking">Dashboard Booking</app-sidebar-link>
+          <app-sidebar-link icon="smartphone" route="/dashboard_mobile_app">Dashboard MobileApp</app-sidebar-link>
+          <app-sidebar-category title="Layout" icon="layers">
+            <app-sidebar-button (click)="changeToLight()">Light Theme</app-sidebar-button>
+            <app-sidebar-button (click)="changeToDark()">Dark Theme</app-sidebar-button>
+          </app-sidebar-category>
+        </ul>
+        <ul class="sidebar-block">
+          <app-sidebar-category title="UI Elements" icon="diamond">
+            <app-sidebar-link route="/ui/alerts">Alerts</app-sidebar-link>
+            <app-sidebar-link route="/ui/buttons">Buttons</app-sidebar-link>
+            <app-sidebar-link route="/ui/carousel">Carousel</app-sidebar-link>
+            <app-sidebar-link route="/ui/collapse">Collapse</app-sidebar-link>
+            <app-sidebar-link route="/ui/grids">Grids</app-sidebar-link>
+            <app-sidebar-link route="/ui/modals">Modals</app-sidebar-link>
+            <app-sidebar-link route="/ui/notifications">Notifications</app-sidebar-link>
+            <app-sidebar-link route="/ui/panels">Panels</app-sidebar-link>
+            <app-sidebar-link route="/ui/progress_bars">Progress Bars</app-sidebar-link>
+            <app-sidebar-link route="/ui/sliders">Range Sliders</app-sidebar-link>
+            <app-sidebar-link route="/ui/tabs">Tabs</app-sidebar-link>
+            <app-sidebar-link route="/ui/timeline">Timeline</app-sidebar-link>
+            <app-sidebar-link route="/ui/tooltips">Tooltips & Popovers</app-sidebar-link>
+            <app-sidebar-link route="/ui/typography">Typography</app-sidebar-link>
+          </app-sidebar-category>
+          <app-sidebar-link icon="envelope" route="/mail_app" [filter]="{filter: 'all'}">Mail Application</app-sidebar-link>
+          <app-sidebar-link icon="bubble" route="/chat_app">Chat Application</app-sidebar-link>
+          <app-sidebar-link icon="book" route="/todo_app" newLink="true">Todo Application</app-sidebar-link>
+          <app-sidebar-category title="Forms" icon="file-add">
+            <app-sidebar-link route="/forms/basic_form">Basic Form</app-sidebar-link>
+            <app-sidebar-link route="/forms/check_form_controls">Check Form Controls</app-sidebar-link>
+            <app-sidebar-link route="/forms/file_upload">File Upload</app-sidebar-link>
+            <app-sidebar-link route="/forms/floating_labels_form">Floating Labels Form</app-sidebar-link>
+            <app-sidebar-link route="/forms/form_dropzone">Form Dropzone</app-sidebar-link>
+            <app-sidebar-link route="/forms/form_layouts">Form Layouts</app-sidebar-link>
+            <app-sidebar-link route="/forms/form_pickers">Form Picker</app-sidebar-link>
+            <app-sidebar-link route="/forms/form_validation">Form Validation</app-sidebar-link>
+            <app-sidebar-link route="/forms/mask_form">Mask Form</app-sidebar-link>
+            <app-sidebar-link route="/forms/material_form">Material Form</app-sidebar-link>
+            <app-sidebar-link route="/forms/wizard_form">Wizard Form</app-sidebar-link>
+          </app-sidebar-category>
+          <app-sidebar-category title="Tables" icon="list">
+            <app-sidebar-link route="/tables/basic_tables">Basic tables</app-sidebar-link>
+            <app-sidebar-link route="/tables/pagination_tables">Data table</app-sidebar-link>
+            <app-sidebar-link route="/tables/editable_tables">Editable table</app-sidebar-link>
+            <app-sidebar-link route="/tables/selection_tables">Material table</app-sidebar-link>
+          </app-sidebar-category>
+          <app-sidebar-category title="Charts" icon="chart-bars">
+            <app-sidebar-link route="/charts/ng2_charts">ChartJS 2</app-sidebar-link>
+          </app-sidebar-category>
+          <app-sidebar-category title="Maps" icon="map">
+            <app-sidebar-link route="/maps/google_maps">Google Maps</app-sidebar-link>
+            <app-sidebar-link route="/maps/leaflet_map">Leaflet Map</app-sidebar-link>
+          </app-sidebar-category>
+        </ul>
+        <ul class="sidebar-block">
+          <app-sidebar-category title="Account" icon="user">
+            <app-sidebar-link route="/account/email_confirmation">Email Confirmation</app-sidebar-link>
+            <app-sidebar-link route="/lock_screen">Lock Screen</app-sidebar-link>
+            <app-sidebar-link route="/login">Log In</app-sidebar-link>
+            <app-sidebar-link route="/login_photo">Log In Photo</app-sidebar-link>
+            <app-sidebar-link route="/account/profile">Profile</app-sidebar-link>
+            <app-sidebar-link route="/register">Register</app-sidebar-link>
+            <app-sidebar-link route="/register_photo">Register Photo</app-sidebar-link>
+          </app-sidebar-category>
+          <app-sidebar-category title="E-commerce" icon="cart">
+            <app-sidebar-link route="/e-commerce/cart">Cart</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/catalog">Catalog</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/orders_list">Orders List</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/payment">Payment</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/product_edit">Product Edit</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/product_page">Product Page</app-sidebar-link>
+            <app-sidebar-link route="/e-commerce/product_list">Products List</app-sidebar-link>
+          </app-sidebar-category>
+          <app-sidebar-category title="Default Pages" icon="file-empty">
+            <app-sidebar-link route="/404">404</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/calendar">Calendar</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/faqs">FAQs</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/gallery">Gallery</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/invoice_template">Invoice template</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/pricing_cards">Pricing Cards</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/project_summary">Project Summary</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/search_results">Search Results</app-sidebar-link>
+            <app-sidebar-link route="/default_pages/text_editor">Text Editor</app-sidebar-link>
+          </app-sidebar-category>
+          <app-sidebar-category title="Multilevel Menu" icon="menu">
+            <app-sidebar-button>Second Level Item</app-sidebar-button>
+            <app-sidebar-category title="Second Level Item">
+              <app-sidebar-button>Third Level Item</app-sidebar-button>
+              <app-sidebar-button>Third Level Item</app-sidebar-button>
+            </app-sidebar-category>
+            </app-sidebar-category>
+        </ul>
+        <ul class="sidebar-block">
+          <app-sidebar-link icon="text-align-justify" route="/documentation">Documentation</app-sidebar-link>
+        </ul>
+        <ul class="sidebar-block">
+          <app-sidebar-link icon="exit" route="/login">Log Out</app-sidebar-link>
+        </ul>
+      </div>
+    </perfect-scrollbar>
+  </section>
+</div>

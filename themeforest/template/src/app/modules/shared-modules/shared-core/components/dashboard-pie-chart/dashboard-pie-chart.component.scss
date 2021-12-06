@@ -1,0 +1,26 @@
+.pie-chart-wrapper {
+  height: 360px;
+
+  .chart-legend {
+    display: unset;
+
+    .legend-labels {
+      background: none;
+      display: grid;
+      max-height: unset!important;
+    }
+
+    .legend-label {
+    }
+
+    .legend-label-color {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+    }
+
+    .legend-label-text {
+      line-height: 10px;
+    }
+  }
+}

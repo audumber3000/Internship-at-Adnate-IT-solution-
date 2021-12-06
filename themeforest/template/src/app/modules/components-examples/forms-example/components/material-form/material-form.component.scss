@@ -1,0 +1,38 @@
+@import "../../../../../../scss/settings/variable";
+
+.material-form {
+  color: var(--colorText);
+
+  .mat-input-element {
+    caret-color: var(--colorText);
+  }
+
+  .mat-form-field {
+    &.mat-focused {
+      .mat-form-field-ripple {
+        background-color: $color-accent;
+      }
+
+      .mat-form-field-label {
+        color: $color-accent;
+      }
+    }
+
+    .mat-form-field-label {
+      color: var(--colorText);
+    }
+  }
+
+  .mat-form-field-appearance-legacy {
+
+    &:hover {
+      .mat-form-field-underline {
+        background-color: $color-accent;
+      }
+    }
+
+    .mat-form-field-underline {
+      background-color: var(--colorFieldsBorder);
+    }
+  }
+}

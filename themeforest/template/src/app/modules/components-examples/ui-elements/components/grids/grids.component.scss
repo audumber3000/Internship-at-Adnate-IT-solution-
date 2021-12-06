@@ -1,0 +1,24 @@
+.grid {
+  padding-bottom: 20px;
+
+  .card-body {
+    padding: 0;
+    text-align: center;
+    height: 62px;
+  }
+
+  p {
+    margin-bottom: 0;
+    padding: 20px 15px;
+  }
+
+  p:first-child {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 1920px) and (min-width: 768px) {
+    .grid-small {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.chart-set-wrapper {
+
+  .chart-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: 1200px) and (max-width: 1539px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart-container {
+      height: 120px;
+      width: 120px;
+      margin-right: 10px;
+    }
+
+    .chart-info {
+      .chart-title {
+        color: #999999;
+        font-size: 13px;
+      }
+    }
+  }
+
+  &.horizontal {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+
+    .chart-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart-container {
+      margin: 0;
+    }
+  }
+
+  &.colored-percent {
+    .percent-label {
+      font-size: 24px;
+      line-height: 24px;
+      transform: translateY(4px);
+    }
+  }
+}

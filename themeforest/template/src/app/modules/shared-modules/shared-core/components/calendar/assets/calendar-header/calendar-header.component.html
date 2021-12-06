@@ -1,0 +1,60 @@
+<div class="text-center calendar-header">
+  <div class="month-week-day">
+    <div class="btn-group">
+      <div
+        class="header-button"
+        (click)="viewChange.emit('month')"
+        [class.active]="view === 'month'"
+      >
+        Month
+      </div>
+      <div
+        class="header-button"
+        (click)="viewChange.emit('week')"
+        [class.active]="view === 'week'"
+      >
+        Week
+      </div>
+      <div
+        class="header-button"
+        (click)="viewChange.emit('day')"
+        [class.active]="view === 'day'"
+      >
+        Day
+      </div>
+    </div>
+  </div>
+  <div>
+    <p class="calendar-header-label">{{ viewDate | calendarDate: view + 'ViewTitle':locale }}</p>
+  </div>
+  <div class="prev-today-next">
+    <div class="btn-group">
+      <div
+        class="header-button header-button-outline"
+        mwlCalendarToday
+        [(viewDate)]="viewDate"
+        (viewDateChange)="viewDateChange.next(viewDate)"
+      >
+        <mat-icon>today</mat-icon>
+      </div>
+      <div
+        class="header-button"
+        mwlCalendarPreviousView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (viewDateChange)="viewDateChange.next(viewDate); closeOpenMonthViewDay()"
+      >
+        <mat-icon>chevron_left</mat-icon>
+      </div>
+      <div
+        class="header-button"
+        mwlCalendarNextView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (viewDateChange)="viewDateChange.next(viewDate); closeOpenMonthViewDay()"
+      >
+        <mat-icon>chevron_right</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

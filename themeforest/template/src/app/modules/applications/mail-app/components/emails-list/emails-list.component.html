@@ -1,0 +1,123 @@
+<div class="emails-list">
+  <button class="toggle-sidebar" (click)="toggleSidebar()"><mat-icon>dehaze</mat-icon></button>
+  <div class="email-controls email-controls--mail checkbox-themed">
+    <mat-checkbox class="checkbox-select-all"
+                  (change)="$event ? masterToggle() : null"
+                  [checked]="selection.hasValue() && isAllSelected()"
+                  [indeterminate]="selection.hasValue() && !isAllSelected()"
+                  [aria-label]="checkboxLabel()">
+    </mat-checkbox>
+    <div class="dropdown email__dropdown" dropdown>
+      <button id="btn-filter-controls" dropdownToggle type="button" class="icon icon--right btn btn-outline-secondary"
+              aria-controls="dropdown-filter-controls">
+        Filter By<mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <ul id="dropdown-filter-controls" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-basic">
+        <li role="menuitem"><button type="button" class="dropdown-item">Name</button>
+        <li role="menuitem"><button type="button" class="dropdown-item">Date</button>
+        <li role="menuitem"><button type="button" class="dropdown-item">Favorite</button>
+        </li>
+      </ul>
+    </div>
+
+    <button type="button"
+            class="icon btn btn-outline-secondary reset-emails"
+            (click)="resetEmailsList()"
+            tooltip="resresh emails"><mat-icon>refresh</mat-icon>
+    </button>
+
+    <div class="dropdown" dropdown *ngIf="selection.hasValue()">
+      <button id="btn-main-controls" dropdownToggle type="button" class="icon icon--right btn btn-outline-secondary"
+              aria-controls="dropdown-main-controls">
+        Action<mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <ul id="dropdown-main-controls" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-basic">
+        <li role="menuitem"><button type="button" class="dropdown-item" (click)="markAsRead()">Mark as read</button>
+        <li role="menuitem"><button type="button" class="dropdown-item" (click)="markAsUnRead()">Mark as unread</button>
+        <li role="menuitem"><button type="button" class="dropdown-item">Move to Drafts</button>
+        <li role="menuitem"><button type="button" class="dropdown-item" (click)="deleteEmail()">Delete</button>
+        </li>
+      </ul>
+    </div>
+    <div class="filter-paginator-controls">
+      <form class="form">
+        <div class="form__form-group">
+          <div class="form__form-group-field">
+            <input type="text" class="filter-field" (keyup)="applyFilter($event.target.value)" placeholder="Search"/>
+            <div class="search-icon"><mat-icon>search</mat-icon></div>
+          </div>
+        </div>
+      </form>
+      <mat-paginator [pageSize]="12" [hidePageSize]="true"></mat-paginator>
+    </div>
+
+  </div>
+  <table mat-table [dataSource]="dataSource" class=" emails-list-table" matSort>
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef style="display: none"></th>
+      <td mat-cell *matCellDef="let row" class="table-select checkbox-themed">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)"
+                      [aria-label]="checkboxLabel(row)">
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+    <!-- Favorite Column -->
+    <ng-container matColumnDef="favorite">
+      <th mat-header-cell *matHeaderCellDef style="display: none" mat-sort-header></th>
+      <td mat-cell *matCellDef="let element">
+        <div class="table-favorite">
+          <mat-icon [ngClass]="{'checked': element.favorite}"
+                    (click)="emailDataService.toggleFavorite(element.id, !element.favorite)">star</mat-icon>
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef style="display: none" mat-sort-header></th>
+      <td mat-cell *matCellDef="let element" class="table-name"> <span>{{element.name}}</span> </td>
+    </ng-container>
+
+
+    <!-- Title + Message Column -->
+    <ng-container matColumnDef="messageBody">
+      <th mat-header-cell *matHeaderCellDef style="display: none"></th>
+      <td mat-cell *matCellDef="let element" class="message-body">
+        <div class="message-body-content">
+          <span class="table-title">{{element.title}}. </span>
+          <span class="table-message">{{element.message}}</span>
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Attachment Icon Column -->
+    <ng-container matColumnDef="attachment">
+      <th mat-header-cell *matHeaderCellDef style="display: none"></th>
+      <td mat-cell *matCellDef="let element" class="attachment-icon">
+        <div class="attachment-icon-container">
+          <mat-icon *ngIf="element.attachment">attach_file</mat-icon>
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef style="display: none" mat-sort-header></th>
+      <td mat-cell *matCellDef="let element" class="table-date"> {{element.date}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" style="display: none"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        class="email-row"
+        [ngClass]="{'unread': row.unread}"
+        [routerLink]="['../email', row.id]"
+        (click)="$event.stopPropagation()">
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,32 @@
+.stat-progress-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .stat-title {
+    width: 40%;
+    font-size: 13px;
+    line-height: 1.38;
+    color: #999999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: flex-end;
+  }
+
+  .progress-wrap {
+    width: 60%;
+    margin-bottom: 5px;
+
+    .progress-label {
+      font-size: 10px;
+      bottom: 16px;
+      margin: 0;
+      text-align: right;
+    }
+  }
+}

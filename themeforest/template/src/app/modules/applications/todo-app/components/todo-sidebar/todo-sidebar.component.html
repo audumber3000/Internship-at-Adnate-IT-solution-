@@ -1,0 +1,91 @@
+<div class="todo__input-new">
+  <div class="todo__sidebar">
+    <img class="todo_sidebar-image" [src]="image" alt="sidebar-img">
+    <button type="button" class="todo__btn-add-new btn btn-secondary" (click)="openModal(modalTemplate)">
+      <svg class="mdi-icon " width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path>
+      </svg>
+      New task
+    </button>
+    <div class="todo__date-filter"><p class="title">Status</p>
+      <ul class="todo__date-filter-list">
+        <li>
+          <input class="todo__filter-radio" type="radio" id="all-tasks" name="date-filter" value="all-tasks" checked="" (change)="toggleStatusFilter($event.target.value)">
+          <label for="all-tasks">All tasks</label>
+        </li>
+        <li>
+          <input class="todo__filter-radio" type="radio" id="pedning-tasks" name="date-filter" value="pending" (change)="toggleStatusFilter($event.target.value)">
+          <label for="pedning-tasks">Pending tasks</label>
+        </li>
+        <li>
+          <input class="todo__filter-radio" type="radio" id="completed-tasks" name="date-filter" value="completed" (change)="toggleStatusFilter($event.target.value)">
+          <label for="completed-tasks">Completed tasks</label>
+        </li>
+      </ul>
+    </div>
+    <div class="todo__priority-filter"><p class="title">Priority</p>
+      <ul class="todo__priority-filter-list">
+        <li>
+          <input class="todo__filter-radio" type="radio" id="priority-all" name="priority-filter" value="" checked="" (change)="togglePriorityFilter($event.target.value)">
+          <label for="priority-all">All</label>
+        </li>
+        <li>
+          <input class="todo__filter-radio" type="radio" id="priority-low" name="priority-filter" value="low" (change)="togglePriorityFilter($event.target.value)">
+          <label for="priority-low">Low</label>
+        </li>
+        <li>
+          <input class="todo__filter-radio" type="radio" id="priority-medium" name="priority-filter" value="medium" (change)="togglePriorityFilter($event.target.value)">
+          <label for="priority-medium">Medium</label>
+        </li>
+        <li>
+          <input class="todo__filter-radio" type="radio" id="priority-high" name="priority-filter" value="high" (change)="togglePriorityFilter($event.target.value)">
+          <label for="priority-high">High</label>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<ng-template #modalTemplate>
+  <div class="todo-modal">
+    <div class="form">
+      <div class="form__form-group">
+        <span class="form__form-group-label">Title</span>
+        <div class="form__form-group-field"><input type="text" placeholder="title.." required="" [(ngModel)]="todoTitle">
+        </div>
+      </div>
+      <div class="form__form-group">
+        <span class="form__form-group-label">Description</span>
+        <div class="form__form-group-field">
+          <textarea type="text" placeholder="what to do.." required="" [(ngModel)]="todoDescription"></textarea>
+        </div>
+      </div>
+      <div class="form__form-group">
+        <span class="form__form-group-label">Due Date</span>
+        <div class="form__form-group-field priority">
+          <div class="datepicker-wrapper">
+            <div class="datepicker__input-container">
+              <input type="text" placeholder="Select any date" class="" [(ngModel)]="todoDate" [bsConfig]="bsConfig" bsDatepicker>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form__form-group">
+        <span class="form__form-group-label">Priority</span>
+        <div class="form__form-group-field">
+          <div class="form__form-group-input-wrap">
+            <ng-select [searchable]="false" [(ngModel)]="todoPriority">
+              <ng-option [value]="'high'">High</ng-option>
+              <ng-option [value]="'medium'">Medium</ng-option>
+              <ng-option [value]="'low'">Low</ng-option>
+            </ng-select>
+          </div>
+        </div>
+      </div>
+      <div role="toolbar" class="form__button-toolbar btn-toolbar">
+        <button type="submit" class="btn btn-primary" (click)="createTodo()">Add</button>
+        <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

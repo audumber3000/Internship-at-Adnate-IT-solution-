@@ -1,0 +1,119 @@
+@import "settings/variable";
+
+.progress-wrap {
+  margin-bottom: 20px;
+  position: relative;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .progress {
+    height: 4px;
+    border-radius: 10px;
+    box-shadow: none;
+    background-color: #dddddd;
+    margin-bottom: 0;
+  }
+
+  .progress-bar {
+    background-color: $color-accent;
+    box-shadow: none;
+    text-align: right;
+    font-size: 9px;
+    line-height: 13px;
+    padding-right: 10px;
+  }
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  &.progress-wrap-small {
+    .progress {
+      height: 8px;
+    }
+  }
+
+  &.progress-wrap-middle {
+    .progress {
+      height: 12px;
+    }
+  }
+
+  &.progress-wrap-big {
+    .progress {
+      height: 16px;
+    }
+  }
+
+  &.progress-wrap-rounded {
+    .progress-bar {
+      border-radius: 5px;
+    }
+  }
+
+  &.progress-wrap-accent {
+    @include progressBarColored($color-accent);
+  }
+
+  &.progress-wrap-yellow {
+    @include progressBarColored($color-yellow);
+  }
+
+  &.progress-wrap-violet {
+    @include progressBarColored($color-violet);
+  }
+
+  &.progress-wrap-pink {
+    @include progressBarColored($color-pink);
+  }
+
+  &.progress-wrap-blue {
+    @include progressBarColored($color-blue);
+  }
+
+  &.progress-wrap-red {
+    @include progressBarColored($color-red);
+  }
+
+  &.progress-wrap-green {
+    @include progressBarColored($color-green);
+  }
+
+  &.progress-wrap-accent-gradient {
+    @include progressBarColoredGradient($color-accent);
+  }
+
+  &.progress-wrap-yellow-gradient {
+    @include progressBarColoredGradient($color-yellow);
+  }
+
+  &.progress-wrap-violet-gradient {
+    @include progressBarColoredGradient($color-violet);
+  }
+
+  &.progress-wrap-pink-gradient {
+    @include progressBarColoredGradient($color-pink);
+  }
+
+  &.progress-wrap-blue-gradient {
+    @include progressBarColoredGradient($color-blue);
+  }
+
+  &.progress-wrap-red-gradient {
+    @include progressBarColoredGradient($color-red);
+  }
+
+  &.progress-wrap-green-gradient {
+    @include progressBarColoredGradient($color-green);
+  }
+
+  &.progress-wrap-label-top {
+
+    .progress__label {
+      position: absolute;
+      right: 0;
+    }
+  }
+}

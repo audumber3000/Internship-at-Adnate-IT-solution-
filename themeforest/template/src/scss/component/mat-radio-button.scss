@@ -1,0 +1,107 @@
+.radio-button-themed {
+  .mat-radio-button {
+
+    transition: all 0.3s;
+
+    .mat-radio-ripple {
+      display: none;
+    }
+
+    .mat-radio-label-content {
+      color: var(--colorText);
+      transition: all 0.3s;
+    }
+
+    .mat-radio-outer-circle {
+      transform: scale(.9);
+      border-color: var(--colorIcon);
+      border-width: 1px;
+    }
+
+    &:not(.mat-radio-disabled) {
+      &:hover {
+        .mat-radio-outer-circle {
+          border-color: $color-accent;
+        }
+
+        .mat-radio-label-content {
+          color: $color-accent;
+        }
+      }
+    }
+
+    &.mat-radio-checked {
+
+      .mat-radio-outer-circle {
+        transform: scale(.9);
+        border-color: $color-accent;
+      }
+
+      .mat-radio-inner-circle {
+        background-color: $color-accent;
+        transform: scale(0.3);
+      }
+    }
+
+    &.mat-radio-disabled {
+
+      .mat-radio-label-content {
+        color: var(--colorDisabled);
+      }
+
+      &.mat-radio-checked {
+        .mat-radio-outer-circle {
+          border-color: var(--colorFieldsBorder);
+        }
+
+        .mat-radio-inner-circle {
+          background-color: var(--colorDisabled) !important;
+        }
+
+        .mat-radio-label-content {
+          color: var(--colorDisabled);
+        }
+      }
+    }
+
+    &.radio-button-colored {
+
+      .mat-radio-outer-circle {
+        border-color: $color-accent;
+        border-width: 2px;
+      }
+
+      &.mat-radio-disabled {
+
+        .mat-radio-outer-circle {
+          border-color: $color-accent;
+          opacity: 0.4;
+        }
+
+        .mat-radio-inner-circle {
+          background-color: $color-accent!important;
+          opacity: 0.4;
+        }
+      }
+    }
+
+    &.radio-button-bold {
+
+      &.mat-radio-checked {
+        .mat-radio-outer-circle {
+          background-color: $color-accent;
+        }
+
+        .mat-radio-inner-circle {
+          background-color: #fff!important;
+        }
+
+        &.mat-radio-disabled {
+          opacity: 0.4;
+        }
+      }
+
+    }
+
+  }
+}

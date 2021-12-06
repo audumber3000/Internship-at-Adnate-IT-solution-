@@ -1,0 +1,178 @@
+<div class="dashboard container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">{{translations['page_title']}}</h3>
+    </div>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let chart of cryptoChartsSettings">
+      <app-panel [title]="chart.title" classes="col-12 col-md-12 col-lg-6 col-xl-3 dashboard-widget">
+        <div class="subhead">{{chart.description}}</div>
+        <app-tiny-area-chart [data]="cryptoChartData"
+                             [amount]="chart.amount"
+                             [color]="chart.color"
+                             [trendDirectionUp]="chart.isTrendUp">
+        </app-tiny-area-chart>
+      </app-panel>
+    </ng-container>
+  </div>
+  <div class="row">
+    <app-panel title="{{translations['trade_history']}}" controls="true" classes="col-12 col-md-12 col-lg-5 col-xl-4">
+      <div class="subhead">Ratings by Market Capitalization</div>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>Coin</th>
+            <th>Cost</th>
+            <th>Change%</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><p class="bold-text dashboard__btc">BTC</p></td>
+            <td>$134,23</td>
+            <td>+12,21%</td>
+          </tr>
+          <tr>
+            <td><p class="bold-text dashboard__eth">ETH</p></td>
+            <td>$12,23</td>
+            <td>+0,21%</td>
+          </tr>
+          <tr>
+            <td><p class="bold-text dashboard__neo">NEO</p></td>
+            <td>$112,23</td>
+            <td>-2,27%</td>
+          </tr>
+          <tr>
+            <td><p class="bold-text dashboard__ste">STE</p></td>
+            <td>$84,23</td>
+            <td>-10,01%</td>
+          </tr>
+          <tr>
+            <td><p class="bold-text dashboard__eos">EOS</p></td>
+            <td>$134,23</td>
+            <td>$134,23</td>
+          </tr>
+          <tr>
+            <td><p class="bold-text dashboard__lit">LIT</p></td>
+            <td>$94,23</td>
+            <td>-1,96%</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </app-panel>
+    <app-panel title="BTC & ETH" controls="true" classes="col-12 col-md-12 col-lg-7 col-xl-8">
+      <div class="subhead">Ratings by Market Capitalization</div>
+      <div class="chart-btc-etc-container chart-with-legend">
+        <ngx-charts-area-chart
+          [scheme]="btcCurrencyChartSettings.colorScheme"
+          [results]="cryptoCurrencyData"
+          [animations]="btcCurrencyChartSettings.animations"
+          [legend]="btcCurrencyChartSettings.showLegend"
+          [legendPosition]="btcCurrencyChartSettings.legendPosition"
+          [legendTitle]="btcCurrencyChartSettings.legendTitle"
+          [xAxis]="btcCurrencyChartSettings.showXAxis"
+          [yAxis]="btcCurrencyChartSettings.showYAxis"
+          [showXAxisLabel]="btcCurrencyChartSettings.showXAxisLabel"
+          [showYAxisLabel]="btcCurrencyChartSettings.showYAxisLabel"
+          [xAxisLabel]="btcCurrencyChartSettings.xAxisLabel"
+          [yAxisLabel]="btcCurrencyChartSettings.yAxisLabel"
+          [autoScale]="btcCurrencyChartSettings.autoScale"
+          [showGridLines]="btcCurrencyChartSettings.showGridLines"
+          [roundDomains]="btcCurrencyChartSettings.roundDomains"
+          [tooltipDisabled]="btcCurrencyChartSettings.tooltipDisabled">
+        </ngx-charts-area-chart>
+      </div>
+    </app-panel>
+    <app-panel title="{{translations['cryptotrends_today']}}" controls="true" classes="col-12 col-lg-12 col-xl-6">
+      <div class="subhead">Top selling items statistic by last month</div>
+      <app-dashboard-pie-chart wrapperHeight="360px" showLabels="true" [data]="cryptoTrends"></app-dashboard-pie-chart>
+    </app-panel>
+    <app-panel title="Trade History" controls="true" classes="col-lg-12 col-xl-6">
+      <p class="subhead">You can buy or sell a cryptocurrency</p>
+      <div class="dashboard__place-order">
+        <div class="dashboard__place-order-form"><h5 class="bold-text">Buy BTC</h5><h5
+          class="dashboard__place-order-form-subhead subhead">USD Balance: $12 232,34</h5>
+          <form class="form form-horizontal">
+            <div class="form__form-group"><span class="form__form-group-label">Price</span>
+              <div class="form__form-group-field"><input name="price" type="text" placeholder="$ 1322323,3" value="">
+              </div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">Amount</span>
+              <div class="form__form-group-field"><input name="amount" type="text" placeholder="0,000334 BTC" value="">
+              </div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">Total</span>
+              <div class="form__form-group-field"><input name="total" type="text" placeholder="$ 112,454" value="">
+              </div>
+            </div>
+            <div role="toolbar" class="form__button-toolbar btn-toolbar">
+              <button type="submit" class="btn btn-primary">Buy BTC</button>
+            </div>
+          </form>
+        </div>
+        <div class="dashboard__place-order-form"><h5 class="bold-text">Sell BTC</h5><h5
+          class="dashboard__place-order-form-subhead subhead">BTC Balance: 2.232344</h5>
+          <form class="form form-horizontal">
+            <div class="form__form-group"><span class="form__form-group-label">Price</span>
+              <div class="form__form-group-field"><input name="price" type="text" placeholder="$ 1322323,3" value="">
+              </div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">Amount</span>
+              <div class="form__form-group-field"><input name="amount" type="text" placeholder="0,000334 BTC" value="">
+              </div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">Total</span>
+              <div class="form__form-group-field"><input name="total" type="text" placeholder="$ 112,454" value="">
+              </div>
+            </div>
+            <div role="toolbar" class="form__button-toolbar btn-toolbar">
+              <button type="submit" class="btn btn-success">Sell BTC</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </app-panel>
+    <app-panel title="{{translations['top_cryptocurrencies']}}" controls="true" classes="col-lg-12">
+      <div class="responsive-table">
+        <table mat-table [dataSource]="dataSource"
+               class="mat-elevation-z8 bordered-table colored-cells-hover crypto-currency-table">
+          <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns; let i = index;">
+            <th mat-header-cell *matHeaderCellDef> {{columnsAliases[column]}}</th>
+            <td mat-cell *matCellDef="let element; let j = index;">
+
+              <ng-container [ngSwitch]="column">
+
+
+                <ng-container class="" *ngSwitchCase="'graph'">
+                  <app-tiny-td-area-chart></app-tiny-td-area-chart>
+                </ng-container>
+
+                <div class="btn-group" dropdown *ngSwitchCase="'control'">
+                  <div ngDropdown>
+                    <button ngDropdownControl type="button" class="btn-orders-control">
+                      <mat-icon>more_horiz</mat-icon>
+                    </button>
+                    <div ngDropdownContent dropdownClass="slide-fade">
+                      <ul class="dropdown-in-table">
+                        <li><button class="dropdown-item" type="button" (click)="editTableRow(j)">Edit</button></li>
+                        <li><button class="dropdown-item" type="button" (click)="deleteTableRow(j)">Delete</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <span *ngSwitchDefault>{{element[column]}}</span>
+              </ng-container>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+
+    </app-panel>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">Products List</h3>
+      <h3 class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="products-list card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Products List</h5>
+            <div role="toolbar" class="products-list__btn-toolbar-top btn-toolbar">
+              <form class="form">
+                <div class="form__form-group products-list__search"><input placeholder="Search..." name="search">
+                  <mat-icon>search</mat-icon>
+                </div>
+              </form>
+              <a class="btn btn-primary products-list__btn-add" routerLink="/e-commerce/product_edit">Add new product</a>
+
+            </div>
+
+          </div>
+          <mat-paginator class="minimized-paginator" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons="false"></mat-paginator>
+          <mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 border-none colored-cells-hover">
+            <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> {{columnsAliases[column]}} </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <ng-container [ngSwitch]="column">
+
+                 <span *ngSwitchCase="'status'"
+                       class="badge"
+                       [ngClass]="{
+                 'badge-success': element.status === 'In Stock',
+                 'badge-disabled': element.status === 'Out Of Stock'}"
+                 >{{element[column]}}</span>
+
+                  <div class="photo-wrapper" *ngSwitchCase="'photo'">
+                    <img [src]="element[column]" />
+                  </div>
+                  <span *ngSwitchDefault>{{element[column]}}</span>
+
+                </ng-container>
+              </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

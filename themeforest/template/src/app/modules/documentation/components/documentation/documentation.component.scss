@@ -1,0 +1,96 @@
+@import "settings/variable";
+
+.documentation-main {
+  flex-direction: row-reverse;
+  min-height: calc(100vh - 152px);
+  position: relative;
+  padding-bottom: 75px;
+
+  .documentation-navigation {
+    position: sticky;
+    top: 80px;
+    height: max-content;
+  }
+
+  .navigation-wrap {
+
+    .links-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .navigation-link {
+      color: var(--colorText);
+      display: block;
+      padding: 5px 0;
+      font-weight: 400;
+      width: 100%;
+      font-size: 14px;
+      transition: all .3s;
+
+      &:hover {
+        color: $color-accent;
+      }
+
+      &.active {
+        color: $color-accent;
+      }
+    }
+  }
+
+  .documentation__nav-bottom {
+    display: flex;
+    background-color: var(--colorBackground);
+  }
+}
+
+.pagination-wrapper {
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  position: absolute;
+  bottom: 15px;
+
+  .link-wrapper{
+    width: 50%;
+    background-color: #fff;
+
+    .pagination-link {
+      width: 100%;
+      padding: 20px 15px;
+      text-transform: uppercase;
+      color: var(--colorText);
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        background-color: #70bbfd;
+        color: #fff;
+      }
+    }
+
+    &.mat-icon {
+      width: 20px;
+      height: 20px;
+      font-size: 19px;
+      color: var(--colorText);
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    &:last-child {
+      a {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+.dark-theme {
+
+  .link-wrapper{
+    background-color: var(--colorBackground);
+  }
+}

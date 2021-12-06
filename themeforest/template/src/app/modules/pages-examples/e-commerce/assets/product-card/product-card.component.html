@@ -1,0 +1,26 @@
+<div class="card">
+  <a class="catalog-item-link" routerLink="/e-commerce/product_page">
+
+    <div class="card-body">
+      <div class="catalog-item-label label-new" [ngClass]="{'label-new': productData.conditionState === 'new', 'label-sale': productData.conditionState === 'sale'}"></div>
+
+      <img class="catalog-item-img" [src]="productData.src" alt="catalog item img">
+
+      <div class="catalog-item-info">
+        <div class="catalog-item-data">
+          <h4 class="catalog-item-title">{{productData.title}}</h4>
+          <p class="catalog-item-description">{{productData.description}}</p>
+          <ng-container *ngFor="let color of productData.colors;">
+            <span class="catalog-item-color" [ngStyle]="{'background': color}"></span>
+          </ng-container>
+        </div>
+
+        <div class="catalog-item-price">
+          <p class="catalog-item-main-price">{{productData.price | currency:'USD':'symbol':'2.0'}}</p>
+          <p class="catalog-item-old-price" *ngIf="productData.conditionState === 'sale'">{{productData.oldPrice | currency:'USD':'symbol':'2.0'}}</p>
+        </div>
+      </div>
+
+    </div>
+  </a>
+</div>

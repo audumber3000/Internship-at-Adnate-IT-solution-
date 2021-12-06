@@ -1,0 +1,123 @@
+@import "../../../../../../../../scss/settings/variable";
+
+.collapse {
+  padding-top: 0;
+}
+
+.collapse-title {
+  padding: 6px 15px 10px 20px;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+  display: block;
+  width: 100%;
+  border: none;
+  text-align: left;
+
+  .mat-icon {
+    position: absolute;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    top: 8px;
+    transition: all 0.3s;
+    color: var(--colorText);
+  }
+
+  p {
+    font-weight: 700;
+    margin-top: 0;
+    transition: all 0.3s;
+    position: relative;
+
+    .mat-icon {
+      right: 0;
+      left: auto;
+      display: none;
+    }
+  }
+
+  &.collapsed {
+    p,
+    .mat-icon {
+      color: $color-additional;
+    }
+  }
+}
+
+.boxed {
+    border: solid 1px #dddddd;
+    margin-top: -1px;
+
+    .collapse-title {
+      background-color: #f2f4f7;
+      border-bottom: none;
+      padding: 8px 15px;
+
+      p {
+        color: #444444;
+      }
+
+      .mat-icon {
+        display: none;
+      }
+
+      &.collapsed {
+        border-bottom: solid 1px #dddddd;
+      }
+    }
+
+    .collapse {
+      padding: 16px 20px 20px 15px;
+    }
+}
+
+.with-shadow {
+  margin-bottom: 10px;
+  box-shadow: none;
+
+  .collapse {
+    padding: 15px 20px 0 25px;
+    max-width: 1320px;
+    color: var(--colorText);
+  }
+
+  .collapse-title {
+    padding: 15px 25px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+    color: var(--colorText);
+
+    &:hover {
+      background-color: var(--colorHover);
+    }
+
+    .mat-icon {
+      display: none;
+    }
+
+    p {
+      .mat-icon {
+        display: block;
+        top: calc(50% - 7px);
+        transition: all 0.3s;
+        color: var(--colorText);
+      }
+    }
+  }
+
+  .collapse-title {
+
+    &.collapsed {
+      p {
+        color: inherit;
+      }
+
+      .mat-icon {
+        color: inherit;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

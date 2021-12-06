@@ -1,0 +1,131 @@
+@import "../../../../../../scss/settings/variable";
+
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
+
+  .product-card__btn-toolbar {
+    margin-bottom: 10px;
+  }
+}
+
+.product-card__info {
+  width: calc(100% - 440px);
+  padding-left: 42px;
+
+  @media screen and (max-width: 1199px) {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 35px;
+  }
+}
+
+.product-card__wish-btn {
+  display: block;
+  padding: 10px 0;
+  font-size: 14px;
+  color: $color-blue;
+  height: 42px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  svg {
+    height: 14px;
+    fill: $color-blue;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    color: $color-blue-hover;
+
+    svg {
+      fill: $color-blue-hover;
+    }
+  }
+}
+
+.product-card__title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.product-card__link {
+  font-size: 12px;
+  color: $color-blue;
+  line-height: 16px;
+  display: block;
+  margin-left: 5px;
+
+  &:hover {
+    color: $color-blue-hover;
+    text-decoration: none;
+  }
+}
+
+.product-card__price {
+  margin-bottom: 25px;
+}
+
+.product-card__old-price {
+  font-size: 24px;
+  color: $color-additional;
+  text-decoration: line-through;
+}
+
+.product-card__form {
+  margin-top: 20px;
+}
+
+.product-card__form-label {
+  font-weight: 500;
+}
+
+.icon-favorite {
+  font-size: 14px;
+  height: 14px;
+  width: 14px;
+  vertical-align: top;
+}
+
+.nav-tabs {
+  margin-bottom: 20px;
+  .nav-link {
+    color: var(--colorText);
+    background-color: transparent;
+  }
+}
+
+.item-color {
+  height: 10px;
+  width: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-left: 5px;
+  vertical-align: middle;
+
+  &.pink {
+    background-color: pink;
+  }
+
+  &.lightskyblue {
+    background-color: lightskyblue;
+  }
+
+  &.aquamarine {
+    background-color: aquamarine;
+  }
+}
+
+.ng-select-container {
+  padding-top: 10px;
+}
+
+.product-gallery-wrapper {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 0;
+}

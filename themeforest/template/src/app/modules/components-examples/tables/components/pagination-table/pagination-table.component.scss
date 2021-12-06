@@ -1,0 +1,31 @@
+@import "../../../../../../scss/settings/variable";
+
+.mat-table {
+  width:100%;
+  box-shadow: none;
+
+  .mat-header-cell {
+    color: var(--colorText);
+    font-weight: bold;
+  }
+
+  .badge {
+    color: #ffffff;
+    padding: 6px 20px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 400;
+
+    &.badge-success {
+      background-color: $color-accent;
+    }
+
+    &.badge-warning {
+      background-color: $color-yellow;
+    }
+
+    &.badge-primary {
+      background-color: #70bbfd;
+    }
+  }
+}

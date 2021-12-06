@@ -1,0 +1,17 @@
+<div class="pie-chart-wrapper" [ngStyle]="{'height': wrapperHeight}">
+  <app-easydev-pie-chart
+    class=""
+    [scheme]="colorScheme"
+    [results]="data"
+    [animations]="animations"
+    [legend]="showLegend"
+    [legendPosition]="legendPosition"
+    [explodeSlices]="explodeSlices"
+    [labels]="showLabels"
+    [doughnut]="doughnut"
+    [arcWidth]="arcWidth"
+    [legendTitle]="false"
+    (legendLabelClick)="onLegendLabelClick($event)"
+    (select)="select($event)">
+  </app-easydev-pie-chart>
+</div>

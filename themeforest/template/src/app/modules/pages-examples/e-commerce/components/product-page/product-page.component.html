@@ -1,0 +1,96 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">Product Page</h3>
+      <h3 class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="product-card">
+            <div class="product-gallery-wrapper">
+              <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+            </div>
+
+            <div class="product-card__info">
+              <h3 class="product-card__title">French bulldog pillow</h3>
+              <app-star-rating [rating]="4">
+                <a class="product-card__link" routerLink="/e-commerce/product_page">See all reviews</a>
+              </app-star-rating>
+              <h1 class="product-card__price">$17.19 <span class="product-card__old-price">$23</span></h1>
+              <p>Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression
+                for. His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved as
+                oh he unpleasant no inquietude insipidity. Advantages can discretion possession add favourable
+                cultivated admiration far.</p>
+              <form class="form product-card__form">
+                <div class="form__form-group"><span
+                  class="form__form-group-label product-card__form-label">Select Color</span>
+                  <div class="form__form-group-field">
+                    <div class="form__form-group-input-wrap">
+                      <ng-select [items]="selectOptions"
+                                 [searchable]="false"
+                                 name="colors"
+                                 bindLabel="color"
+                                 bindValue="color"
+                                 placeholder="Select color"
+                                 [(ngModel)]="selectedColor">
+
+                        <ng-template ng-label-tmp let-item="item">
+                          <span>{{item.description}}</span> <span class="item-color" [ngClass]="item.colorName"></span>
+                        </ng-template>
+
+                        <ng-template ng-option-tmp let-item="item" let-index="index">
+                          <span>{{item.description}}</span> <span class="item-color" [ngClass]="item.colorName"></span>
+                        </ng-template>
+                      </ng-select>
+                    </div>
+                  </div>
+                </div>
+                <div role="toolbar" class="product-card__btn-toolbar btn-toolbar">
+                  <a class="btn btn-primary" routerLink="/e-commerce/cart">Add to cart</a>
+                  <button class="product-card__wish-btn" type="button">
+                    <mat-icon class="icon-favorite">favorite</mat-icon>
+                    Add to wishlist
+                  </button>
+                </div>
+              </form>
+
+              <tabset>
+                <tab heading="Description">
+                  <p>Direction has strangers now believing. Respect enjoyed gay far exposed
+                    parlors towards. Enjoyment use tolerably dependent listening men. No peculiar in handsome together
+                    unlocked do by. Article concern joy anxious did picture sir her. Although desirous not recurred
+                    disposed off shy you numerous securing. Knowledge nay estimable questions repulsive daughters boy.
+                    Solicitude gay way unaffected expression for.</p>
+                  <p>His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved
+                    as oh he unpleasant no inquietude insipidity. Advantages can discretion possession add favourable
+                    cultivated admiration far.</p>
+                </tab>
+                <tab heading="Delivery">
+                  <p>Direction has strangers now believing. Respect enjoyed gay far exposed
+                  parlors towards. Enjoyment use tolerably dependent listening men. No peculiar in handsome together
+                  unlocked do by.
+                  </p>
+                </tab>
+                <tab heading="Refounds"><p>Direction has strangers now believing. Respect enjoyed gay far exposed
+                  parlors towards. Enjoyment use tolerably dependent listening men. No peculiar in handsome together
+                  unlocked do by. Here is also refounds tab</p>
+                </tab>
+              </tabset>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title page-title--not-last">Related Items</h3></div>
+  </div>
+  <div class="row">
+    <ng-container *ngFor="let product of productSet">
+      <app-product-card [productData]="product"></app-product-card>
+    </ng-container>
+  </div>
+</div>

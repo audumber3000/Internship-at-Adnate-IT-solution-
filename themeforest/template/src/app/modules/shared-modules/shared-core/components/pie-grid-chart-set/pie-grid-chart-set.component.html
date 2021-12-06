@@ -1,0 +1,25 @@
+<div class="chart-set-wrapper" [ngClass]="{'horizontal': horizontal, 'colored-percent': coloredPercent}">
+  <div class="chart-wrapper" *ngFor="let item of chartsSettings;">
+    <div class="chart-container">
+      <app-easydev-pie-grid
+        appNgxChartZeroMargin
+        class="chart"
+        [scheme]="item.colorScheme"
+        (legendLabelClick)="onLegendLabelClick($event)"
+        [results]="item.data"
+        [animations]="animations"
+        [showLabel]="false"
+        [labelColor]="item.colorScheme.domain[0]"
+        [designatedTotal]="item.total"
+        [tooltipDisabled]="tooltipDisabled"
+        [tooltipText]="pieTooltipText"
+        (select)="select($event)">
+      </app-easydev-pie-grid>
+    </div>
+    <div class="chart-info">
+      <p class="chart-title">{{item.title}}</p>
+      <h4 *ngIf="!hideTotal">{{item.total | currency}}</h4>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,9 @@
+@import "settings/variable";
+@import "component/mat-checkbox";
+
+.dark-theme {
+
+  input {
+    background: var(--colorBackgroundBody);
+  }
+}

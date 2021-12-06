@@ -1,0 +1,171 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Basic form</h3>
+      <h3 class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Horizontal form</h5>
+            <p class="subhead">Labels are left from fields</p>
+          </div>
+          <form class="form form--horizontal" [formGroup]="horizontalForm" (ngSubmit)="onSubmit(horizontalForm)">
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Default Label</span>
+              <div class="form__form-group-field">
+                <input formControlName="defaultInput" type="text" class="form-field" placeholder="Default Input"/>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Disabled Field</span>
+              <div class="form__form-group-field">
+                <input formControlName="disableInput" type="text" placeholder="Disabled Input"/>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">E-mail</span>
+              <div class="form__form-group-field">
+                <input formControlName="email" type="email" placeholder="example@mail.com"></div>
+            </div>
+
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Password</span>
+              <div class="form__form-group-field">
+                <input formControlName="password" [attr.type]="showHorizontalFormPassword ? 'text' : 'password'" placeholder="Password">
+                <label class="form__form-group-button" [ngClass]="{'active': showHorizontalFormPassword}">
+                  <input type="checkbox" class="visually-hidden" formControlName="showPassword">
+                  <mat-icon>visibility</mat-icon>
+                </label>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Icon Left</span>
+              <div class="form__form-group-field">
+                <div class="form__form-group-icon"><mat-icon>mail</mat-icon></div>
+                <input formControlName="leftIcon" type="email" placeholder="Icon Left Input"></div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Icon Right</span>
+              <div class="form__form-group-field">
+                <input formControlName="rightIcon" type="text" placeholder="Icon Right Input"/>
+                <div class="form__form-group-icon"><mat-icon>people</mat-icon></div>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Field with description</span>
+              <div class="form__form-group-field">
+                <input formControlName="descriptionInput" type="text"/>
+              </div>
+              <span class="form__form-group-description">Zealously now pronounce existence add you instantly say offending.</span>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Dropdown</span>
+              <div class="form__form-group-field">
+                <div class="form__form-group-input-wrap">
+                  <ng-select [searchable]="false" formControlName="agree">
+                    <ng-option [value]="true">Yes</ng-option>
+                    <ng-option [value]="false">No</ng-option>
+                  </ng-select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Multiselect</span>
+              <div class="form__form-group-field">
+                <div class="form__form-group-input-wrap">
+                  <ng-select [items]="multiSelectItems"
+                             [multiple]="true"
+                             [searchable]="false"
+                             placeholder="Select few of"
+                             clearAllText="Clear"
+                             formControlName="multiSelect">
+                  </ng-select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label mt-0">Text area</span>
+              <div class="form__form-group-field">
+                <textarea formControlName="textarea" type="text"></textarea>
+              </div>
+            </div>
+            <div role="toolbar" class="form__button-toolbar btn-toolbar">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-secondary" (click)="resetForm(horizontalForm)">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Vertical form</h5>
+            <p class="subhead">Labels are above fields</p>
+          </div>
+          <form class="form" [formGroup]="verticalForm" (ngSubmit)="onSubmit(verticalForm)">
+            <div class="form__form-group">
+              <span class="form__form-group-label">Default Label</span>
+              <div class="form__form-group-field">
+                <input formControlName="defaultInput" type="text" class="form-field" placeholder="Default Input"/>
+              </div>
+            </div>
+            <div class="form__form-group">
+              <span class="form__form-group-label">Disabled Field</span>
+              <div class="form__form-group-field">
+                <input formControlName="disableInput" type="text" placeholder="Disabled Input"/>
+              </div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">E-mail</span>
+              <div class="form__form-group-field">
+                <input formControlName="email" type="email" placeholder="example@mail.com"></div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">Password</span>
+              <div class="form__form-group-field">
+                <input formControlName="password" [attr.type]="showVerticalFormPassword ? 'text' : 'password'" placeholder="Password">
+                <label class="form__form-group-button" [ngClass]="{'active': showVerticalFormPassword}">
+                  <input type="checkbox" class="visually-hidden" formControlName="showPassword">
+                  <mat-icon>visibility</mat-icon>
+                </label>
+              </div>
+            </div>
+            <div class="form__form-group">
+              <span class="form__form-group-label">Icon Left</span>
+              <div class="form__form-group-field">
+                <div class="form__form-group-icon"><mat-icon>mail</mat-icon></div>
+                <input formControlName="leftIcon" type="email" placeholder="Icon Left Input"></div>
+            </div>
+            <div class="form__form-group">
+              <span class="form__form-group-label">Icon Right</span>
+              <div class="form__form-group-field">
+                <input formControlName="rightIcon" type="text" placeholder="Icon Right Input"/>
+                <div class="form__form-group-icon"><mat-icon>people</mat-icon></div>
+              </div>
+            </div>
+            <div role="toolbar" class="form__button-toolbar btn-toolbar">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-secondary" (click)="resetForm(verticalForm)">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

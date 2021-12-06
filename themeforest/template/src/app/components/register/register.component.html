@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <main>
+    <div class="account">
+      <div class="account__wrapper">
+        <div class="account__card">
+          <div class="account__head">
+            <h3 class="account__title">Welcome to<span class="account__logo"> Easy<span class="account__logo-accent">DEV</span></span></h3>
+            <h4 class="account__subhead subhead">Create an account</h4>
+          </div>
+          <form class="form" [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)">
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Username</span>
+              <div class="form__form-group-field">
+                <div class="form__form-group-icon"><mat-icon>person_outline</mat-icon></div>
+                <input formControlName="username" type="text" placeholder="Name">
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">E-mail</span>
+              <div class="form__form-group-field">
+                <div class="form__form-group-icon"><mat-icon>mail</mat-icon></div>
+                <input formControlName="email" type="email" placeholder="example@mail.com">
+              </div>
+            </div>
+
+            <div class="form__form-group">
+              <span class="form__form-group-label">Password</span>
+              <div class="form__form-group-field">
+                <div class="form__form-group-icon"><mat-icon>vpn_key</mat-icon></div>
+                <input formControlName="password" [attr.type]="showFormPassword ? 'text' : 'password'" placeholder="Password">
+                <label class="form__form-group-button" [ngClass]="{'active': showFormPassword}">
+                  <input type="checkbox" class="visually-hidden" formControlName="showPassword">
+                  <mat-icon>visibility</mat-icon>
+                </label>
+              </div>
+            </div>
+
+
+            <div class="account__btns">
+              <a class="btn btn-primary account__btn" routerLink="/dashboard_default">Sign Up</a>
+            </div>
+
+          </form>
+          <div class="account__have-account"><p>Already have an account? <a routerLink="/login">Login</a></p></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

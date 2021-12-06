@@ -1,0 +1,161 @@
+<simple-notifications
+  [options]="notificationOptions"
+  [ngClass]="{'large-colored-notifications': notificationOptions.position[1] === 'center'}"
+>
+</simple-notifications>
+<ng-template #imageNotification>
+  <div class="d-flex">
+    <img class="image" [src]="image" alt="Notification image">
+    <div class="description">
+      <p class="sn-title">{{imageTitle}}</p>
+      <p class="sn-content">{{imageDescription}}</p>
+    </div>
+  </div>
+</ng-template>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">Notifications</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Basic notifications</h5>
+            <p class="subhead">
+              Use basic notification with necessary value of property
+              <span class="red-text">defaultNotificationSettings</span>
+            </p>
+          </div>
+          <div role="toolbar" class="btn-toolbar">
+            <button
+              class="btn btn-outline-secondary"
+              (click)="openDefaultNotification(['top', 'left'], 'scale')"
+            >
+              Left Up
+            </button>
+            <button
+              class="btn btn-outline-secondary"
+              (click)="openDefaultNotification(['top', 'right'], 'rotate')"
+            >
+              Right Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Image notifications</h5>
+            <p
+              class="subhead"
+            >
+              Use basic notification with necessary value of property
+              <span class="red-text">imageNotificationSettings</span>
+            </p>
+          </div>
+          <div role="toolbar" class="btn-toolbar">
+            <button
+              class="btn btn-outline-secondary"
+              (click)="openImageNotification(['top', 'left'], 'scale')"
+            >
+              Left Up
+            </button>
+            <button
+              class="btn btn-outline-secondary"
+              (click)="openImageNotification(['top', 'right'], 'rotate')"
+            >
+              Right Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Colored notifications</h5>
+            <p class="subhead">
+              Use basic notification with necessary value of property
+              <span class="red-text">coloredNotificationSettings</span>
+            </p>
+          </div>
+          <div role="toolbar" class="btn-toolbar">
+            <button
+              class="btn btn-primary"
+              (click)="openColoredNotification(notificationTypes.Info, ['top', 'right'])"
+            >
+              Primary
+            </button>
+            <button
+              class="btn btn-success"
+              (click)="openColoredNotification(notificationTypes.Success, ['top', 'right'])"
+            >
+              Success
+            </button>
+            <button
+              class="btn btn-warning"
+              (click)="openColoredNotification(notificationTypes.Warn, ['top', 'right'])"
+            >
+              Warning
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="openColoredNotification(notificationTypes.Alert, ['top', 'right'])"
+            >
+              Danger
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Color states full width</h5>
+            <p
+              class="subhead"
+            >
+              Use basic notification with necessary value of property
+              <span class="red-text">progressBarNotificationSettings</span>
+            </p>
+          </div>
+          <div role="toolbar" class="btn-toolbar">
+            <button
+              class="btn btn-primary"
+              (click)="openProgressNotification(notificationTypes.Info, ['top', 'center'])"
+            >
+              Primary
+            </button>
+            <button
+              class="btn btn-success"
+              (click)="openProgressNotification(notificationTypes.Success, ['top', 'center'])">
+              Success
+            </button>
+            <button
+              class="btn btn-warning"
+              (click)="openProgressNotification(notificationTypes.Warn, ['top', 'center'])"
+            >
+              Warning
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="openProgressNotification(notificationTypes.Alert, ['top', 'center'])"
+            >
+              Danger
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

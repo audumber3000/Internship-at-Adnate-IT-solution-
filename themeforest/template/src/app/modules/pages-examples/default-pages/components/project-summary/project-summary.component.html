@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Project Summary</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-7 col-xl-9">
+      <div class="card">
+        <div class="card-body">
+          <div class="project-summary">
+            <div class="card-title">
+              <h5 class="bold-text">News website for Global company</h5>
+              <button class="project-summary-btn btn btn-outline-secondary btn-sm">Edit</button>
+            </div>
+            <table class="summary-info">
+              <tbody>
+              <tr>
+                <th>Project owner:</th>
+                <td>Mary McCorny</td>
+              </tr>
+              <tr>
+                <th>Due date:</th>
+                <td>21/12/2018</td>
+              </tr>
+              <tr>
+                <th>Client Brief:</th>
+                <td><button class="btn-link" type="button">Design Brief_Global Co.txt</button></td>
+              </tr>
+              </tbody>
+            </table>
+            <p>Knowledge nay estimable questions repulsive daughters boy. Solicitude gay way unaffected expression for.
+              His mistress ladyship required off horrible disposed rejoiced. Unpleasing pianoforte unreserved as oh he
+              unpleasant no inquietude insipidity. Advantages can discretion possession add favourable cultivated
+              admiration far. Why rather assure how esteem end hunted nearer and before. By an truth after heard going
+              early given he.</p>
+            <div class="summary-stats" *ngIf="(taskStatistic$ | async) as taskStatistic">
+              <div class="summary-stat"><p>{{taskStatistic.totalTasks}} <span>Tasks</span></p></div>
+              <div class="summary-stat"><p>12 <span>Users</span></p></div>
+              <div class="summary-stat"><p>{{totalBugs$ | async}} <span>Bugs</span></p></div>
+              <div class="progress-wrap progress-wrap-middle progress-tasks">
+                  <progressbar [value]="taskStatistic.completedPercent">{{taskStatistic.completedPercent}}% tasks completed</progressbar>
+              </div>
+            </div>
+            <hr>
+            <div class="update-button">
+              <button type="button" class="project-summary-btn btn btn-outline-secondary btn-sm" (click)="updateSummary()">Update Data</button>
+            </div>
+            <div class="project-summary-statistics">
+              <div class="statistics-refresh" *ngIf="isRefreshing">
+                <mat-spinner [diameter]="30"></mat-spinner>
+              </div>
+              <div class="summary-statistic">
+                <p class="statistic-title">Task Statistic</p>
+                <div class="statistic-chart-wrapper">
+                  <canvas baseChart
+                          [data]="tasksChartData$ | async"
+                          [colors]="chartColors"
+                          [chartType]="chartType"
+                          [labels]="taskStatLabels"
+                          [options]="chartOptions"></canvas>
+                </div>
+              </div>
+              <div class="summary-statistic">
+                <p class="statistic-title">Bug Statistic</p>
+                <div class="statistic-chart-wrapper">
+                  <canvas baseChart
+                          [data]="bugsChartData$ | async"
+                          [colors]="chartColors"
+                          [chartType]="chartType"
+                          [labels]="bugsStatLabels"
+                          [options]="chartOptions"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-5 col-xl-3">
+      <div class="card--not-full-height card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Project team</h5>
+          </div>
+
+          <ng-container *ngIf="(projectTeam$ | async) as projectTeam">
+            <div class="project-member" *ngFor="let teamMember of projectTeam;">
+              <div class="project-member-avatar-wrap">
+                <img [src]="teamMember.avatar" alt="avatar">
+              </div>
+              <div>
+                <p class="project-member-name">{{teamMember.name}}</p>
+                <p class="project-member-post">{{teamMember.position}}</p></div>
+              <a class="project-member-btn btn btn-outline-primary btn-sm icon" routerLink="/chat_app">
+                <mat-icon>mail_outline</mat-icon>
+              </a>
+            </div>
+          </ng-container>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+version: '2'
+services:
+  client:
+    image: $DOCKER_ASPIRITY_REGISTRY_URL/$PROJECT_NAME/client:$DOCKER_TAG
+    build:
+      context: ./
+      args:
+        VERSION: $VERSION
+    container_name: $PROJECT_NAME.$ENV.client
+    ports:
+    - $PORT1:4200
+    command: yarn serve:docker
+    restart: always
+

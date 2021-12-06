@@ -1,0 +1,14 @@
+<button type="button"
+        class="btn btn-secondary btn-show-alert"
+        (click)="toggleVisibility()"
+        *ngIf="!isVisible; else alert">Show Alert</button>
+
+<ng-template #alert>
+  <div class="alert" [ngClass]="color">
+    <div class="alert-icon" *ngIf="icon"><mat-icon>{{icon}}</mat-icon></div>
+    <button class="close" type="button" (click)="toggleVisibility()"><span class="lnr lnr-cross"></span></button>
+    <div class="alert-content">
+      <p><ng-content></ng-content></p>
+    </div>
+  </div>
+</ng-template>

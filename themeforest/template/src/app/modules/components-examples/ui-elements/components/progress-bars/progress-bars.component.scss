@@ -1,0 +1,9 @@
+.progress-bar-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .progress-bar-body-card {
+    min-height: 100px;
+  }
+}

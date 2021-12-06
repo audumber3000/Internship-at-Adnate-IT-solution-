@@ -1,0 +1,57 @@
+@import "../../../../../../scss/settings/variable";
+
+:host-context(.mat-expansion-panel-body) {
+  padding-top: 0;
+}
+
+.tiny-bar-chart {
+  display: flex;
+  align-items: flex-end;
+
+  .mat-icon {
+    margin-bottom: 6px;
+    margin-right: 4px;
+    color: $color-accent;
+  }
+
+  .chart-total-stat {
+    font-size: 18px;
+    height: 24px;
+    margin: 0;
+    margin-bottom: 6px;
+    line-height: 24px;
+    color: var(--colorText);
+  }
+
+  .chart-container {
+    height: 50px;
+    flex-grow: 1;
+    margin-left: auto;
+
+    @media (min-width: 1200px) {
+      max-width: 160px;
+    }
+
+    @media (min-width: 1900px) {
+      & {
+        max-width: 220px;
+      }
+    }
+
+    @media (min-width: 992px) and (max-width: 1352px) {
+      & {
+        width: 120px;
+      }
+    }
+  }
+
+  .app-bar-chart {
+    position: absolute;
+  }
+
+  .bar-chart.chart {
+    .active {
+      fill: $color-accent;
+    }
+  }
+}

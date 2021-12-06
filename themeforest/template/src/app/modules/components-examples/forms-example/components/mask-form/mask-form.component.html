@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Mask form</h3>
+      <p class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Mask examples</h5>
+          </div>
+          <form class="form" [formGroup]="maskForm" (ngSubmit)="onSubmit(maskForm)">
+            <div class="form__form-group">
+              <span class="form__form-group-label">Phone <span>(xxx) xxx-xxxx</span></span>
+              <div class="form__form-group-field">
+                <input formControlName="phone" name="phone" type="text" mask="(000) 000-0000">
+              </div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">Phone with code <span>+23 xxx xx xx</span></span>
+              <div class="form__form-group-field">
+                <input formControlName="phoneCode" name="phone_code" type="text" prefix="+23 " mask="000 00 00">
+              </div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">Date <span>dd/mm/yyyy</span></span>
+              <div class="form__form-group-field">
+                <input formControlName="date" name="date" type="text" mask="d0/M0/0000">
+              </div>
+            </div>
+            <div class="form__form-group"><span class="form__form-group-label">Date <span>dd-mm-yyyy</span></span>
+              <div class="form__form-group-field">
+                <input formControlName="dateValid" name="date_another" type="text" mask="d0-M0-0000">
+              </div>
+            </div>
+            <div class="form__form-group"><span
+              class="form__form-group-label">Currency <span>$xxx,xxx,xxx.xx</span></span>
+              <div class="form__form-group-field">
+                <input formControlName="currency" name="currency" type="text" prefix="$" mask="comma_separator.2">
+              </div>
+            </div>
+            <div class="form__form-group"><span
+              class="form__form-group-label">Licence key <span>xxxx-xxxx-xxxx-xxxx</span></span>
+              <div class="form__form-group-field">
+                <input formControlName="licenceKey" name="licence" type="text" mask="0000-0000-0000-0000">
+              </div>
+            </div>
+            <div class="form__form-group"><span
+              class="form__form-group-label">IP Address <span>xxx.xxx.xxx.xxx</span></span>
+              <div class="form__form-group-field">
+                <input formControlName="ipAddress" name="ip" type="text" mask="IP">
+              </div>
+            </div>
+            <div role="toolbar" class="form__button-toolbar btn-toolbar">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn btn-secondary" (click)="resetForm(maskForm)">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

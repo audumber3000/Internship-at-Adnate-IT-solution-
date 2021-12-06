@@ -1,0 +1,300 @@
+@import "settings/variable";
+
+.mat-table {
+  box-shadow: none;
+  width: 100%;
+
+  .mat-header-row,
+  .mat-row {
+    background-color: var(--colorBackground);
+  }
+
+  .mat-header-row,
+  mat-header-row {
+    height: 36px;
+    min-height: 36px;
+  }
+
+  .mat-header-cell {
+    color: var(--colorText);
+    font-weight: bold;
+    border-bottom-color: var(--colorBorder);
+    border-width: 2px;
+    padding: 0 10px;
+  }
+
+  td.mat-cell:first-of-type,
+  td.mat-footer-cell:first-of-type,
+  th.mat-header-cell:first-of-type {
+    padding: 0 10px;
+  }
+
+  td.mat-cell:last-of-type,
+  td.mat-footer-cell:last-of-type,
+  th.mat-header-cell:last-of-type {
+    padding: 0 10px;
+  }
+
+  .mat-footer-row,
+  .mat-header-row,
+  .mat-row,
+  td.mat-cell,
+  td.mat-footer-cell,
+  th.mat-header-cell {
+    border-bottom-color: var(--colorBorder);
+  }
+
+  .mat-row {
+    .mat-cell {
+      color: var(--colorText);
+      padding: 0 10px;
+      white-space: nowrap;
+      font-size: 13px;
+    }
+  }
+
+  .mat-checkbox-layout {
+    margin: 0;
+    white-space: normal;
+  }
+
+  .badge {
+    color: #ffffff;
+    padding: 6px 20px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 400;
+
+    &.badge-success {
+      background-color: $color-accent;
+    }
+
+    &.badge-warning {
+      background-color: $color-yellow;
+    }
+
+    &.badge-primary {
+      background-color: #70bbfd;
+    }
+
+    &.badge-disabled {
+      background-color: #dddddd;
+    }
+  }
+
+
+  &.border-none {
+    .mat-cell {
+      border: none;
+    }
+  }
+
+  &.bordered-table {
+
+    .mat-cell {
+      border-bottom-color: var(--colorBorder);
+    }
+  }
+
+  &.colored-cells-hover {
+
+    .mat-row {
+      &:hover {
+        background-color: var(--colorBackgroundBody);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &.head-accent {
+    .mat-header-row {
+      background-color: var(--colorHover);
+    }
+  }
+
+  &.colored-rows {
+    .mat-row {
+      &:nth-of-type(odd) {
+        background-color: var(--colorHover);
+      }
+    }
+  }
+}
+
+.responsive-table {
+  overflow-x: auto;
+
+  &.material-responsive {
+
+    .mat-column-status {
+      min-width: 120px;
+    }
+  }
+}
+
+.table {
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  tbody td, th {
+    border: none;
+    padding: 10px;
+
+    color: var(--colorTextAdditional);
+  }
+
+  thead th {
+    color: var(--colorText);
+    border-bottom-color: var(--colorBorder);
+  }
+
+  .badge {
+    color: #ffffff;
+    padding: 6px 20px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 400;
+
+    &.badge-success {
+      background-color: $color-accent;
+    }
+
+    &.badge-warning {
+      background-color: $color-yellow;
+    }
+
+    &.badge-primary {
+      background-color: $color-blue;
+    }
+
+    &.badge-danger {
+      background-color: $color-red;
+    }
+
+    &.badge-disabled {
+      background-color: #dddddd;
+    }
+  }
+
+  &.table--bordered {
+
+    tr {
+      border-bottom: 1px solid var(--colorBorder);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &.table--head-accent {
+
+    thead {
+
+      color: var(--colorTextAdditional);
+      background-color: var(--colorHover);
+
+      th {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &.table-striped {
+
+    tbody tr:nth-of-type(odd) {
+
+      background-color: var(--colorHover);
+    }
+  }
+
+  &.table-hover {
+
+    tbody tr {
+      transition: all 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--colorBackgroundBody);
+      }
+    }
+  }
+}
+
+.mat-paginator {
+
+}
+
+.minimized-paginator {
+
+  .mat-paginator-container {
+    justify-content: flex-start;
+  }
+
+  .mat-paginator-page-size-label {
+    display: none;
+  }
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $color-accent;
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: $color-accent;
+}
+
+.mat-paginator-outer-container {
+
+  background-color: var(--colorBackground);
+  color: var(--colorText);
+
+  .mat-paginator-range-label {
+    color: var(--colorText);
+  }
+
+  .mat-paginator-container {
+    .mat-form-field {
+
+      &.mat-focused {
+        .mat-form-field-ripple {
+          background-color: $color-accent;
+        }
+      }
+    }
+
+  }
+
+  .mat-paginator-icon {
+    width: 18px;
+    color: var(--colorText);
+  }
+
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: var(--colorText);
+}
+
+.mat-select-arrow {
+  color: var(--colorText);
+}
+
+.mat-select-panel {
+  background: var(--colorBackground);
+
+  .mat-option.mat-selected:not(.mat-option-multiple) {
+  }
+
+  .mat-option-text {
+    color: var(--colorText);
+  }
+}
+
+.mat-select-value {
+  color: var(--colorText);
+}
+
+

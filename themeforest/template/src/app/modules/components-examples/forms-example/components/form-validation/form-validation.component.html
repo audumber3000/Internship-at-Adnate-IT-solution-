@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Form Validation</h3>
+      <h3 class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Horizontal form validate</h5>
+            <p class="subhead">Errors are under fields</p>
+          </div>
+          <app-form-validation-example></app-form-validation-example>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Horizontal form validate 2</h5>
+            <p class="subhead">Errors are above fields, pass <span class="red-text">showErrorAbove="true"</span> to example form component</p>
+          </div>
+          <app-form-validation-example showErrorAbove="true"></app-form-validation-example>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Vertical form validate</h5>
+            <p class="subhead">Errors are under fields, pass <span class="red-text">[horizontalForm]="false"</span> to example form component</p>
+          </div>
+          <app-form-validation-example [horizontalForm]="false"></app-form-validation-example>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Vertical form validate 2</h5>
+            <p class="subhead">Errors are above fields, pass<span class="red-text"> showErrorAbove="true"</span> to example form component with <span class="red-text">[horizontalForm]="false"</span></p>
+          </div>
+          <app-form-validation-example [horizontalForm]="false" showErrorAbove="true"></app-form-validation-example>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

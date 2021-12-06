@@ -1,0 +1,15 @@
+<input class="visually-hidden" accept="image/jpeg, image/png" autocomplete="off" type="file" #file name="file" (change)="onFilesAdded()" [attr.multiple]="multiple"/>
+<div class="dropzone" [ngClass]="{'dropzone--custom-height': customHeight, 'dropzone--single': !multiple, 'dropzone--multiple': multiple}" appDnd (filesChangeEmiter)="onFilesChange($event)">
+  <div tabindex="0" class="dropzone__input" (click)="addFiles()">
+    <div class="dropzone__drop-here" *ngIf="!fileList.length"><span class="lnr lnr-upload"></span> Drop file here to upload</div>
+  </div>
+  <div [ngClass]="{'dropzone__imgs-wrapper': multiple, 'temp-wrapper': !multiple}" *ngIf="fileList.length">
+    <div class="dropzone__img" *ngFor="let image of fileList; let i = index">
+      <img [src]="image.preview" alt="drop-img" />
+      <p class="dropzone__img-name">{{image.name}}</p>
+      <button class="dropzone__img-delete" type="button" (click)="deleteImage(i)">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>

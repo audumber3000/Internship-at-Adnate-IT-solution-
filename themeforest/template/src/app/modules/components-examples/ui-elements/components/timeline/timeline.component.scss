@@ -1,0 +1,129 @@
+@import "../../../../../../scss/settings/variable";
+
+.timeline {
+  position: relative;
+
+  color: var(--colorText);
+
+  &:before {
+    content: "";
+    background-color: #dddddd;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .timeline-date {
+    font-size: 12px;
+    color: $color-additional;
+    line-height: 16px;
+    margin-bottom: 5px;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 50px;
+
+  &:nth-child(even) {
+
+    .timeline-content {
+      margin-left: calc(50% + 52px);
+
+      &:after {
+        right: auto;
+        left: -20px;
+        border: 10px solid transparent;
+        border-right: 10px solid var(--colorBackground);
+      }
+    }
+  }
+}
+
+.timeline-icon {
+  position: absolute;
+  left: calc(50% - 25px);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: $color-accent;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+
+  &.work {
+    background-image: linear-gradient(to bottom, #4ce1b6, #1cd25a), linear-gradient(#4ce1b6, #4ce1b6);
+  }
+
+  &.video {
+    background-image: linear-gradient(to bottom, #708eee, #9e44f3), linear-gradient(#7082ee, #7082ee);
+  }
+
+  &.file {
+    background-image: linear-gradient(to bottom, #ee4f99, #f76e5b);
+  }
+
+  img {
+    height: 100%;
+    width: auto;
+    min-width: 100%;
+  }
+
+  span {
+    color: white;
+    font-size: 20px;
+    margin: auto;
+  }
+}
+
+.timeline-content {
+  width: calc(50% - 52px);
+  padding: 25px 25px 25px 20px;
+  border-radius: 5px;
+  position: relative;
+
+  background-color: var(--colorBackground);
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 20px;
+    border: 10px solid transparent;
+    border-left: 10px solid var(--colorBackground);
+  }
+}
+
+.timeline-title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 991px) {
+
+  .timeline:before {
+    left: 25px;
+  }
+
+  .timeline-icon {
+    left: 0;
+  }
+
+  .timeline-item:nth-child(even) .timeline-content,
+  .timeline-item .timeline-content {
+    margin-left: 72px;
+    width: calc(100% - 72px);
+
+    &:after {
+      right: auto;
+      left: -20px;
+      border: 10px solid transparent;
+      border-right: 10px solid var(--colorBackground);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import "../../../../../../scss/settings/variable";
+
+.rating {
+  display: flex;
+
+  .mat-icon {
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    color: $color-yellow;
+  }
+}

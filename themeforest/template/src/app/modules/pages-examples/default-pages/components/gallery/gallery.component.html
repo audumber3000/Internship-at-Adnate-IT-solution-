@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">Gallery</h3>
+      <h3 class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"><h5 class="bold-text">Filter Gallery</h5></div>
+          <div class="gallery">
+            <div class="gallery-btns">
+              <input id="all" name="gallery-filter" type="radio" class="visually-hidden" (click)="handleFilterChanges($event)" value="" checked><label for="all" class="btn-gallery">all</label>
+              <input id="sneakers" name="gallery-filter" type="radio" class="visually-hidden" (click)="handleFilterChanges($event)" value="sneakers"><label for="sneakers" class="btn-gallery">sneakers</label>
+              <input id="cap" name="gallery-filter" type="radio" class="visually-hidden" (click)="handleFilterChanges($event)" value="cap"><label for="cap" class="btn-gallery">cap</label>
+              <input id="watch" name="gallery-filter" type="radio" class="visually-hidden" (click)="handleFilterChanges($event)" value="watch"><label for="watch" class="btn-gallery">watch</label>
+              <input id="glasses" name="gallery-filter" type="radio" class="visually-hidden" (click)="handleFilterChanges($event)" value="glasses"><label for="glasses" class="btn-gallery">glasses</label>
+            </div>
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

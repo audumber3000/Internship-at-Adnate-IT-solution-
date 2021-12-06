@@ -1,0 +1,388 @@
+@import "../../../../../../scss/settings/variable";
+
+.bs-datepicker {
+  &.theme-blue {
+
+    .bs-datepicker-container {
+      padding: 0;
+    }
+
+    .bs-datepicker-head {
+      background-color: #70bbfd;
+      border-color: #70bbfd;
+    }
+
+    .bs-datepicker-body {
+      table {
+        td {
+          &.week{
+            span {
+              color: #70bbfd;
+            }
+          }
+
+          &.active-week{
+            span:hover {
+              color: #fff;
+              background-color: #70bbfd;
+              border-radius: 6px;
+            }
+          }
+
+          span {
+            &.selected {
+              background-color: #70bbfd;
+              border-radius: 6px;
+            }
+
+            &.is-highlighted {
+              border-radius: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.theme-dark {
+
+    .bs-datepicker-container {
+      padding: 0;
+    }
+
+    .bs-datepicker-head {
+      background-color: #063263;
+      border-color: #70bbfd;
+    }
+
+    .bs-datepicker-body {
+      background-color: #232329 !important;
+
+      table {
+        td {
+          &.week{
+            span {
+              color: #70bbfd;
+            }
+          }
+
+          &.active-week{
+            span:hover {
+              color: #fff;
+              background-color: #70bbfd;
+              border-radius: 6px;
+            }
+          }
+
+          span {
+            color: #9aaec1;
+            &.selected {
+              background-color: #70bbfd;
+              border-radius: 6px;
+            }
+
+            &.is-highlighted {
+              color: black;
+              border-radius: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.timepicker-dial__control {
+  font-size: 40px!important;
+  height: 50px !important;
+}
+
+.color-pickers-sample {
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+
+  .form__form-group {
+    width: auto;
+  }
+
+  .color-picker-field {
+    width: 160px;
+    display: flex;
+
+    .color-preview {
+      width: 50px;
+      cursor: pointer;
+      border: 1px solid var(--colorFieldsBorder);
+      border-left:none;
+    }
+
+    .saturation-lightness,
+    .hue,
+    .alpha {
+      position: relative;
+    }
+
+    .cursor {
+      position: absolute;
+    }
+
+
+    &.sketch-picker {
+
+      .color-picker {
+        box-shadow:
+          rgba(0, 0, 0, 0.15) 0px 0px 0px 1px,
+          rgba(0, 0, 0, 0.15) 0px 8px 16px;
+        border: none;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: column;
+
+        .saturation-lightness {
+          width: 200px;
+          height: 160px;
+          margin: 0 10px;
+          padding: 0;
+          padding-top: 10px;
+          background-clip: content-box;
+
+          .cursor {
+            border: none;
+            width: 4px;
+            height: 4px;
+            box-shadow: rgb(255, 255, 255) 0px 0px 0px 1.5px, rgba(0, 0, 0, 0.3) 0px 0px 1px 1px inset, rgba(0, 0, 0, 0.4) 0px 0px 1px 2px;
+            border-radius: 50%;
+            transform: translate(-2px, -2px);
+          }
+        }
+
+        .left {
+          padding: 0;
+
+          .selected-color,
+          .selected-color-background {
+            width: 24px;
+            height: 24px;
+            border-radius: 2px;
+          }
+
+          .selected-color {
+            top: 0;
+            left: 0;
+          }
+
+        }
+
+        .right {
+          padding: 0;
+          transform: scaleX(0.9);
+
+          .cursor {
+            margin-top: 1px;
+            width: 4px;
+            border-radius: 1px;
+            height: 8px;
+            box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
+            background: rgb(255, 255, 255);
+            transform: translateX(-2px);
+            border: none;
+          }
+
+          .hue,
+          .alpha {
+            height: 10px;
+          }
+
+          .hue {
+            margin-bottom: 4px;
+          }
+        }
+
+        .box {
+          padding: 4px 10px;
+          padding-left: 2px;
+          flex-direction: row-reverse;
+        }
+
+        .hex-text {
+          display: inline-block!important;
+
+          input {
+            width: 50px;
+            height: 19px;
+          }
+        }
+
+        .rgba-text {
+          display: inline-block!important;
+          .box {
+            flex-direction: row;
+
+            input {
+              height: 19px;
+            }
+          }
+        }
+
+        .hex-text,
+        rgba-text {
+          .box {
+            padding: 0 10px!important;
+          }
+        }
+
+        .preset-area {
+          padding: 4px 0px 4px 10px;
+          .preset-color {
+            margin: 0px 5px 7px 0;
+          }
+        }
+
+        .type-policy {
+          display: none;
+        }
+
+      }
+    }
+
+    &.block-picker {
+
+      .color-picker {
+        box-shadow:
+          rgba(0, 0, 0, 0.1) 1px 1px 3px 1px,
+          rgba(0, 0, 0, 0.1) -1px -1px 3px 1px;
+        display: flex;
+        flex-direction: column;
+        border: none;
+        border-radius: 6px;
+
+        .arrow.arrow-top {
+          top: 256px!important;
+        }
+
+        .selected-color,
+        .selected-color-background {
+          width: 16px;
+          height: 16px;
+        }
+
+        .saturation-lightness {
+          border-radius: 6px 6px 0px 0px;
+          background-image: none;
+
+          .cursor {
+            border: 1px solid white;
+            width: 12px;
+            height: 12px;
+          }
+        }
+
+        .hue-alpha.box {
+          display: none;
+        }
+
+        .hex-text {
+          order: 1;
+          margin-bottom: 5px;
+          .box {
+            padding: 0;
+          }
+
+          .box:nth-child(2) {
+            display: none;
+          }
+
+          input {
+            box-shadow: rgb(221, 221, 221) 0px 0px 0px 1px inset;
+            border-radius: 4px;
+            border: 0px;
+            font-size: 12px;
+            color: rgb(102, 102, 102);
+            text-align: left;
+            padding: 0 4px;
+            height: 22px;
+          }
+        }
+
+        .type-policy {
+          display: none;
+        }
+
+        .preset-area {
+          padding: 4px 0;
+          hr {
+            display: none;
+          }
+
+          & > div:nth-child(3) {
+            margin-left: 8px;
+          }
+
+          .preset-color {
+            width: 22px;
+            height: 22px;
+            margin: 0 10px 10px 0;
+          }
+        }
+
+      }
+    }
+
+    &.chrome-picker {
+
+      .color-picker {
+
+        .selected-color,
+        .selected-color-background {
+          width: 16px;
+          height: 16px;
+        }
+
+        .saturation-lightness {
+
+          .cursor {
+            border: 1px solid white;
+            width: 12px;
+            height: 12px;
+          }
+        }
+
+        .right {
+
+          .cursor {
+            background-color: rgb(248, 248, 248);
+            box-shadow: rgba(0, 0, 0, 0.37) 0px 1px 4px 0px;
+            border: none;
+            width: 12px;
+            height: 12px;
+            top: -1px;
+          }
+
+          .hue,
+          .alpha {
+            height: 10px;
+          }
+
+          .hue {
+            margin-bottom: 8px;
+          }
+        }
+
+      }
+    }
+
+
+    &.dark-theme {
+
+      .color-picker {
+        background-color: var(--colorBackground);
+        input {
+          color: white;
+        }
+      }
+    }
+
+  }
+}

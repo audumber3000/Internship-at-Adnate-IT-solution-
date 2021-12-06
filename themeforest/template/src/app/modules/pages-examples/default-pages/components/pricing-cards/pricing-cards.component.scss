@@ -1,0 +1,77 @@
+@import "../../../../../../scss/settings/variable";
+
+.pricing-card {
+  text-align: center;
+
+  hr {
+    border-top-color: var(--colorFieldsBorder);
+  }
+
+  .pricing-card-img {
+    height: 70px;
+    margin-bottom: 20px;
+  }
+
+  &.primary {
+    border-top: 5px solid $color-blue;
+
+    svg {
+      fill: $color-blue;
+    }
+  }
+
+  &.info {
+    border-top: 5px solid $color-accent;
+
+    svg {
+      fill: $color-accent;
+    }
+  }
+
+  &.warning {
+    border-top: 5px solid $color-yellow;
+
+    svg {
+      fill: $color-yellow;
+    }
+  }
+
+  &.danger {
+    border-top: 5px solid $color-red;
+
+    svg {
+      fill: $color-red;
+    }
+  }
+
+  .card-body {
+    padding: 45px 40px;
+
+    .pricing-card-plan {
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 20px;
+      font-weight: 300;
+      color: var(--colorText);
+    }
+
+    .pricing-card-price {
+      margin-top: 20px;
+      font-weight: 300;
+      font-size: 48px;
+      line-height: 48px;
+
+      span {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .pricing-card-button {
+    margin-top: 25px;
+    margin-bottom: 0;
+    max-width: 160px;
+    width: 100%;
+  }
+
+}

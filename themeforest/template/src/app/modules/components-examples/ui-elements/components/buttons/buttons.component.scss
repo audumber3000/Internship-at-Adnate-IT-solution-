@@ -1,0 +1,59 @@
+.mat-icon {
+  height: 14px;
+  width: 14px;
+  margin: 2px 5px 0 0;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+mat-icon[svgIcon] {
+  margin-top: 0;
+}
+
+mat-icon[svgIcon] svg {
+  margin-bottom: 10px;
+}
+
+.dropdown {
+
+  .mat-icon {
+    margin: -5px 0px 0 5px;
+    vertical-align: middle;
+    font-size: 18px;
+  }
+
+  .btn-group {
+    margin-right: 15px;
+
+    .mat-icon {
+      margin: 0 3px 0 1px;
+      transition: all 0.3s;
+      font-size: 18px;
+      vertical-align: middle;
+    }
+
+    .btn[dropdownToggle] {
+      border-left: none;
+      padding: 7px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+}
+
+.dark-theme {
+
+  .dropdown-menu {
+
+    color: var(--colorText);
+    background: var(--colorBackgroundBody);
+    border: 1px solid;
+  }
+
+  .dropdown-divider {
+     height: 0;
+     margin: .5rem 0;
+     overflow: hidden;
+     border-top: 1px solid var(--colorText);
+   }
+}

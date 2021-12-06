@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title">Mail Application</h3>
+      <p class="page-subhead subhead">You can compose an email here</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <mat-sidenav-container class="mail-app">
+          <mat-sidenav [opened]="sidebarOpened | async" #sidenav
+                       [mode]="mode.value" (closed)="closeSidebar()">
+            <app-mail-sidebar></app-mail-sidebar>
+          </mat-sidenav>
+
+          <mat-sidenav-content>
+            <router-outlet></router-outlet>
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+      </div>
+    </div>
+  </div>
+</div>

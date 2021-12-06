@@ -1,0 +1,16 @@
+<div class="mail-sidebar">
+  <img class="sidebar-image" [src]="sidebarImg" alt="sidebar image">
+  <a class="btn btn-primary btn-email-compose" routerLink="compose">
+    <mat-icon>create</mat-icon>
+    Compose
+  </a>
+  <ul class="mail-navigation">
+    <li><a [routerLink]="['/mail_app/inbox']" [queryParams]="{filter: 'all'}" class="mail-folder"
+           routerLinkActive="active-folder">
+      <mat-icon>move_to_inbox</mat-icon>Inbox <span class="badge">21</span></a></li>
+    <li><a [routerLink]="['/mail_app/inbox']" [queryParams]="{filter: 'sent'}" routerLinkActive="active-folder" class="mail-folder"><mat-icon>mail_outline</mat-icon>Sent Mail</a></li>
+    <li><a [routerLink]="['/mail_app/inbox']" [queryParams]="{filter: 'drafts'}" routerLinkActive="active-folder" class="mail-folder"><mat-icon>rate_review</mat-icon>Drafts</a></li>
+    <li><a [routerLink]="['/mail_app/inbox']" [queryParams]="{filter: 'tagged'}" routerLinkActive="active-folder" class="mail-folder"><mat-icon>star</mat-icon>Tagged</a></li>
+    <li><a [routerLink]="['/mail_app/inbox']" [queryParams]="{filter: 'deleted'}" routerLinkActive="active-folder" class="mail-folder"><mat-icon>delete</mat-icon>Deleted</a></li>
+  </ul>
+</div>

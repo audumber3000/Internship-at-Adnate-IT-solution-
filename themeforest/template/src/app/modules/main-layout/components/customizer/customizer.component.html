@@ -1,0 +1,70 @@
+<button class="customizer-btn" type="button" (click)="handleOpen()">
+  <img class="customizer-btn-icon" [src]="settingsImg" alt="open" />
+</button>
+<button class="btn-back" type="button" *ngIf="!isCollapsed" (click)="handleOpen()"></button>
+<div class="customizer-wrap" [ngClass]="{'customizer-wrap-open': !isCollapsed}">
+  <div class="title-wrap">
+    <h5>Theme Customizer</h5>
+    <button class="btn-close" type="button" (click)="handleOpen()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <p class="customizer-caption">This customizer allows you to see the different variations of the EasyDev.
+    Create your own visual style for every project you do!
+  </p>
+  <div class="toggle-btn">
+    <input
+      id="sidebar-toggle"
+      class="visually-hidden"
+      type="checkbox"
+      name="sidebar-toggle"
+      [ngModel]="sideBarCollapsedState$ | async"
+      (change)="changeSidebarVisibility($event.target.checked)"
+    />
+    <label for="sidebar-toggle" class="toggle-label"><span>Collapsed Menu</span></label>
+  </div>
+  <div class="toggle-btn">
+    <input
+      id="topmenu-toggle"
+      class="visually-hidden"
+      type="checkbox"
+      name="topmenu-toggle"
+      [ngModel]="topMenuState$ | async"
+      (change)="toggleTopNavigation($event.target.checked)"
+    />
+    <label for="topmenu-toggle" class="toggle-label"><span>Top Menu</span></label>
+  </div>
+  <div class="toggle-btn">
+    <input
+      id="darktheme-toggle"
+      class="visually-hidden"
+      type="checkbox"
+      name="darktheme-toggle"
+      [ngModel]="!(darkThemeState$ | async)"
+      (change)="changeToDark($event.target.checked)"
+    />
+    <label for="darktheme-toggle" class="toggle-label"><span>Dark Theme</span></label>
+  </div>
+  <div class="toggle-btn">
+    <input
+      id="border-toggle"
+      class="visually-hidden"
+      type="checkbox"
+      name="border-toggle"
+      [ngModel]="borderRadiusState$ | async"
+      (change)="changeBorderRadius($event.target.checked)"
+    />
+    <label for="border-toggle" class="toggle-label"><span>Squared borders</span></label>
+  </div>
+  <div class="toggle-btn">
+    <input
+      id="shadow-toggle"
+      class="visually-hidden"
+      type="checkbox"
+      name="shadow-toggle"
+      [ngModel]="blockShadowState$ | async"
+      (change)="toggleBoxShadow($event.target.checked)"
+    />
+    <label for="shadow-toggle" class="toggle-label"><span>Block's Shadows</span></label>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<form class="form" [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)" [ngClass]="{'form--horizontal': horizontalForm}">
+
+  <div class="form__form-group">
+    <span class="form__form-group-label">Username</span>
+    <div class="form__form-group-field">
+      <div class="form__form-group-icon" *ngIf="showIcons"><mat-icon>person_outline</mat-icon></div>
+      <input formControlName="username" type="text" placeholder="Name">
+    </div>
+  </div>
+
+  <div class="form__form-group">
+    <span class="form__form-group-label">E-mail</span>
+    <div class="form__form-group-field">
+      <div class="form__form-group-icon" *ngIf="showIcons"><mat-icon>mail</mat-icon></div>
+      <input formControlName="email" type="email" placeholder="example@mail.com">
+    </div>
+  </div>
+
+  <div class="form__form-group">
+    <span class="form__form-group-label">Url</span>
+    <div class="form__form-group-field">
+      <div class="form__form-group-icon" *ngIf="showIcons"><mat-icon>language</mat-icon></div>
+      <input formControlName="url" type="url" placeholder="https://themeforest.net">
+    </div>
+  </div>
+
+  <div class="form__form-group">
+    <span class="form__form-group-label">Password</span>
+    <div class="form__form-group-field">
+      <div class="form__form-group-icon" *ngIf="showIcons"><mat-icon>vpn_key</mat-icon></div>
+      <input formControlName="password" [attr.type]="showFormPassword ? 'text' : 'password'" placeholder="Password">
+      <label class="form__form-group-button" [ngClass]="{'active': showFormPassword}">
+        <input type="checkbox" class="visually-hidden" formControlName="showPassword">
+        <mat-icon>visibility</mat-icon>
+      </label>
+    </div>
+  </div>
+
+  <div class="form__form-group">
+    <div class="form__form-group-field checkbox-themed">
+      <mat-checkbox class="checkbox-default" formControlName="rememberMe">Remember me</mat-checkbox>
+    </div>
+  </div>
+
+  <div role="toolbar" class="form__button-toolbar btn-toolbar">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="button" class="btn btn-secondary" (click)="resetForm(reactiveForm)">Cancel</button>
+  </div>
+</form>

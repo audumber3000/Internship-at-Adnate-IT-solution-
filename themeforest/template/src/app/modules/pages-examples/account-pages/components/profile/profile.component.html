@@ -1,0 +1,227 @@
+<div class="container">
+  <div class="profile">
+    <div class="row">
+      <div class="col-md-12 col-lg-12 col-xl-4">
+        <div class="row">
+          <div class="col-md-12 col-lg-12 col-xl-12">
+            <div class="card">
+              <div class="profile__card card-body">
+                <div class="profile__information">
+                  <div class="profile__avatar"><img [src]="imageResoures.mainAvatarImg" alt="avatar"></div>
+                  <div class="profile__data"><p class="profile__name">Larry Boom</p>
+                    <p class="profile__work">Senior Account Manager</p>
+                    <p class="profile__contact">mailmethisletter@gmail.com</p>
+                    <p class="profile__contact">+23-123-743-23-21</p>
+                    <button class="icon profile__btn btn btn-primary">
+                      <p>
+                        <mat-icon>message</mat-icon>
+                        Message
+                      </p>
+                    </button>
+                  </div>
+                </div>
+                <div class="profile__stats">
+                  <div class="profile__stat"><p class="profile__stat-number">05</p>
+                    <p class="profile__stat-title">Projects</p></div>
+                  <div class="profile__stat"><p class="profile__stat-number">24</p>
+                    <p class="profile__stat-title">Tasks</p></div>
+                  <div class="profile__stat"><p class="profile__stat-number">12</p>
+                    <p class="profile__stat-title">Reports</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-12 col-xl-12">
+            <div class="card">
+              <div class="profile__card--calendar card-body">
+                <app-calendar></app-calendar>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-12 col-xl-12">
+            <div class="card">
+              <div class="profile__card card-body"><p class="profile__current-tasks-title">Current tasks <span>12</span>
+              </p>
+                <div class="profile__current-tasks">
+                  <div class="profile__current-task checkbox-themed">
+                    <mat-checkbox class="checkbox-default">Create screens of Mobile App</mat-checkbox>
+                    <span class="badge badge-info">New</span>
+                  </div>
+                  <div class="profile__current-task checkbox-themed">
+                    <mat-checkbox class="checkbox-default">Write Cris about the bag report</mat-checkbox>
+                  </div>
+                  <div class="profile__current-task checkbox-themed">
+                    <mat-checkbox class="checkbox-default">Test new system of versions control</mat-checkbox>
+                    <span class="badge badge-error">Priority</span>
+                  </div>
+
+                  <div class="profile__current-task checkbox-themed">
+                    <mat-checkbox class="checkbox-default">Design new layout for message page in Partnership project
+                    </mat-checkbox>
+                  </div>
+
+                  <div class="profile__current-task checkbox-themed">
+                    <mat-checkbox class="checkbox-default">Test new system of versions control <span
+                      class="badge badge-error">Priority</span></mat-checkbox>
+                  </div>
+
+                  <div class="profile__current-task checkbox-themed">
+                    <mat-checkbox class="checkbox-default">Design new layout for message page in Partnership project
+                    </mat-checkbox>
+                  </div>
+                  <a routerLink="/todo_app" class="profile__see-all-tasks">See all tasks</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-lg-12 col-xl-8">
+        <div class="card">
+
+          <div class="tabs profile__card">
+            <div class="tabs-wrap">
+              <tabset>
+                <tab heading="Activity" customClass="bordered-bottom">
+                  <div>
+                    <div class="profile__activity">
+                      <div class="profile__activity-avatar"><img [src]="imageResoures.mainAvatarImg" alt=""></div>
+                      <div><p class="profile__activity-name">Lora Kolly<span class="profile__activity-date"> 1 min ago</span>
+                      </p>
+                        <p>Dependent certainty off discovery him his tolerably offending. Ham for attention
+                          remainder sometimes additions recommend fat our.</p></div>
+                    </div>
+                    <div class="profile__activity">
+                      <div class="profile__activity-avatar"><img [src]="imageResoures.mainAvatarImg" alt=""></div>
+                      <div><p class="profile__activity-name">Anna Bro<span class="profile__activity-date"> 3 hours ago</span>
+                      </p>
+                        <p>Dependent certainty off discovery him his tolerably offending. Ham for attention
+                          remainder sometimes additions recommend fat our. Dependent certainty off discovery him his
+                          tolerably offending. Ham for attention remainder sometimes additions recommend fat
+                          our..</p></div>
+                    </div>
+                    <div class="profile__activity">
+                      <div class="profile__activity-avatar"><img [src]="imageResoures.secondaryAvatarImg" alt=""></div>
+                      <div><p class="profile__activity-name">Michel Tompson<span class="profile__activity-date"> 3 hours ago</span>
+                      </p>
+                        <p>Dependent certainty off discovery him his <a href="/">tolerably</a> offending.</p>
+                        <img [src]="imageResoures.secondaryAvatarImg1" alt="">
+                        <img [src]="imageResoures.secondaryAvatarImg2" alt="">
+                      </div>
+                    </div>
+                    <div class="profile__activity">
+                      <div class="profile__activity-avatar">
+                        <img [src]="imageResoures.secondaryAvatarImg3" alt="">
+                      </div>
+                      <div><p class="profile__activity-name">Antony Mirrel <span class="profile__activity-date"> 5 hours ago</span>
+                      </p>
+                        <p>Dependent certainty off discovery him his tolerably offending. Ham for attention
+                          remainder sometimes additions recommend fat our.</p></div>
+                    </div>
+                    <div class="profile__activity">
+                      <div class="profile__activity-avatar"><img [src]="imageResoures.secondaryAvatarImg4" alt=""></div>
+                      <div><p class="profile__activity-name">Lora Kolly<span class="profile__activity-date"> 20.05.2017</span>
+                      </p>
+                        <p>Dependent certainty off discovery him his tolerably offending. Ham for attention
+                          remainder sometimes additions recommend fat our. Dependent certainty off discovery him his
+                          tolerably offending. Ham for attention remainder sometimes additions recommend fat
+                          our..</p></div>
+                    </div>
+                    <div class="profile__activity">
+                      <div class="profile__activity-avatar"><img [src]="imageResoures.mainAvatarImg" alt=""></div>
+                      <div><p class="profile__activity-name">Maria Anderson-Bella<span
+                        class="profile__activity-date"> 20.05.2017</span></p>
+                        <p>Dependent certainty off discovery him his tolerably offending. Ham for attention
+                          remainder sometimes additions recommend fat our. Dependent certainty off discovery him his
+                          tolerably offending. Ham for attention remainder sometimes additions recommend fat
+                          our..</p></div>
+                    </div>
+              </div>
+                </tab>
+                <tab heading="Timeline" customClass="bordered-bottom">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="timeline">
+                        <div class="timeline-item">
+                          <div class="timeline-icon work"><span class="lnr lnr-briefcase"></span></div>
+                          <div class="timeline-content">
+                            <h5 class="timeline-title">Business meetup</h5>
+                            <p class="subhead timeline-date">3 hours ago</p>
+                            <p>Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes
+                              additions recommend fat our.</p>
+                          </div>
+                        </div>
+                        <div class="timeline-item">
+                          <div class="timeline-icon video"><span class="lnr lnr-film-play"></span></div>
+                          <div class="timeline-content"><h5 class="timeline-title">Video conference with client</h5>
+                            <p class="subhead timeline-date">5 hours ago</p>
+                            <p>Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes
+                              additions recommend fat our.</p>
+                          </div>
+                        </div>
+                        <div class="timeline-item">
+                          <div class="timeline-icon"><img [src]="imageResoures.secondaryAvatarImg5" alt="img"></div>
+                          <div class="timeline-content"><h5 class="timeline-title">Call to Jovanna</h5>
+                            <p class="subhead timeline-date">8 hours ago</p>
+                            <p>Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes
+                              additions recommend fat our.</p>
+                          </div>
+                        </div>
+                        <div class="timeline-item">
+                          <div class="timeline-icon file"><span class="lnr lnr-file-add"></span></div>
+                          <div class="timeline-content"><h5 class="timeline-title">Create offer. Prepare document</h5>
+                            <p class="subhead timeline-date">Yesterday at 18:30</p>
+                            <p>Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes
+                              additions recommend fat our.</p>
+                          </div>
+                        </div>
+                        <div class="timeline-item">
+                          <div class="timeline-icon"><img [src]="imageResoures.secondaryAvatarImg" alt="img"></div>
+                          <div class="timeline-content"><h5 class="timeline-title">Conversation with Philip</h5>
+                            <p class="subhead timeline-date">21.03.2017</p>
+                            <p>Dependent certainty off discovery him his tolerably offending. Ham for attention remainder sometimes
+                              additions recommend fat our.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </tab>
+                <tab heading="Settings" customClass="bordered-bottom">
+                  <form [ngClass]="{'dark-theme': !(isLightTheme | async)}" class="material-form" [formGroup]="MaterialForm" (ngSubmit)="onSubmit(MaterialForm)">
+                      <span class="material-form-label">Full Name</span>
+                    <mat-form-field class="w-100" floatLabel="never">
+                      <input matInput  formControlName="username">
+                    </mat-form-field>
+                      <span class="material-form-label">Email</span>
+                    <mat-form-field class="w-100" floatLabel="never">
+                      <input matInput  formControlName="email">
+                    </mat-form-field>
+                      <span class="material-form-label">URL</span>
+                    <mat-form-field class="w-100" floatLabel="never">
+                      <input matInput  formControlName="url">
+                    </mat-form-field>
+                      <span class="material-form-label">Password</span>
+                    <mat-form-field class="w-100" floatLabel="never">
+                      <input matInput  formControlName="password">
+                    </mat-form-field>
+                      <span class="material-form-label">Text Area</span>
+                    <mat-form-field class="w-100" floatLabel="never">
+                      <input matInput formControlName="textarea">
+                    </mat-form-field>
+                    <div [ngClass]="{'dark-theme': !(isLightTheme | async)}" role="toolbar" class="form__button-toolbar btn-toolbar">
+                      <button type="submit" class="btn btn-primary">Update profile</button>
+                      <button type="button" class="btn btn-secondary" (click)="resetForm(MaterialForm)">Cancel</button>
+                    </div>
+                  </form>
+                </tab>
+              </tabset>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

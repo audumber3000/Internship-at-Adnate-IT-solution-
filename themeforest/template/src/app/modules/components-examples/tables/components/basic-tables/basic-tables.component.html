@@ -1,0 +1,172 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12"><h3 class="page-title">Basic tables</h3>
+      <h3 class="page-subhead subhead">Use this elements, if you want to show some hints or additional information</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Basic table</h5>
+            <p class="subhead">Use default table</p>
+          </div>
+          <div class="responsive-table">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 border-none colored-cells-hover">
+
+              <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+                <th mat-header-cell *matHeaderCellDef> {{columnsAliases[column]}} </th>
+                <td mat-cell *matCellDef="let element">
+                  <ng-container *ngIf="column === 'status'; else simpleCell">
+                 <span class="badge"
+                       [ngClass]="{
+                 'badge-success': element.status === 'Work',
+                 'badge-warning': element.status === 'Vacation'}"
+                 >{{element[column]}}</span>
+                  </ng-container>
+                  <ng-template #simpleCell>
+                    {{element[column]}}
+                  </ng-template>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"><h5 class="bold-text">Bordered table</h5>
+            <p class="subhead">Use default table with class<span class="red-text"> table--bordered</span></p>
+          </div>
+          <div class="responsive-table">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 bordered-table">
+
+            <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+              <th mat-header-cell *matHeaderCellDef> {{columnsAliases[column]}} </th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container *ngIf="column === 'status'; else simpleCell">
+                 <span class="badge"
+                       [ngClass]="{
+                 'badge-success': element.status === 'Work',
+                 'badge-warning': element.status === 'Vacation'}"
+                 >{{element[column]}}</span>
+                </ng-container>
+                <ng-template #simpleCell>
+                  {{element[column]}}
+                </ng-template>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"><h5 class="bold-text">Head accent table</h5>
+            <p class="subhead">Use default table with class <span class="red-text">table--bordered table--head-accent</span></p>
+          </div>
+          <div class="responsive-table">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 colored-cells-hover head-accent">
+
+            <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+              <th mat-header-cell *matHeaderCellDef> {{columnsAliases[column]}} </th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container *ngIf="column === 'status'; else simpleCell">
+                 <span class="badge"
+                       [ngClass]="{
+                 'badge-success': element.status === 'Work',
+                 'badge-warning': element.status === 'Vacation'}"
+                 >{{element[column]}}</span>
+                </ng-container>
+                <ng-template #simpleCell>
+                  {{element[column]}}
+                </ng-template>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12 col-xl-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Colored string table</h5>
+            <p class="subhead">Use default table with property <span class="red-text">striped</span></p>
+          </div>
+          <div class="responsive-table">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 colored-rows border-none">
+
+            <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+              <th mat-header-cell *matHeaderCellDef> {{columnsAliases[column]}} </th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container *ngIf="column === 'status'; else simpleCell">
+                 <span class="badge"
+                       [ngClass]="{
+                 'badge-success': element.status === 'Work',
+                 'badge-warning': element.status === 'Vacation'}"
+                 >{{element[column]}}</span>
+                </ng-container>
+                <ng-template #simpleCell>
+                  {{element[column]}}
+                </ng-template>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 class="bold-text">Responsive table</h5>
+            <p class="subhead">Use default table with property <span class="red-text">responsive</span></p>
+          </div>
+          <div class="responsive-table">
+            <table mat-table [dataSource]="dataSourceResponsive" class="mat-elevation-z8 border-none colored-cells-hover">
+
+            <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumnsResponsive">
+              <th mat-header-cell *matHeaderCellDef> {{columnsAliasesResponsive[column]}} </th>
+              <td mat-cell *matCellDef="let element">
+                <ng-container *ngIf="column === 'status'; else simpleCell">
+                 <span class="badge"
+                       [ngClass]="{
+                 'badge-success': element.status === 'In Progress',
+                 'badge-primary': element.status === 'Completed'}"
+                 >{{element[column]}}</span>
+                </ng-container>
+                <ng-template #simpleCell>
+                  {{element[column]}}
+                </ng-template>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsResponsive"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsResponsive;"></tr>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
